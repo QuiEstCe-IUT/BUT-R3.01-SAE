@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="assets/styles/_default.css">
-        <link rel="stylesheet" href="assets/styles/_navigation.css">
-        <link rel="stylesheet" href="assets/styles/forgottenPwdStyle.css">
+        <link rel="stylesheet" href="assets/styles/_default.min.css">
+        <link rel="stylesheet" href="assets/styles/_navigation.min.css">
+        <link rel="stylesheet" href="assets/styles/forgottenPwdStyle.min.css">
         <?php start_page(); ?>
     </head>
     <body>

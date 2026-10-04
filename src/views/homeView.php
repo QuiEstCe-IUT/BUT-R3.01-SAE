@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         
-        <link rel="stylesheet" href="assets/styles/_default.css">
-        <link rel="stylesheet" href="assets/styles/_navigation.css">
-        <link rel="stylesheet" href="assets/styles/homeStyle.css">
+        <link rel="stylesheet" href="assets/styles/_default.min.css">
+        <link rel="stylesheet" href="assets/styles/_navigation.min.css">
+        <link rel="stylesheet" href="assets/styles/homeStyle.min.css">
         <?php start_page(); ?>
     </head>
     <body>
