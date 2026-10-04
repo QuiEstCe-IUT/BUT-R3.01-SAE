@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="assets/styles/_default.css">
         <link rel="stylesheet" href="assets/styles/_navigation.css">
         <link rel="stylesheet" href="assets/styles/signUpStyle.css">
-        <?php start_page(); ?>
+        <?php startPage(); ?>
     </head>
     <body>
         <div id="main-container">
@@ -67,7 +67,7 @@
                     </div>
                 </main>
                 <footer>
-                    <?php end_page(); ?>
+                    <?php endPage(); ?>
                 </footer>
             </div>
         </div>

@@ -23,7 +23,7 @@
                             <p>Vous êtes déjà connecté, vous ne pouvez pas modifier votre mot de passe</p>
                             
                         <?php } else if (isset($success)) { ?>
-                            <!-- Affichage du message de succès -->
+                            <!-- Affichage du message de succès (pour l'envoi de mail OU le changement de mot de passe) -->
                             <?php echo $success; ?>
                             <br><br>
                             <a href="index.php?page=login" class="link">Se connecter</a>

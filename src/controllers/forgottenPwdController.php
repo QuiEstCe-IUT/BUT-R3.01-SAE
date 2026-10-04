@@ -1,8 +1,10 @@
 <?php
 namespace src\controllers;
 
-class forgottenPwdController {
-    public function execute() : void {
+class ForgottenPwdController
+{
+    public function execute() : void
+    {
         $error = null;
         $success = null;
         $get_token = null;

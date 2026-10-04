@@ -1,7 +1,9 @@
 <?php
 namespace src\controllers;
-class LegalNoticeController {
-    public function execute(): void 
+
+class LegalNoticeController
+{
+    public function execute(): void
     {
         $companyName = "Qui est-ce";
         $address = "413 avenue Gaston Berger, Aix-En-Provence 13100";

@@ -2,7 +2,8 @@
 
 require_once __DIR__ . '/../../core/model.php';
 
-class LoginModel extends Model {
+class LoginModel extends Model
+{
 
     /**
      * Récupère un utilisateur par son email.
@@ -12,7 +13,8 @@ class LoginModel extends Model {
      * @return array ou false
         */
 
-    public static function getUserByEmail(string $email): array|false {
+    public static function getUserByEmail(string $email): array|false
+    {
         $sql = "SELECT user_id, login, email, hash_password FROM users WHERE email = :email";
         $stmt = self::getPdo()->prepare($sql);
         $stmt->execute([':email' => $email]);

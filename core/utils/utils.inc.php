@@ -1,5 +1,6 @@
 <?php
-function start_page(): void {
+function startPage(): void
+{
     echo '<link rel="icon" type="image/x-icon" href="favicon.ico">';
     echo '<title>Qui est-ce?</title>';
 
@@ -14,14 +15,17 @@ function start_page(): void {
     echo '<meta name="twitter:title" content="Qui est-ce?">';
     echo '<meta name="twitter:description" content="Jeu en ligne Qui est-ce? - Devinez le personnage mystère de votre adversaire.">';
 }
-function end_page(): void {
+
+function endPage(): void
+{
     echo <<<HTML
     <p>&copy; <?= date('Y') ?> - Tous droits réservés.</p>
     <p>Fin de page ici</p>
-    HTML;
+HTML;
 }
 
-function navigation(): void {
+function navigation(): void
+{
     echo <<<HTML
         <nav id="navigation">
             <a class="link-cont" href="index.php?page=home">
@@ -48,13 +52,6 @@ function navigation(): void {
                 <svg class="m-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"/></svg>
                 <p class="desc">Website map</p>
             </a>
-            <!--
-            <div class="link-cont"><a class="nav-link" href="index.php?page=home">Accueil</a></div>
-            <div class="link-cont"><a class="nav-link" href="index.php?page=login">Authentification</a></div>
-            <div class="link-cont"><a class="nav-link" href="index.php?page=signUp">Inscription</a></div>
-            <div class="link-cont"><a class="nav-link" href="index.php?page=forgottenPwd">Mot de passe oublié</a></div>
-            -->
         </nav>
-    HTML;
+HTML;
 }
-

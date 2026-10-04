@@ -1,8 +1,9 @@
 <?php
 namespace src\controllers;
 
-class mapController {
-    public function execute(): void 
+class MapController
+{
+    public function execute(): void
     {
         $pages = [
             [
@@ -25,7 +26,7 @@ class mapController {
                 'title' => 'Mentions Légales',
                 'url'   => 'index.php?page=legalNotice'
             ],
-         
+
             [
                 'title' => 'À propos',
                 'url'   => 'index.php?page=about'
@@ -36,7 +37,7 @@ class mapController {
             ]
         ];
 
-        
+
         require_once __DIR__ . '/../views/mapView.php';
     }
 }
