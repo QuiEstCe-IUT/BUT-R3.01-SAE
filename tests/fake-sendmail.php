@@ -1,6 +1,6 @@
 <?php
 
-// commande de test :php -d sendmail_path="php tests/fake-sendmail.php" -S localhost:8000 -t public/
+// commande de test :php -d sendmail_path="php ../tests/fake-sendmail.php" -S localhost:8000 -t public/
 
 // Script pour intercepter les emails en développement local
 $input = file_get_contents('php://stdin');
