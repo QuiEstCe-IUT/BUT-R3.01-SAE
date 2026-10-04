@@ -1,7 +1,21 @@
 <?php
 namespace src\controllers;
 
+/**
+ * Controller for handling forgotten password requests.
+ *
+ * This controller manages both the request to send a password reset link
+ * via email, and the actual password reset process once a valid token is provided.
+ */
 class forgottenPwdController {
+    /**
+     * Executes the forgotten password logic.
+     *
+     * Processes form submissions for sending a password reset email and
+     * resetting the password. Renders the associated view.
+     *
+     * @return void
+     */
     public function execute() : void {
         $error = null;
         $success = null;

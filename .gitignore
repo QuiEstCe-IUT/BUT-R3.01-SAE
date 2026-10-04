@@ -6,3 +6,5 @@ coverage/
 projet-dev-web.code-workspace
 config/database.php
 emails_envoyes.txt
+
+docs/

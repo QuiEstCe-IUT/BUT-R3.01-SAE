@@ -1,4 +1,10 @@
 <?php
+/**
+ * Autoloader configuration.
+ *
+ * Automatically loads PHP classes from the src/ directory based on their namespace.
+ */
+
 // On enregistre une fonction anonyme
 spl_autoload_register(function ($class) {
 
