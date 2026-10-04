@@ -3,7 +3,7 @@ name: Deploy Documentation
 on:
   # Se déclenche lors d'un push sur la branche main
   push:
-    branches: ["main"]
+    branches: ["main", "dev"]
   # Permet de lancer le workflow manuellement depuis GitHub
   workflow_dispatch:
 
