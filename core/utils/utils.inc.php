@@ -11,6 +11,9 @@
 function start_page(): void {
     echo '<link rel="icon" type="image/x-icon" href="favicon.ico">';
     echo '<title>Qui est-ce?</title>';
+    
+    // SEO Google (Balise meta description)
+    echo '<meta name="description" content="Jeu en ligne Qui est-ce? - Devinez le personnage mystère de votre adversaire.">';
 
     // Open Graph (Facebook, Discord, LinkedIn, etc.)
     echo '<meta property="og:title" content="Qui est-ce?">';
