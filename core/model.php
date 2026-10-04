@@ -1,6 +1,14 @@
 <?php
 
+/**
+ * Abstract base model class.
+ *
+ * Provides a singleton PDO database connection to be used by all child models.
+ */
 abstract class Model {
+    /**
+     * @var PDO|null Holds the singleton PDO instance
+     */
     private static ?PDO $pdo = null;
 
     protected static function getPdo(): PDO {

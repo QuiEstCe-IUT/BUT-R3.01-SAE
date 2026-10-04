@@ -1,7 +1,15 @@
 <?php
 namespace src\controllers;
 
+/**
+ * Controller for handling user login and logout.
+ */
 class LoginController {
+    /**
+     * Executes the login/logout logic and renders the view.
+     *
+     * @return void
+     */
     public function execute() : void {
         $error = null;
 

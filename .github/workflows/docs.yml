@@ -1,0 +1,47 @@
+name: Deploy Documentation
+
+on:
+  # Se déclenche lors d'un push sur la branche main
+  push:
+    branches: ["main", "dev"]
+  # Permet de lancer le workflow manuellement depuis GitHub
+  workflow_dispatch:
+
+# Droits nécessaires pour publier sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permet d'éviter de lancer plusieurs déploiements de doc en même temps
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Generate PHPDoc
+        uses: docker://phpdoc/phpdoc:3
+        with:
+          args: -d src,core -t docs/api
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload documentation artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # On indique le dossier qui contient la documentation générée
+          path: './docs/api'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
