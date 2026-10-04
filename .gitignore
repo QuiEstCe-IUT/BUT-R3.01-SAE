@@ -5,4 +5,4 @@ coverage/
 .phpunit.result.cache
 projet-dev-web.code-workspace
 config/database.php
-.idea
+.ideaemails_envoyes.txt
