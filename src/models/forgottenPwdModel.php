@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/../../core/model.php';
 
+/**
+ * Model for handling forgotten password tokens and updates.
+ */
 class ForgottenPwdModel extends Model {
 
     /**

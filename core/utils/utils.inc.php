@@ -1,4 +1,13 @@
 <?php
+/**
+ * Utility functions for generating common HTML elements.
+ */
+
+/**
+ * Generates the start of an HTML page, including meta tags and title.
+ *
+ * @return void
+ */
 function start_page(): void {
     echo '<link rel="icon" type="image/x-icon" href="favicon.ico">';
     echo '<title>Qui est-ce?</title>';
@@ -14,6 +23,12 @@ function start_page(): void {
     echo '<meta name="twitter:title" content="Qui est-ce?">';
     echo '<meta name="twitter:description" content="Jeu en ligne Qui est-ce? - Devinez le personnage mystère de votre adversaire.">';
 }
+
+/**
+ * Generates the end of an HTML page, including footer information.
+ *
+ * @return void
+ */
 function end_page(): void {
     echo <<<HTML
     <p>&copy; <?= date('Y') ?> - Tous droits réservés.</p>
@@ -21,6 +36,11 @@ function end_page(): void {
     HTML;
 }
 
+/**
+ * Generates the main navigation menu for the website.
+ *
+ * @return void
+ */
 function navigation(): void {
     echo <<<HTML
         <nav id="navigation">
