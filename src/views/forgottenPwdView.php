@@ -19,18 +19,27 @@
                 <main>
                     <div class="cont">
                         <h1>Mot de passe oublié</h1>
-                        <?php if (!isset($success)) { ?>
+                        <?php if (isset($_SESSION['suid'])) { ?>
+                            <p>Vous êtes déjà connecté, vous ne pouvez pas modifier votre mot de passe</p>
+                        <?php } else if (isset($get_token)) { ?>
+                            <form method="post" class="form_bg" action="index.php?page=forgottenPwd&token=<?php echo $get_token; ?>">
+                                <p>Nouveau mot de passe :</p>
+                                <input name="form2[mdp]" class="input" type="password" required>
+                                <p>Confirmer le mot de passe :</p>
+                                <input name="form2[mdp2]" class="input" type="password" required>
+                                <input type="submit" class="submit" value="Modifier">
+                            </form>
+                            <?php
+                            if (isset($error)) {
+                                echo $error;
+                            }
+                            ?>
+                        <?php } else if (!isset($success)) { ?>
                             <form method="post" class="form_bg" action="index.php?page=forgottenPwd">
                                 <p>Email :</p>
                                 <input name="form[email]" class="input" type="email" placeholder="Adresse mail" required>
     
-                                <p>Nouveau mot de passe :</p>
-                                <input name="form[mdp]" class="input" type="password" required>
-    
-                                <p>Confirmer le mot de passe :</p>
-                                <input name="form[mdp2]" class="input" type="password" required>
-    
-                                <input type="submit" class="submit" value="Modifier">
+                                <input type="submit" class="submit" value="Envoyer mail">
                             </form>
                             <?php
                             if (isset($error)) {
