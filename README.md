@@ -11,6 +11,8 @@
 ![Last Commit](https://img.shields.io/github/last-commit/QuiEstCe-IUT/BUT-R3.01-SAE?style=flat)
 
 > Site déployé : **https://mathiasm.alwaysdata.net**
+> 
+> Documentation : **https://quiestce-iut.github.io/BUT-R3.01-SAE/**
 ### Technologie
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
