@@ -6,7 +6,7 @@
     <source>
         <include>
             <directory>src</directory>
-            <directory>kernel</directory>
+            <file>core/model.php</file>
         </include>
     </source>
 </phpunit>

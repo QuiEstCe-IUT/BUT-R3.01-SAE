@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/../kernel/model.php';
+require_once __DIR__ . '/../core/model.php';
 require_once __DIR__ . '/../src/models/authentificationModel.php';
 require_once __DIR__ . '/../src/models/signUpModel.php';
 

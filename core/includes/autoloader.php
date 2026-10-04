@@ -7,7 +7,7 @@ spl_autoload_register(function ($class) {
     // $relativeClass devient : "Controllers\AccueilController"
 
     // 2. On construit le chemin absolu vers le dossier src/
-    // __DIR__ représente le dossier où se trouve l'autoloader (_assets/includes/)
+    // __DIR__ représente le dossier où se trouve l'autoloader ( core/includes/)
     $file = __DIR__ . '/../../src/' . str_replace('\\', '/', $relativeClass) . '.php';
     // $file devient : /chemin/vers/projet/src/Controllers/AccueilController.php
 

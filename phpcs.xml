@@ -3,8 +3,8 @@
     <rule ref="PSR12"/>
     <file>public/index.php</file>
     <file>src</file>
-    <file>kernel</file>
-    <file>_assets/includes</file>
-    <file>_assets/utils</file>
+    <file>core/model.php</file>
+    <file>core/includes</file>
+    <file>core/utils</file>
     <file>tests</file>
 </ruleset>
