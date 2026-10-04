@@ -4,12 +4,16 @@ body {
 }
 
 .cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     background-color: #c7e0ed;
     
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
 
     border-style: solid;
@@ -28,6 +32,8 @@ h1 {
 }
 
 .form_bg {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center;
     align-items: center;
