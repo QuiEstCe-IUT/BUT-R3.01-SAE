@@ -9,12 +9,14 @@ namespace src\controllers {
 
 namespace {
     use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
+    use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\TestCase;
 
     require_once __DIR__ . '/../src/controllers/signUpController.php';
     require_once __DIR__ . '/../core/utils/utils.inc.php';
 
     #[RunTestsInSeparateProcesses]
+    #[CoversClass(\src\controllers\SignUpController::class)]
     class VerificationChampsTest extends TestCase
     {
         protected function setUp(): void
