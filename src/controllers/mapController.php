@@ -33,6 +33,10 @@ class mapController {
             [
                 'title' => 'Contact',
                 'url'   => 'index.php?page=contact'
+            ],
+            [
+                'title' => 'Supprimer mon compte',
+                'url'   => 'index.php?page=deletion'
             ]
         ];
 
