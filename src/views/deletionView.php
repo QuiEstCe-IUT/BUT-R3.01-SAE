@@ -4,7 +4,7 @@ namespace src\views;
 /**
  * View for the signup page.
  */
-class SignUpView {
+class DeletionView {
     /**
      * Display the view of the signup page.
      *
