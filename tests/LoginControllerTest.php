@@ -2,7 +2,10 @@
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
+use PHPUnit\Framework\Attributes\CoversClass;
+use src\controllers\LoginController;
 
+#[CoversClass(LoginController::class)]
 class LoginControllerTest extends TestCase
 {
     private array $previousPost;

@@ -1,7 +1,10 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use src\controllers\SignUpController;
 
+#[CoversClass(SignUpController::class)]
 class SignUpControllerTest extends TestCase
 {
     private array $previousPost;
