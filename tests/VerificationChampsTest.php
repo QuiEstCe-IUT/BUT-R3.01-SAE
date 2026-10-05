@@ -26,7 +26,7 @@ namespace {
 
         private function executeWithForm(array $overrides = []): string
         {
-            $_POST['form'] = array_replace([
+            $form = array_replace([
                 'pseudo' => 'Alice',
                 'prenom' => 'Alice',
                 'nom' => 'Dubois',
@@ -36,6 +36,12 @@ namespace {
                 'adress' => '1 rue de Aix',
                 'generalCondition' => 'on',
             ], $overrides);
+
+            if (array_key_exists('generalCondition', $overrides) && $overrides['generalCondition'] === null) {
+                unset($form['generalCondition']);
+            }
+
+            $_POST['form'] = $form;
 
             ob_start();
             (new \src\controllers\SignUpController())->execute();
