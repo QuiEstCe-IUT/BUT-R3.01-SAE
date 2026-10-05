@@ -47,7 +47,8 @@
                         HTML;
                         $username = $_SESSION['username'];
                         echo "<p>$username</p>";
-                        echo '<a href="index.php?page=login&action=logout">Se déconnecter</a><br>';
+                        echo '<a href="index.php?page=login&action=logout" class="link">Se déconnecter</a><br><br>';
+                        echo '<a href="index.php?page=deletion" class="link" style="color: red;">Supprimer mon compte</a><br>';
                     }
                     ?>
                 </main>
