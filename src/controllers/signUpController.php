@@ -31,12 +31,12 @@ class SignUpController {
                 }
                 if (strlen($postData['form']['prenom']) > 30) {
                     $bad_prenom = "<p class='error'>le prenom doit être inférieur ou égale à 30 caractères</p>";
-                } elseif (strlen($postData['form']['pseudo']) == 0) {
+                } elseif (strlen($postData['form']['prenom']) == 0) {
                     $bad_prenom = "<p class='error'>Veuillez entrer le prenom</p>";
                 }
                 if (strlen($postData['form']['nom']) > 30) {
                     $bad_nom = "<p class='error'>le nom doit être inférieur ou égale à 30 caractères</p>";
-                } elseif (strlen($postData['form']['pseudo']) == 0) {
+                } elseif (strlen($postData['form']['nom']) == 0) {
                     $bad_nom = "<p class='error'>Veuillez entrer le nom</p>";
                 }
     
