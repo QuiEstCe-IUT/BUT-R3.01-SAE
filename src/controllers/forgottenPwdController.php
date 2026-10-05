@@ -150,6 +150,7 @@ class forgottenPwdController {
         }
 
         // On affiche la vue de mot de passe oublié
-        require_once __DIR__ . '/../views/forgottenPwdView.php';
+        $path = 'src\\views\\forgottenPwdView';
+        (new $path())->show($success, $error, $get_token);
     }
 }
