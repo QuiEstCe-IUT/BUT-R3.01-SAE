@@ -13,6 +13,8 @@ body {
 
 /* Afficher la nav sur la gauche et la page sur la droite */
 #main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -5,6 +5,8 @@
     justify-content: space-around;
     align-items: center;
 
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
     border-radius: 2vh;
 
     background-color: var(--color_orange2);
@@ -28,6 +30,9 @@
 
     margin: 1vh;
 
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 .link-cont:hover {

@@ -42,6 +42,11 @@ jobs:
       - name: Static analysis (PHPStan)
         run: composer stan
 
+      - name: Generate PHPDoc
+        uses: docker://phpdoc/phpdoc:3
+        with:
+          args: -d src,core -t docs/api
+
       - name: Unit tests (PHPUnit)
         run: vendor/bin/phpunit --coverage-clover coverage/clover.xml
 

@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
 
-        <link rel="stylesheet" href="assets/styles/_default.css">
-        <link rel="stylesheet" href="assets/styles/_navigation.css">
-        <link rel="stylesheet" href="assets/styles/loginStyle.css">
+        <link rel="stylesheet" href="assets/styles/_default.min.css">
+        <link rel="stylesheet" href="assets/styles/_navigation.min.css">
+        <link rel="stylesheet" href="assets/styles/loginStyle.min.css">
         <?php start_page(); ?>
     </head>
     <body>
@@ -47,7 +47,8 @@
                         HTML;
                         $username = $_SESSION['username'];
                         echo "<p>$username</p>";
-                        echo '<a href="index.php?page=login&action=logout">Se déconnecter</a><br>';
+                        echo '<a href="index.php?page=login&action=logout" class="link">Se déconnecter</a><br><br>';
+                        echo '<a href="index.php?page=deletion" class="link" style="color: red;">Supprimer mon compte</a><br>';
                     }
                     ?>
                 </main>
