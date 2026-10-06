@@ -43,7 +43,7 @@ class MdpOublieTest extends TestCase
 		}
 
 		$this->assertStringContainsString('<h1>Mot de passe oublié</h1>', $html);
-		$this->assertStringContainsString("name='form[email]'", $html);
+		$this->assertStringContainsString('name="form[email]"', $html);
 		$this->assertStringContainsString('Envoyer mail', $html);
 	}
 
@@ -63,6 +63,6 @@ class MdpOublieTest extends TestCase
 			'Vous êtes déjà connecté, vous ne pouvez pas modifier votre mot de passe',
 			$html
 		);
-		$this->assertStringNotContainsString("name='form[email]'", $html);
+		$this->assertStringNotContainsString('name="form[email]"', $html);
 	}
 }
