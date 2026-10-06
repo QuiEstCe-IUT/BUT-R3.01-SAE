@@ -1,9 +1,11 @@
 <?php
 
 namespace src\controllers {
-    function filter_input_array(...$arguments)
-    {
-        return \filter_var_array($_POST, $arguments[1] ?? null);
+    if (!function_exists(__NAMESPACE__ . '\\filter_input_array')) {
+        function filter_input_array(...$arguments)
+        {
+            return \filter_var_array($_POST, $arguments[1] ?? null);
+        }
     }
 }
 
@@ -125,6 +127,23 @@ namespace {
             $output = $this->executeWithForm(['adress' => '']);
 
             $this->assertStringContainsString('Veuillez entrer une addresse', $output);
+        }
+
+        public function testChampObligatoireManquantNeLancePasLaValidation(): void
+        {
+            $output = $this->executeWithForm(['email' => null]);
+
+            $this->assertStringContainsString("<h1>S'inscrire</h1>", $output);
+            $this->assertStringNotContainsString("L'email est incorrect", $output);
+        }
+
+        public function testFormulaireEstIgnoreQuandUtilisateurEstConnecte(): void
+        {
+            $_SESSION['uid'] = 42;
+            $output = $this->executeWithForm(['pseudo' => '']);
+
+            $this->assertStringContainsString("<h1>S'inscrire</h1>", $output);
+            $this->assertStringNotContainsString('Veuillez entrer un pseudonyme', $output);
         }
     }
 }
