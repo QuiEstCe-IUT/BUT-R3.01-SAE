@@ -1,9 +1,13 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversFunction;
 
 require_once __DIR__ . '/../../core/utils/utils.inc.php';
 
+#[CoversFunction('start_page')]
+#[CoversFunction('end_page')]
+#[CoversFunction('navigation')]
 class UtilsTest extends TestCase
 {
     public function testStartPageOutputsFaviconAndTitle(): void
