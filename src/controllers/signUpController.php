@@ -1,8 +1,25 @@
 <?php
 namespace src\controllers;
 
+/**
+ * Controller for handling user signup.
+ */
 class SignUpController {
+    /**
+     * Executes the signup logic and renders the view.
+     *
+     * @return void
+     */
     public function execute() {
+
+        $bad_pseudo = null;
+        $bad_prenom = null;
+        $bad_nom = null;
+        $bad_email = null;
+        $notMatch_password = null;
+        $bad_adress = null;
+        $notAccepted_conditions = null;
+
         // On vérifie le contenu du formulaire d'inscription (si on est pas déjà connecté)
         if (isset($_POST['form']) && !isset($_SESSION['uid'])) {
             // On filtre les entrées pour éviter les injections SQL
@@ -31,12 +48,12 @@ class SignUpController {
                 }
                 if (strlen($postData['form']['prenom']) > 30) {
                     $bad_prenom = "<p class='error'>le prenom doit être inférieur ou égale à 30 caractères</p>";
-                } elseif (strlen($postData['form']['pseudo']) == 0) {
+                } elseif (strlen($postData['form']['prenom']) == 0) {
                     $bad_prenom = "<p class='error'>Veuillez entrer le prenom</p>";
                 }
                 if (strlen($postData['form']['nom']) > 30) {
                     $bad_nom = "<p class='error'>le nom doit être inférieur ou égale à 30 caractères</p>";
-                } elseif (strlen($postData['form']['pseudo']) == 0) {
+                } elseif (strlen($postData['form']['nom']) == 0) {
                     $bad_nom = "<p class='error'>Veuillez entrer le nom</p>";
                 }
     
@@ -116,7 +133,15 @@ class SignUpController {
             }
         }
     
-        // On affiche le formulaire d'authentification
-        require_once __DIR__ . '/../views/signUpView.php';
+        // On affiche le formulaire d'inscription
+        $path = 'src\\views\\signUpView';
+        (new $path())->show(
+            $bad_pseudo,
+            $bad_prenom,
+            $bad_nom,
+            $bad_email,
+            $notMatch_password,
+            $bad_adress,
+            $notAccepted_conditions);
     }
 }

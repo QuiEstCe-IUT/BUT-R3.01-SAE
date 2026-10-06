@@ -1,38 +1,54 @@
 <?php
+namespace src\controllers;
 
-class mapController 
-{
-    public function show(): void 
+/**
+ * Controller for handling the map page.
+ */
+class mapController {
+    /**
+     * Executes the map logic renders the view.
+     *
+     * @return void
+     */
+    public function execute(): void 
     {
         $pages = [
             [
                 'title' => 'Accueil',
-                'url'   => 'index.php'
-            ],
-            [
-                'title' => 'S\'inscrire',
-                'url'   => 'index.php?action=signUp'
+                'url'   => 'index.php?page=home'
             ],
             [
                 'title' => 'Se connecter',
-                'url'   => 'index.php?action=login'
+                'url'   => 'index.php?page=login'
+            ],
+            [
+                'title' => 'S\'inscrire',
+                'url'   => 'index.php?page=signUp'
+            ],
+            [
+                'title' => 'Mot de passe oublié',
+                'url'   => 'index.php?page=forgottenPwd'
+            ],
+            [
+                'title' => 'Mentions Légales',
+                'url'   => 'index.php?page=legalNotice'
             ],
          
             [
                 'title' => 'À propos',
-                'url'   => 'index.php?action=about'
+                'url'   => 'index.php?page=about'
             ],
             [
                 'title' => 'Contact',
-                'url'   => 'index.php?action=contact'
+                'url'   => 'index.php?page=contact'
             ],
             [
-                'title' => 'Mentions Légales',
-                'url'   => 'index.php?action=legal'
+                'title' => 'Supprimer mon compte',
+                'url'   => 'index.php?page=deletion'
             ]
         ];
-
         
-        require_once __DIR__ . '/../views/mapView.php';
+        $path = 'src\\views\\mapView';
+        (new $path())->show($pages);
     }
 }

@@ -12,6 +12,7 @@
     "scripts": {
         "stan": "phpstan analyse --memory-limit=512M",
         "cs": "phpcs",
-        "test": "phpunit"
+        "test": "phpunit",
+        "doc": "phpdoc -d src,core -t docs/api"
     }
 }
