@@ -209,7 +209,4 @@ Configurés dans *Settings > Secrets and variables > Actions* :
 ## Figma et tâches à faire (WIP)
 
 - [Consulter l'interface sur Figma](https://www.figma.com/site/8oDWB7jazMQrtPeLXBzpkZ/Maquette-Qui-est-ce?node-id=0-1&p=f&t=6JdjGxCOOWHijIBQ-0)
-
-
-
--[Consulter le Trello](https://trello.com/b/vU8P6PBF/r301-developpement-web-projet-php)
+- [Consulter le Trello](https://trello.com/b/vU8P6PBF/r301-developpement-web-projet-php)
