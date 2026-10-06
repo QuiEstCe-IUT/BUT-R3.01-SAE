@@ -3,8 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use src\controllers\SignUpController;
+use src\views\SignUpView;
 
 #[CoversClass(SignUpController::class)]
+#[CoversClass(SignUpView::class)]
 class SignUpControllerTest extends TestCase
 {
     private array $previousPost;

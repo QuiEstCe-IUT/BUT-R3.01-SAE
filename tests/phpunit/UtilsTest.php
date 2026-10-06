@@ -1,11 +1,13 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversFunction;
 
 require_once __DIR__ . '/../../core/utils/utils.inc.php';
 
 class UtilsTest extends TestCase
 {
+    #[CoversFunction('start_page')]
     public function testStartPageOutputsFaviconAndTitle(): void
     {
         ob_start();
@@ -17,6 +19,7 @@ class UtilsTest extends TestCase
         $this->assertStringContainsString('og:title', $output);
     }
 
+    #[CoversFunction('end_page')]
     public function testEndPageOutputsFooterText(): void
     {
         ob_start();
@@ -27,6 +30,7 @@ class UtilsTest extends TestCase
         $this->assertStringContainsString('Tous droits réservés', $output);
     }
 
+    #[CoversFunction('navigation')]
     public function testNavigationContainsProjectRoutes(): void
     {
         ob_start();
