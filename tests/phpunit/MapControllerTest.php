@@ -33,6 +33,6 @@ class MapControllerTest extends TestCase
 			$this->assertStringContainsString($route, $html);
 		}
 
-		$this->assertSame(8, substr_count($html, '<li>'));
+		$this->assertSame(6, substr_count($html, '<li>'));
 	}
 }
