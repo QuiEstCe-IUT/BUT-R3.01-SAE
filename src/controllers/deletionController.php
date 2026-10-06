@@ -1,7 +1,15 @@
 <?php
 namespace src\controllers;
 
+/**
+ * Controller for user deletion.
+ */
 class DeletionController {
+    /**
+     * Executes the user deletion logic and renders the view.
+     *
+     * @return void
+     */
     public function execute(): void {
         $error = null;
         $success = null;
@@ -30,6 +38,7 @@ class DeletionController {
             }
         }
 
-        require_once __DIR__ . '/../views/deletionView.php';
+        $path = 'src\\views\\deletionView';
+        (new $path())->show($error, $success);
     }
 }

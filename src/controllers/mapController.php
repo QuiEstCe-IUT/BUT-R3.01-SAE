@@ -1,7 +1,15 @@
 <?php
 namespace src\controllers;
 
+/**
+ * Controller for handling the map page.
+ */
 class mapController {
+    /**
+     * Executes the map logic renders the view.
+     *
+     * @return void
+     */
     public function execute(): void 
     {
         $pages = [
@@ -39,8 +47,8 @@ class mapController {
                 'url'   => 'index.php?page=deletion'
             ]
         ];
-
         
-        require_once __DIR__ . '/../views/mapView.php';
+        $path = 'src\\views\\mapView';
+        (new $path())->show($pages);
     }
 }

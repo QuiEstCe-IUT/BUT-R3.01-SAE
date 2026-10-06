@@ -1,6 +1,15 @@
 <?php
 namespace src\controllers;
+
+/**
+ * Controller for handling legal notice page.
+ */
 class LegalNoticeController {
+    /**
+     * Executes the legal notice logic and renders the view.
+     *
+     * @return void
+     */
     public function execute(): void 
     {
         $companyName = "Qui est-ce";
@@ -10,6 +19,13 @@ class LegalNoticeController {
         $hostName = "";
         $hostAddress = "";
 
-        require_once __DIR__ . '/../views/legalNoticeView.php';
+        $path = 'src\\views\\legalNoticeView';
+        (new $path())->show(
+            $companyName,
+            $address,
+            $contactEmail,
+            $hostName,
+            $hostAddress
+        );
     }
 }
