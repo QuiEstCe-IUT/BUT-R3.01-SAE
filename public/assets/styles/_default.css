@@ -24,6 +24,8 @@ body {
     height: 100vh;
 }
 header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -33,9 +35,41 @@ header {
     margin: 3vh;
 }
 #right-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
 
     height: 100%;
     width: 90%;
+}
+
+/* Responsive : la nav passe au-dessus de la page */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+    }
+    #main-container {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        height: auto;
+        min-height: 100vh;
+    }
+    header {
+        align-self: stretch;
+
+        width: auto;
+
+        margin: 1vh;
+    }
+    #right-container {
+        box-sizing: border-box;
+
+        height: auto;
+        width: 100%;
+
+        padding: 0 3vw;
+    }
 }

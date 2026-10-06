@@ -40,6 +40,8 @@ h1 {
     flex-direction: column;
 
     background-color: #d8e7ef;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
 
     width: 80%;
@@ -49,6 +51,8 @@ h1 {
 .input {
     margin-bottom: 10px;
 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     border-color: #b8ced9;
 }
@@ -71,4 +75,25 @@ h1 {
 
 .error {
     color: red;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .cont {
+        width: 60%;
+    }
+}
+@media (max-width: 768px) {
+    .cont {
+        width: 92%;
+    }
+    .form_bg {
+        width: 90%;
+    }
+    .input {
+        max-width: 90%;
+    }
+    .submit {
+        width: 50%;
+    }
 }
