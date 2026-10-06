@@ -41,8 +41,10 @@ namespace {
                 'generalCondition' => 'on',
             ], $overrides);
 
-            if (array_key_exists('generalCondition', $overrides) && $overrides['generalCondition'] === null) {
-                unset($form['generalCondition']);
+            foreach ($overrides as $field => $value) {
+                if ($value === null) {
+                    unset($form[$field]);
+                }
             }
 
             $_POST['form'] = $form;
