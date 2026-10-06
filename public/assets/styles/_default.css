@@ -46,6 +46,11 @@ header {
     height: 100%;
     width: 90%;
 }
+/* Centre verticalement le contenu de la page, le footer reste en bas */
+main {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
 /* Responsive : la nav passe au-dessus de la page */
 @media (max-width: 768px) {
