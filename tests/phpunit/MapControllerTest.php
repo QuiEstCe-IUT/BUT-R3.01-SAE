@@ -27,6 +27,7 @@ class MapControllerTest extends TestCase
 			'index.php?page=signUp',
 			'index.php?page=forgottenPwd',
 			'index.php?page=legalNotice',
+			'index.php?page=article',
 			'index.php?page=about',
 			'index.php?page=contact',
 			'index.php?page=deletion',
