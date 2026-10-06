@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var array $articles
+ * @var int $totalPages
+ * @var int $currentPage
+ */
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
