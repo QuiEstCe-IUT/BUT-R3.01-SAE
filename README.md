@@ -21,10 +21,8 @@
 ![SonarQube Cloud](https://img.shields.io/badge/SonarQube%20Cloud-F3702A?style=flat&logo=sonarqubecloud&logoColor=white)
 ![Repo Size](https://img.shields.io/github/repo-size/QuiEstCe-IUT/BUT-R3.01-SAE?style=flat-square&logo=github&logoColor=white)
 
-![PHPUnit](https://img.shields.io/badge/PHPUnit-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![phpDocumentor](https://img.shields.io/badge/phpDocumentor-EF2D5E?style=for-the-badge&logo=php&logoColor=white)
-
-[![Architecture diagram of quiestce-iut/but-r3.01-sae](https://gitdiagram.com/quiestce-iut/but-r3.01-sae/diagram.png)](https://gitdiagram.com/quiestce-iut/but-r3.01-sae?utm_source=readme&utm_medium=picture)
+![PHPUnit](https://img.shields.io/badge/PHPUnit-777BB4?style=flat&logo=php&logoColor=white)
+![phpDocumentor](https://img.shields.io/badge/phpDocumentor-EF2D5E?style=flat&logo=php&logoColor=white)
 
 ## Équipe de réalisation
 
@@ -73,6 +71,8 @@
 ├── sonar-project.properties
 └── README.md
 ```
+
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/quiestce-iut/but-r3.01-sae?utm_source=readme&utm_medium=badge)
 
 > `vendor/`, `config/database.php` et `coverage/` ne sont pas versionnés : voir [Installation locale](#installation-locale).
 
