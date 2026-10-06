@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../core/utils/utils.inc.php';
 require_once __DIR__ . '/../../src/controllers/deletionController.php';
 
 #[CoversClass(DeletionController::class)]
-class SuppressionTest extends TestCase
+class DeletionControllerTest extends TestCase
 {
 	private array $previousPost;
 	private array $previousGet;
