@@ -2,6 +2,9 @@
 :root {
   --color_orange: #fce76f;
   --color_orange2: #f1d65c;
+  --color_orange3: #d9bd45;
+  --color_link: #6b5a10;
+  --color_link_hover: #3d3308;
 }
 
 body {
