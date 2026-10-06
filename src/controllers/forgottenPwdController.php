@@ -135,9 +135,12 @@ class forgottenPwdController {
                                 $message .= 'Ce lien est valable 1 heure.' . "\n";
                                 $message .= 'Si vous n\'êtes pas à l\'origine de cette demande, ignorez ce message.';
 
-                                mail($to, $subject, $message, $headers);
-
-                                $success = "<p class='success'>Un email a été envoyé, veuillez vérifier votre boîte mail</p>";
+                                $envoie = mail($to, $subject, $message, $headers);
+                                if ($envoi) {
+                                    $success = "<p class='success'>Un email a été envoyé, veuillez vérifier votre boîte mail</p>";
+                                } else {
+                                    $error = "<p class='error'>Une erreur est survenue lors de l'envoie de l'email, veuillez réessayer</p>";
+                                }
                             } else {
                                 $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
                             }
