@@ -12,6 +12,9 @@ function start_page(): void {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
     echo '<link rel="icon" type="image/x-icon" href="favicon.ico">';
     echo '<title>Qui est-ce?</title>';
+
+    // CSS d'impression integre a la page pour eviter une requete HTTP supplementaire
+    echo '<style media="print">' . file_get_contents(__DIR__ . '/../../public/assets/styles/_print.min.css') . '</style>';
     
     // prefixe meta description)
     echo '<meta name="description" content="Jeu en ligne Qui est-ce? - Devinez le personnage mystère de votre adversaire.">';
