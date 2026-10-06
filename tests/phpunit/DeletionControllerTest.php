@@ -51,4 +51,21 @@ class DeletionControllerTest extends TestCase
 			$html
 		);
 	}
+
+	#[RunInSeparateProcess]
+	public function testConnectedUserSeesDeletionFormWithoutSubmittingIt(): void
+	{
+		$_SESSION = ['suid' => 'session-id', 'user_id' => 123];
+
+		ob_start();
+		try {
+			(new DeletionController())->execute();
+		} finally {
+			$html = ob_get_clean();
+		}
+
+		$this->assertStringContainsString('<h1>Supprimer mon compte</h1>', $html);
+		$this->assertStringContainsString('name="confirm_delete"', $html);
+		$this->assertSame(123, $_SESSION['user_id']);
+	}
 }

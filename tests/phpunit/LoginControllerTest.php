@@ -62,4 +62,23 @@ class LoginControllerTest extends TestCase
         $this->assertSame([], $_SESSION);
         $this->assertStringContainsString("name='form[email]'", $html);
     }
+
+    #[RunInSeparateProcess]
+    public function testConnectedUserDoesNotProcessLoginForm(): void
+    {
+        $_SESSION = ['suid' => 'session-id', 'username' => 'jules'];
+        $_POST = ['form' => ['email' => 'user@example.com', 'mdp' => 'password']];
+
+        ob_start();
+        try {
+            (new \src\controllers\LoginController())->execute();
+        } finally {
+            $html = ob_get_clean();
+        }
+
+        $this->assertStringContainsString('Actuellement connecté en tant que', $html);
+        $this->assertStringContainsString('jules', $html);
+        $this->assertStringNotContainsString("name='form[mdp]'", $html);
+        $this->assertSame('jules', $_SESSION['username']);
+    }
 }
