@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../core/utils/utils.inc.php';
 require_once __DIR__ . '/../../src/controllers/forgottenPwdController.php';
 
 #[CoversClass(forgottenPwdController::class)]
-class MdpOublieTest extends TestCase
+class ForgottenPwdControllerTest extends TestCase
 {
 	private array $previousPost;
 	private array $previousGet;
