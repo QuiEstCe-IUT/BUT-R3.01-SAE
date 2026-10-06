@@ -122,12 +122,15 @@ class forgottenPwdController {
                             if ($reussite) {
                                 // On envoie un email avec le lien de réinitialisation
                                 $to = $postData['form']['email'];
-                                $from = 'no_reply@mathiasm.alwaysdata.net';
-                                $reply = 'no_reply@mathiasm.alwaysdata.net';
-                                $subject = 'Réinitialisation de mot de passe';
+                                $from = 'mathiasm@alwaysdata.net';
+                                $reply = 'mathiasm@alwaysdata.net';
+                                $subject = '=?UTF-8?B?' . base64_encode('Réinitialisation de mot de passe') . '?=';
 
-                                $headers = 'From: Name <' . $from . '>' . "\n";
-                                $headers .= 'Return-Path: <' . $reply . '>' . "\n";
+                                $headers  = 'MIME-Version: 1.0' . "\r\n";
+                                $headers .= 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
+                                $headers .= 'From: Name <' . $from . '>' . "\r\n";
+                                $headers .= 'Reply-To:' . $reply . "\r\n";
+                                $headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
 
                                 $message = 'Bonjour, suite à votre demande de réinitialisation ';
                                 $message .= 'de mot de passe, veuillez cliquer sur le lien suivant :' . "\n";
