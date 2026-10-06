@@ -9,6 +9,7 @@
  * @return void
  */
 function start_page(): void {
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
     echo '<link rel="icon" type="image/x-icon" href="favicon.ico">';
     echo '<title>Qui est-ce?</title>';
     
