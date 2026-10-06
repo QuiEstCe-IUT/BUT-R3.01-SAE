@@ -14,11 +14,13 @@ namespace {
     use PHPUnit\Framework\Attributes\RunInSeparateProcess;
     use PHPUnit\Framework\TestCase;
     use src\controllers\forgottenPwdController;
+	use src\views\ForgottenPwdView;
 
     require_once __DIR__ . '/../../core/utils/utils.inc.php';
     require_once __DIR__ . '/../../src/controllers/forgottenPwdController.php';
 
     #[CoversClass(forgottenPwdController::class)]
+	#[CoversClass(ForgottenPwdView::class)]
     class ForgottenPwdControllerTest extends TestCase
     {
 	    private array $previousPost;

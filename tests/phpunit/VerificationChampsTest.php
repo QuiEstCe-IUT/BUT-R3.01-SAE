@@ -19,6 +19,7 @@ namespace {
 
     #[RunTestsInSeparateProcesses]
     #[CoversClass(\src\controllers\SignUpController::class)]
+    #[CoversClass(\src\views\SignUpView::class)]
     class VerificationChampsTest extends TestCase
     {
         protected function setUp(): void
