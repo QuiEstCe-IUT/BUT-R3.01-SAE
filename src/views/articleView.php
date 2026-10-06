@@ -31,7 +31,7 @@ $currentPage = $currentPage ?? 1;
                                 <?php foreach ($articles as $article): ?>
                                     <div class="form_bg" style="padding: 10px; width: 90%;">
                                         <h3 style="margin:0; color:#2a2c2c;"><?= htmlspecialchars($article['title']) ?></h3>
-                                        <p style="margin:5px 0; font-size:0.9em; color:#577482;">Publié le : <?= htmlspecialchars($article['created_at']) ?></p>
+                                        <p style="margin:5px 0; font-size:0.9em; color:var(--color_link);">Publié le : <?= htmlspecialchars($article['created_at']) ?></p>
                                     </div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
