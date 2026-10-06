@@ -11,6 +11,7 @@ class HomeController {
      * @return void
      */
     public function execute() {
-        require_once __DIR__ . '/../views/homeView.php';
+        $path = 'src\\views\\homeView';
+        (new $path())->show();
     }
 }

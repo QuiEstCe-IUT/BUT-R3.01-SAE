@@ -7,8 +7,4 @@ parameters:
         - core/includes
         - core/utils
     ignoreErrors:
-    # Faux positifs permanents : les vues reçoivent leurs variables du contrôleur
-    -
-        identifier: variable.undefined
-        path: src/views/*
 

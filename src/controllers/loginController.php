@@ -54,6 +54,7 @@ class LoginController {
         }
 
         // On affiche le formulaire d'authentification
-        require_once __DIR__ . '/../views/loginView.php';
+        $path = 'src\\views\\loginView';
+        (new $path())->show($error);
     }
 }

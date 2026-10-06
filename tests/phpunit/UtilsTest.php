@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../core/utils/utils.inc.php';
+require_once __DIR__ . '/../../core/utils/utils.inc.php';
 
 class UtilsTest extends TestCase
 {
