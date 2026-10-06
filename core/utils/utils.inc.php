@@ -37,10 +37,10 @@ function start_page(): void {
  * @return void
  */
 function end_page(): void {
-    echo <<<HTML
+    ?>
     <p>&copy; <?= date('Y') ?> - Tous droits réservés.</p>
     <p>Fin de page ici</p>
-    HTML;
+    <?php
 }
 
 /**
