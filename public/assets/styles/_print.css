@@ -1,0 +1,37 @@
+/* Impression : pas de navigation, pas de couleurs de fond, contenu en pleine largeur */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+
+        height: auto;
+    }
+    header,
+    .pagination,
+    .submit {
+        display: none;
+    }
+    #main-container {
+        display: block;
+
+        height: auto;
+    }
+    #right-container {
+        display: block;
+
+        height: auto;
+        width: 100%;
+    }
+    .cont,
+    .form_bg,
+    .btn-page {
+        background-color: transparent;
+        border-color: black;
+    }
+    .cont {
+        width: 100%;
+    }
+    a {
+        color: black;
+    }
+}
