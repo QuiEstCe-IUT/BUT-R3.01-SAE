@@ -1,9 +1,7 @@
 <?php
-/**
- * @var array $articles
- * @var int $totalPages
- * @var int $currentPage
- */
+$articles = $articles ?? [];
+$totalPages = $totalPages ?? 1;
+$currentPage = $currentPage ?? 1;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
