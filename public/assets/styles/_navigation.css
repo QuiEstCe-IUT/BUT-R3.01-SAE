@@ -23,6 +23,8 @@
     text-decoration: none;
     color: black;
 
+    -webkit-border-radius: 2vh;
+    -moz-border-radius: 2vh;
     border-radius: 2vh;
 
     width: 85%;
@@ -45,4 +47,29 @@
     width: 30%;
     height: 100%;
     fill: rgb(41, 41, 41);
+}
+
+/* Responsive : liens en ligne, icone au-dessus du texte */
+@media (max-width: 768px) {
+    #navigation {
+        flex-direction: row;
+    }
+    .link-cont {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+
+        min-width: 0;
+        height: auto;
+
+        padding: 1vh 0;
+        margin: 0.5vh;
+    }
+    .desc {
+        font-size: 0.7rem;
+    }
+    .m-icon {
+        width: 100%;
+        height: 24px;
+    }
 }
