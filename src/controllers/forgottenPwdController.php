@@ -55,8 +55,8 @@ class forgottenPwdController {
                         }
 
                         // Vérification que le mot de passe n'est pas vide
-                        if ($error === null && strlen($postData['form2']['mdp']) == 0) {
-                            $error = "<p class='error'>Veuillez entrer un mot de passe</p>";
+                        if ($error === null && strlen($postData['form2']['mdp']) < 8) {
+                            $error = "<p class='error'>Veuillez entrer un mot de passe de taille 8+ caractères</p>";
                         }
 
                         // Si pas d'erreur, on modifie le mot de passe

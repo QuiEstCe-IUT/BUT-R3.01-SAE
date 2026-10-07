@@ -33,15 +33,6 @@ class mapController {
                 'title' => 'Mentions Légales',
                 'url'   => 'index.php?page=legalNotice'
             ],
-         
-            [
-                'title' => 'À propos',
-                'url'   => 'index.php?page=about'
-            ],
-            [
-                'title' => 'Contact',
-                'url'   => 'index.php?page=contact'
-            ],
             [
                 'title' => 'Supprimer mon compte',
                 'url'   => 'index.php?page=deletion'

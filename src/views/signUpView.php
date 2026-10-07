@@ -57,14 +57,14 @@ class SignUpView {
                                         echo $bad_nom;} ?>
 
                                     <p class="inpt">Email:</p>
-                                    <input name='form[email]' class="input" type="text">  
+                                    <input name='form[email]' class="input" type="text" required>  
                                     <?php if (isset($bad_email)) {
                                         echo $bad_email;} ?>
 
                                     <p class="inpt">Mot de passe:</p>
-                                    <input name='form[mdp]' class="input" type="password">
+                                    <input name='form[mdp]' class="input" type="password" minlength="8" required>
                                     <p class="inpt">Confirmation du mot de passe:</p>
-                                    <input name='form[mdp2]' class="input" type="password">
+                                    <input name='form[mdp2]' class="input" type="password" minlength="8" required>
                                     <?php if (isset($notMatch_password)) {
                                         echo $notMatch_password;} ?>
 
