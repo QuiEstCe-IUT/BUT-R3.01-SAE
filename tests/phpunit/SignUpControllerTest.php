@@ -64,8 +64,8 @@ namespace {
                 'prenom' => 'Alice',
                 'nom' => 'Dubois',
                 'email' => 'email-invalide',
-                'mdp' => 'password',
-                'mdp2' => 'password',
+                'mdp' => 'password1234',
+                'mdp2' => 'password1234',
                 'phone' => '',
                 'adress' => '1 rue de Aix',
                 'generalCondition' => 'on',
@@ -214,8 +214,8 @@ namespace {
                 'prenom' => 'Alice',
                 'nom' => 'Dubois',
                 'email' => 'email-invalide',
-                'mdp' => 'password',
-                'mdp2' => 'password',
+                'mdp' => 'password1234',
+                'mdp2' => 'password1234',
                 'adress' => '1 rue de Aix',
             ];
 
