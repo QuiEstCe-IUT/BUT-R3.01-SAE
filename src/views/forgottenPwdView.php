@@ -45,10 +45,10 @@ class ForgottenPwdView {
                                     <!-- Formulaire 2 : Nouveau mot de passe -->
                                     <form method="post" class="form_bg" action="index.php?page=forgottenPwd&token=<?php echo $get_token; ?>">
                                         <p><label for="mdp">Nouveau mot de passe :</label></p>
-                                        <input id="mdp" name="form2[mdp]" class="input" type="password" required>
+                                        <input id="mdp" name="form2[mdp]" class="input" type="password" minlength="8" required>
 
                                         <p><label for="mdp2">Confirmer le mot de passe :</label></p>
-                                        <input id="mdp2" name="form2[mdp2]" class="input" type="password" required>
+                                        <input id="mdp2" name="form2[mdp2]" class="input" type="password" minlength="8" required>
 
                                         <input type="submit" class="submit" value="Modifier">
                                     </form>

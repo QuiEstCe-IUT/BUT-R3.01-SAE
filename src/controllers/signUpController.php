@@ -74,8 +74,8 @@ class SignUpController {
                 if ($postData['form']['mdp'] !== $postData['form']['mdp2']) {
                     // Les deux mots de passe entrées ne sont pas exactement similaire
                     $notMatch_password = "<p class='error'>Le mot de passe entré est différent</p>";
-                } elseif (strlen($postData['form']['mdp']) == 0) {
-                    $notMatch_password = "<p class='error'>Veuillez entrer un mot de passe</p>";
+                } elseif (strlen($postData['form']['mdp']) < 8) {
+                    $notMatch_password = "<p class='error'>Veuillez entrer un mot de passe de taille 8+ caractères</p>";
                 }
     
                 // Vérification Conditions générales

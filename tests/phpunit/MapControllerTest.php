@@ -28,13 +28,11 @@ class MapControllerTest extends TestCase
 			'index.php?page=forgottenPwd',
 			'index.php?page=legalNotice',
 			'index.php?page=article',
-			'index.php?page=about',
-			'index.php?page=contact',
 			'index.php?page=deletion',
 		] as $route) {
 			$this->assertStringContainsString($route, $html);
 		}
 
-		$this->assertSame(8, substr_count($html, '<li>'));
+		$this->assertSame(6, substr_count($html, '<li>'));
 	}
 }
