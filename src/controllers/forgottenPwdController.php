@@ -35,7 +35,7 @@ class forgottenPwdController {
                 require_once __DIR__ . '/../models/forgottenPwdModel.php';
 
                 // On vérifie dans la BD que le token correspond bien à une adresse mail
-                $email = \ForgottenPwdModel::getEmailByToken($get_token);
+                $email = \ForgottenPwdModel::getEmailByToken(password_hash($get_token, PASSWORD_DEFAULT));
 
                 // Si le mail existe on vérifie les mots de passe et on met à jour
                 if ($email) {
@@ -71,7 +71,7 @@ class forgottenPwdController {
 
                                 if ($reussite) {
                                     // On supprime le token utilisé
-                                    \ForgottenPwdModel::deleteToken($get_token);
+                                    \ForgottenPwdModel::deleteToken(password_hash($get_token, PASSWORD_DEFAULT));
                                     $success = "<p class='success'>Mot de passe modifié avec succès</p>";
                                 } else {
                                     $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
@@ -116,8 +116,10 @@ class forgottenPwdController {
                             $bytes = random_bytes(32);
                             $token = bin2hex($bytes);
 
+                            $hashed_token = password_hash($token, PASSWORD_DEFAULT);
+
                             // On sauvegarde (token|email) dans la BD
-                            $reussite = \ForgottenPwdModel::saveToken($token, $postData['form']['email']);
+                            $reussite = \ForgottenPwdModel::saveToken($hashed_token, $postData['form']['email']);
 
                             if ($reussite) {
                                 // On envoie un email avec le lien de réinitialisation
