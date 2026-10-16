@@ -36,6 +36,7 @@ class ArticleController {
         $articles = \ArticleModel::getPaginatedArticles($limit, $offset);
 
         // On inclut la vue qui utilisera $articles, $currentPage et $totalPages
-        require_once __DIR__ . '/../views/articleView.php';
+        $path = 'src\\views\\articleView';
+        (new $path())->show($articles, $totalPages, $currentPage);
     }
 }

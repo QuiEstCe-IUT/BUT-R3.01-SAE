@@ -19,6 +19,7 @@ class SignUpView {
         $bad_adress,
         $notAccepted_conditions
     ) {
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -28,12 +29,12 @@ class SignUpView {
                 <link rel="stylesheet" href="assets/styles/_default.min.css">
                 <link rel="stylesheet" href="assets/styles/_navigation.min.css">
                 <link rel="stylesheet" href="assets/styles/signUpStyle.min.css">
-                <?php start_page(); ?>
+                <?php $layout->start_page(); ?>
             </head>
             <body>
                 <div id="main-container">
                     <header>
-                        <?php navigation(); ?>
+                        <?php $layout->navigation(); ?>
                     </header>
 
                     <div id="right-container">
@@ -89,7 +90,7 @@ class SignUpView {
                             </div>
                         </main>
                         <footer>
-                            <?php end_page(); ?>
+                            <?php $layout->end_page(); ?>
                         </footer>
                     </div>
                 </div>
