@@ -44,7 +44,7 @@ class LoginController {
                     $_SESSION['user_id'] = $user['user_id']; // pour le delete du compte
 
                     // on redirige vers la page d'accueil
-                    header('Location: index.php?page=home');
+                    header('Location: /home');
                     exit;
                 } else {
                     // informations invalide

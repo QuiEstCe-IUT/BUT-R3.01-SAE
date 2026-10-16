@@ -15,27 +15,31 @@ class mapController {
         $pages = [
             [
                 'title' => 'Accueil',
-                'url'   => 'index.php?page=home'
+                'url'   => '/home'
             ],
             [
                 'title' => 'Se connecter',
-                'url'   => 'index.php?page=login'
+                'url'   => '/user/login'
             ],
             [
                 'title' => 'S\'inscrire',
-                'url'   => 'index.php?page=signUp'
+                'url'   => '/user/signup'
             ],
             [
                 'title' => 'Mot de passe oublié',
-                'url'   => 'index.php?page=forgottenPwd'
+                'url'   => '/user/forgotten_password'
+            ],
+            [
+                'title' => 'Articles',
+                'url'   => '/article'
             ],
             [
                 'title' => 'Mentions Légales',
-                'url'   => 'index.php?page=legalNotice'
+                'url'   => '/legalNotice'
             ],
             [
                 'title' => 'Supprimer mon compte',
-                'url'   => 'index.php?page=deletion'
+                'url'   => '/user/deletion'
             ]
         ];
         

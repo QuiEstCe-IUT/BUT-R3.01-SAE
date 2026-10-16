@@ -42,7 +42,7 @@ class SignUpView {
                         <main>
                             <div class="cont">
                                 <h1>S'inscrire</h1>
-                                <form method='post' class="form_bg" action="index.php?page=signUp">
+                                <form method='post' class="form_bg" action="/user/signup">
                                     <p class="inpt">Pseudo:</p>
                                     <input name='form[pseudo]' class="input" type="text">
                                     <?php if (isset($bad_pseudo)) {
@@ -87,7 +87,7 @@ class SignUpView {
 
                                     <input type="submit" class="submit">
                                 </form>
-                                <a href="index.php?page=login" class="link">S'authentifier</a><br>
+                                <a href="/user/login" class="link">S'authentifier</a><br>
                             </div>
                         </main>
                         <footer>

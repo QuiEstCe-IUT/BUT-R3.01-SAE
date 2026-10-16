@@ -54,19 +54,19 @@ class ArticleView {
                                 <?php if ($totalPages > 1): ?>
                                     <div class="pagination">
                                         <?php if ($currentPage > 1): ?>
-                                            <a href="index.php?page=article&p=<?= $currentPage - 1 ?>" class="link btn-page">&laquo; Précédent</a>
+                                            <a href="/article&p=<?= $currentPage - 1 ?>" class="link btn-page">&laquo; Précédent</a>
                                         <?php endif; ?>
                                         
                                         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                                             <?php if ($i === $currentPage): ?>
                                                 <span class="link btn-page active-page" style="font-weight: bold; color: rgb(42, 44, 44);"><?= $i ?></span>
                                             <?php else: ?>
-                                                <a href="index.php?page=article&p=<?= $i ?>" class="link btn-page"><?= $i ?></a>
+                                                <a href="/article&p=<?= $i ?>" class="link btn-page"><?= $i ?></a>
                                             <?php endif; ?>
                                         <?php endfor; ?>
                                             
                                         <?php if ($currentPage < $totalPages): ?>
-                                            <a href="index.php?page=article&p=<?= $currentPage + 1 ?>" class="link btn-page">Suivant &raquo;</a>
+                                            <a href="/article&p=<?= $currentPage + 1 ?>" class="link btn-page">Suivant &raquo;</a>
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>

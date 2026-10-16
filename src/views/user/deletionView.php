@@ -38,12 +38,12 @@ class DeletionView {
                                 <?php if (isset($success)) { ?>
                                     <p style="color: green; text-align: center; margin-bottom: 20px;"><?= $success ?></p>
                                     <div style="text-align: center;">
-                                        <a href="index.php?page=home" class="link">Retour à l'accueil</a>
+                                        <a href="/home" class="link">Retour à l'accueil</a>
                                     </div>
                                 <?php } else { ?>
                                     <p style="text-align: center; margin-bottom: 20px;">Attention : Cette action est irréversible. Toutes vos données seront définitivement effacées de notre base de données.</p>
 
-                                    <form method="post" class="form_bg" action="index.php?page=deletion" style="width: 90%; padding: 20px;">
+                                    <form method="post" class="form_bg" action="/user/deletion" style="width: 90%; padding: 20px;">
                                         <div style="margin: 20px 0; text-align: center;">
                                             <input type="checkbox" id="confirm_delete" name="confirm_delete">
                                             <label for="confirm_delete">Je confirme vouloir supprimer définitivement mon compte et toutes mes données.</label>

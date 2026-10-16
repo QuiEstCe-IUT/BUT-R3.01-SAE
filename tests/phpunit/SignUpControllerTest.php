@@ -140,8 +140,8 @@ namespace {
             foreach ($fields as $field) {
                 $this->assertStringContainsString("name='form[$field]'", $html);
             }
-            $this->assertStringContainsString('action="index.php?page=signUp"', $html);
-            $this->assertStringContainsString('href="index.php?page=login"', $html);
+            $this->assertStringContainsString('action="/user/signup"', $html);
+            $this->assertStringContainsString('href="/user/login"', $html);
         }
 
         public function testNoErrorIsDisplayedWithoutSubmittedForm(): void

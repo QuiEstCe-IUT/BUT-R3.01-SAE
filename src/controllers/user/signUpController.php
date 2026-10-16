@@ -120,7 +120,7 @@ class SignUpController {
                     $_SESSION['username'] = $postData['form']['pseudo'];
     
                     // On recharge la page pour aller sur authentification
-                    header('Location: index.php?page=login');
+                    header('Location: /user/login');
                     exit; //sert a ne plus charger la page apres la redirection
                     } else {
                         // Erreur lors de l'enregistrement dans la BD

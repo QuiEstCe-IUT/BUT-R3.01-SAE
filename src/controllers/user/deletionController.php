@@ -16,7 +16,7 @@ class DeletionController {
 
         // Si l'utilisateur n'est pas connecté, on le redirige vers l'accueil
         if (!isset($_SESSION['suid']) || !isset($_SESSION['user_id'])) {
-            header('Location: index.php?page=home');
+            header('Location: /home');
             exit;
         }
 
