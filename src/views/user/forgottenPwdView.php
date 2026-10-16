@@ -1,5 +1,6 @@
 <?php
-namespace src\views;
+namespace src\views\user;
+use src\views\_Layout;
 
 /**
  * View for the forgotten password page.
@@ -18,9 +19,9 @@ class ForgottenPwdView {
             <head>
                 <meta charset="utf-8">
 
-                <link rel="stylesheet" href="assets/styles/_default.min.css">
-                <link rel="stylesheet" href="assets/styles/_navigation.min.css">
-                <link rel="stylesheet" href="assets/styles/forgottenPwdStyle.min.css">
+                <link rel="stylesheet" href="../assets/styles/_default.min.css">
+                <link rel="stylesheet" href="../assets/styles/_navigation.min.css">
+                <link rel="stylesheet" href="../assets/styles/forgottenPwdStyle.min.css">
                 <?php $layout->start_page(); ?>
             </head>
             <body>

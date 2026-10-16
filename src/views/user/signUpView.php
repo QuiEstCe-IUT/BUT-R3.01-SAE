@@ -1,5 +1,6 @@
 <?php
-namespace src\views;
+namespace src\views\user;
+use src\views\_Layout;
 
 /**
  * View for the signup page.
@@ -26,9 +27,9 @@ class SignUpView {
             <head>
                 <meta charset="UTF-8">
 
-                <link rel="stylesheet" href="assets/styles/_default.min.css">
-                <link rel="stylesheet" href="assets/styles/_navigation.min.css">
-                <link rel="stylesheet" href="assets/styles/signUpStyle.min.css">
+                <link rel="stylesheet" href="../assets/styles/_default.min.css">
+                <link rel="stylesheet" href="../assets/styles/_navigation.min.css">
+                <link rel="stylesheet" href="../assets/styles/signUpStyle.min.css">
                 <?php $layout->start_page(); ?>
             </head>
             <body>
