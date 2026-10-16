@@ -37,12 +37,12 @@ class UtilsTest extends TestCase
         navigation();
         $output = ob_get_clean();
 
-        $this->assertStringContainsString('index.php?page=home', $output);
-        $this->assertStringContainsString('index.php?page=login', $output);
-        $this->assertStringContainsString('index.php?page=signUp', $output);
-        $this->assertStringContainsString('index.php?page=forgottenPwd', $output);
-        $this->assertStringContainsString('index.php?page=legalNotice', $output);
-        $this->assertStringContainsString('index.php?page=map', $output);
+        $this->assertStringContainsString('/home', $output);
+        $this->assertStringContainsString('/user/login', $output);
+        $this->assertStringContainsString('/user/signup', $output);
+        $this->assertStringContainsString('/user/forgotten_password', $output);
+        $this->assertStringContainsString('/legalNotice', $output);
+        $this->assertStringContainsString('/map', $output);
         $this->assertStringContainsString('Home', $output);
         $this->assertStringContainsString('Profil', $output);
         $this->assertStringContainsString('Sign up', $output);

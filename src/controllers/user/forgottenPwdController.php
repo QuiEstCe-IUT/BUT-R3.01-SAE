@@ -1,5 +1,5 @@
 <?php
-namespace src\controllers;
+namespace src\controllers\user;
 
 /**
  * Controller for handling forgotten password requests.
@@ -31,8 +31,8 @@ class forgottenPwdController {
             if (isset($_POST['form2']) && isset($get_token)) {
 
 
-                require_once __DIR__ . '/../models/signUpModel.php';
-                require_once __DIR__ . '/../models/forgottenPwdModel.php';
+                require_once __DIR__ . '/../../models/signUpModel.php';
+                require_once __DIR__ . '/../../models/forgottenPwdModel.php';
 
                 // On vérifie dans la BD que le token correspond bien à une adresse mail
                 $email = \ForgottenPwdModel::getEmailByToken(password_hash($get_token, PASSWORD_DEFAULT));
@@ -106,8 +106,8 @@ class forgottenPwdController {
 
                     // Si pas d'erreur, on vérifie l'email en base
                     if ($error === null) {
-                        require_once __DIR__ . '/../models/signUpModel.php';
-                        require_once __DIR__ . '/../models/forgottenPwdModel.php';
+                        require_once __DIR__ . '/../../models/signUpModel.php';
+                        require_once __DIR__ . '/../../models/forgottenPwdModel.php';
 
                         if (!\SignUpModel::emailExists($postData['form']['email'])) {
                             $error = "<p class='error'>Aucun compte associé à cet email</p>";
@@ -136,7 +136,7 @@ class forgottenPwdController {
 
                                 $message = 'Bonjour, suite à votre demande de réinitialisation ';
                                 $message .= 'de mot de passe, veuillez cliquer sur le lien suivant :' . "\n";
-                                $message .= 'https://mathiasm.alwaysdata.net/index.php?page=forgottenPwd&token=' . $token . "\n";
+                                $message .= 'https://mathiasm.alwaysdata.net/user/forgotten_password&token=' . $token . "\n";
                                 $message .= 'Ce lien est valable 1 heure.' . "\n";
                                 $message .= 'Si vous n\'êtes pas à l\'origine de cette demande, ignorez ce message.';
 
@@ -158,7 +158,7 @@ class forgottenPwdController {
         }
 
         // On affiche la vue de mot de passe oublié
-        $path = 'src\\views\\forgottenPwdView';
+        $path = 'src\\views\\user\\forgottenPwdView';
         (new $path())->show($success, $error, $get_token);
     }
 }
