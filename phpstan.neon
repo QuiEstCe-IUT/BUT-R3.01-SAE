@@ -5,6 +5,5 @@ parameters:
         - src
         - core/model.php
         - core/includes
-        - core/utils
     ignoreErrors:
 
