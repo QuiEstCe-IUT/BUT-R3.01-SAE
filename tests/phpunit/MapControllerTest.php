@@ -4,7 +4,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use src\controllers\mapController;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
+require_once __DIR__ . '/../../src/views/_layout.php';
 require_once __DIR__ . '/../../src/controllers/mapController.php';
 
 #[CoversClass(mapController::class)]
@@ -22,13 +22,13 @@ class MapControllerTest extends TestCase
 		$this->assertStringContainsString('<h2>Plan du site</h2>', $html);
 
 		foreach ([
-			'index.php?page=home',
-			'index.php?page=login',
-			'index.php?page=signUp',
-			'index.php?page=forgottenPwd',
-			'index.php?page=legalNotice',
-			'index.php?page=article',
-			'index.php?page=deletion',
+			'/home',
+			'/user/login',
+			'/user/signup',
+			'/user/forgotten_password',
+			'/legalNotice',
+			'/article',
+			'/user/deletion',
 		] as $route) {
 			$this->assertStringContainsString($route, $html);
 		}

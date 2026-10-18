@@ -1,5 +1,6 @@
 <?php
-namespace src\views;
+namespace src\views\user;
+use src\views\_Layout;
 
 /**
  * View for the signup page.
@@ -19,28 +20,29 @@ class SignUpView {
         $bad_adress,
         $notAccepted_conditions
     ) {
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">
             <head>
                 <meta charset="UTF-8">
 
-                <link rel="stylesheet" href="assets/styles/_default.min.css">
-                <link rel="stylesheet" href="assets/styles/_navigation.min.css">
-                <link rel="stylesheet" href="assets/styles/signUpStyle.min.css">
-                <?php start_page(); ?>
+                <link rel="stylesheet" href="../assets/styles/_default.min.css">
+                <link rel="stylesheet" href="../assets/styles/_navigation.min.css">
+                <link rel="stylesheet" href="../assets/styles/signUpStyle.min.css">
+                <?php $layout->start_page(); ?>
             </head>
             <body>
                 <div id="main-container">
                     <header>
-                        <?php navigation(); ?>
+                        <?php $layout->navigation(); ?>
                     </header>
 
                     <div id="right-container">
                         <main>
                             <div class="cont">
                                 <h1>S'inscrire</h1>
-                                <form method='post' class="form_bg" action="index.php?page=signUp">
+                                <form method='post' class="form_bg" action="/user/signup">
                                     <p class="inpt">Pseudo:</p>
                                     <input name='form[pseudo]' class="input" type="text">
                                     <?php if (isset($bad_pseudo)) {
@@ -85,11 +87,11 @@ class SignUpView {
 
                                     <input type="submit" class="submit">
                                 </form>
-                                <a href="index.php?page=login" class="link">S'authentifier</a><br>
+                                <a href="/user/login" class="link">S'authentifier</a><br>
                             </div>
                         </main>
                         <footer>
-                            <?php end_page(); ?>
+                            <?php $layout->end_page(); ?>
                         </footer>
                     </div>
                 </div>

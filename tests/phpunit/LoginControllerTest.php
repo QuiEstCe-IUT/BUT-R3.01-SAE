@@ -3,8 +3,8 @@
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\Attributes\CoversClass;
-use src\controllers\LoginController;
-use src\views\LoginView;
+use src\controllers\user\LoginController;
+use src\views\user\LoginView;
 
 #[CoversClass(LoginController::class)]
 #[CoversClass(LoginView::class)]
@@ -16,8 +16,8 @@ class LoginControllerTest extends TestCase
 
     protected function setUp(): void
     {
-        require_once __DIR__ . '/../../core/utils/utils.inc.php';
-        require_once __DIR__ . '/../../src/controllers/loginController.php';
+        require_once __DIR__ . '/../../src/views/_layout.php';
+        require_once __DIR__ . '/../../src/controllers/user/loginController.php';
 
         $this->previousPost = $_POST;
         $this->previousGet = $_GET;
@@ -38,7 +38,7 @@ class LoginControllerTest extends TestCase
     {
         ob_start();
         try {
-            (new \src\controllers\LoginController())->execute();
+            (new \src\controllers\user\LoginController())->execute();
         } finally {
             $html = ob_get_clean();
         }
@@ -56,7 +56,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\LoginController())->execute();
+            (new \src\controllers\user\LoginController())->execute();
         } finally {
             $html = ob_get_clean();
         }
@@ -73,7 +73,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\LoginController())->execute();
+            (new \src\controllers\user\LoginController())->execute();
         } finally {
             $html = ob_get_clean();
         }
