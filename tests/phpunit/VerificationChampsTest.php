@@ -51,7 +51,7 @@ namespace {
             $_POST['form'] = $form;
 
             ob_start();
-            (new \src\controllers\SignUpController())->execute();
+            (new \src\controllers\user\SignUpController())->execute();
             return ob_get_clean();
         }
 
