@@ -14,6 +14,7 @@ namespace {
     use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\TestCase;
 
+    require_once __DIR__ . '/../../src/views/_layout.php';
     require_once __DIR__ . '/../../src/controllers/user/signUpController.php';
 
     #[RunTestsInSeparateProcesses]

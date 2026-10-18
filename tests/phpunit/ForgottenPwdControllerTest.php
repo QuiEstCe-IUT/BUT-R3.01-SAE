@@ -16,6 +16,7 @@ namespace {
     use src\controllers\user\forgottenPwdController;
 	use src\views\user\ForgottenPwdView;
 
+	require_once __DIR__ . '/../../src/views/_layout.php';
     require_once __DIR__ . '/../../src/controllers/user/forgottenPwdController.php';
 
     #[CoversClass(forgottenPwdController::class)]
