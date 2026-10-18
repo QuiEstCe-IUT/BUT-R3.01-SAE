@@ -3,8 +3,8 @@
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\Attributes\CoversClass;
-use src\controllers\LoginController;
-use src\views\LoginView;
+use src\controllers\user\LoginController;
+use src\views\user\LoginView;
 
 #[CoversClass(LoginController::class)]
 #[CoversClass(LoginView::class)]

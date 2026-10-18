@@ -13,8 +13,8 @@ namespace {
     use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\Attributes\RunInSeparateProcess;
     use PHPUnit\Framework\TestCase;
-    use src\controllers\forgottenPwdController;
-	use src\views\ForgottenPwdView;
+    use src\controllers\user\forgottenPwdController;
+	use src\views\user\ForgottenPwdView;
 
     require_once __DIR__ . '/../../src/controllers/user/forgottenPwdController.php';
 
