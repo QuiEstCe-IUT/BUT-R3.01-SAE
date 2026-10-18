@@ -6,8 +6,7 @@ use PHPUnit\Framework\TestCase;
 use src\controllers\DeletionController;
 use src\views\DeletionView;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
-require_once __DIR__ . '/../../src/controllers/deletionController.php';
+require_once __DIR__ . '/../../src/controllers/user/deletionController.php';
 
 #[CoversClass(DeletionController::class)]
 #[CoversClass(DeletionView::class)]

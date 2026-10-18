@@ -4,7 +4,6 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use src\controllers\mapController;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
 require_once __DIR__ . '/../../src/controllers/mapController.php';
 
 #[CoversClass(mapController::class)]

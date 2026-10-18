@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\CoversFunction;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
+require_once __DIR__ . '/../../src/views/_layout.php';
 
 #[CoversFunction('start_page')]
 #[CoversFunction('end_page')]

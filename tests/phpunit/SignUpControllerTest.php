@@ -29,9 +29,8 @@ namespace {
 
         protected function setUp(): void
         {
-            require_once __DIR__ . '/../../core/utils/utils.inc.php';
             require_once __DIR__ . '/../../core/model.php';
-            require_once __DIR__ . '/../../src/controllers/signUpController.php';
+            require_once __DIR__ . '/../../src/controllers/user/signUpController.php';
 
             $this->previousPost = $_POST;
             $this->previousGet = $_GET;

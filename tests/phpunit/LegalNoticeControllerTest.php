@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 use src\controllers\LegalNoticeController;
 use src\views\LegalNoticeView;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
 require_once __DIR__ . '/../../src/controllers/legalNoticeController.php';
 
 #[CoversClass(LegalNoticeController::class)]

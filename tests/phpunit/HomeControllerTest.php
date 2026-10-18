@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 use src\controllers\HomeController;
 use src\views\HomeView;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
 require_once __DIR__ . '/../../src/controllers/homeController.php';
 
 #[CoversClass(HomeController::class)]
