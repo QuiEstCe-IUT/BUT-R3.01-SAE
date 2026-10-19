@@ -1,6 +1,6 @@
 <?php
 
-namespace src\controllers {
+namespace src\controllers\user {
     if (!function_exists(__NAMESPACE__ . '\\filter_input_array')) {
         function filter_input_array(...$arguments)
         {
@@ -18,8 +18,8 @@ namespace {
     require_once __DIR__ . '/../../src/controllers/user/signUpController.php';
 
     #[RunTestsInSeparateProcesses]
-    #[CoversClass(\src\controllers\SignUpController::class)]
-    #[CoversClass(\src\views\SignUpView::class)]
+    #[CoversClass(\src\controllers\user\SignUpController::class)]
+    #[CoversClass(\src\views\user\SignUpView::class)]
     class VerificationChampsTest extends TestCase
     {
         protected function setUp(): void

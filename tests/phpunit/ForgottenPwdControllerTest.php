@@ -1,6 +1,6 @@
 <?php
 
-namespace src\controllers {
+namespace src\controllers\user {
     if (!function_exists(__NAMESPACE__ . '\\filter_input_array')) {
         function filter_input_array(...$arguments)
         {
