@@ -13,8 +13,8 @@ namespace {
     use PHPUnit\Framework\TestCase;
     use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\Attributes\DataProvider;
-    use src\controllers\SignUpController;
-    use src\views\SignUpView;
+    use src\controllers\user\SignUpController;
+    use src\views\user\SignUpView;
 
     #[CoversClass(SignUpController::class)]
     #[CoversClass(SignUpView::class)]
@@ -29,9 +29,8 @@ namespace {
 
         protected function setUp(): void
         {
-            require_once __DIR__ . '/../../core/utils/utils.inc.php';
             require_once __DIR__ . '/../../core/model.php';
-            require_once __DIR__ . '/../../src/controllers/signUpController.php';
+            require_once __DIR__ . '/../../src/controllers/user/signUpController.php';
 
             $this->previousPost = $_POST;
             $this->previousGet = $_GET;
@@ -64,8 +63,8 @@ namespace {
                 'prenom' => 'Alice',
                 'nom' => 'Dubois',
                 'email' => 'email-invalide',
-                'mdp' => 'password',
-                'mdp2' => 'password',
+                'mdp' => 'password1234',
+                'mdp2' => 'password1234',
                 'phone' => '',
                 'adress' => '1 rue de Aix',
                 'generalCondition' => 'on',
@@ -140,8 +139,8 @@ namespace {
             foreach ($fields as $field) {
                 $this->assertStringContainsString("name='form[$field]'", $html);
             }
-            $this->assertStringContainsString('action="index.php?page=signUp"', $html);
-            $this->assertStringContainsString('href="index.php?page=login"', $html);
+            $this->assertStringContainsString('action="/user/signup"', $html);
+            $this->assertStringContainsString('href="/user/login"', $html);
         }
 
         public function testNoErrorIsDisplayedWithoutSubmittedForm(): void
@@ -214,8 +213,8 @@ namespace {
                 'prenom' => 'Alice',
                 'nom' => 'Dubois',
                 'email' => 'email-invalide',
-                'mdp' => 'password',
-                'mdp2' => 'password',
+                'mdp' => 'password1234',
+                'mdp2' => 'password1234',
                 'adress' => '1 rue de Aix',
             ];
 

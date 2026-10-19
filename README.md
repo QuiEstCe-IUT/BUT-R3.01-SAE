@@ -118,8 +118,8 @@ Pour chaque page : `nameController` (PHP) / `nameView` (PHP) / `nameModel` (SQL)
 
 **Wip**
 
-Pour changer de page : `header('Location: index.php?action=accueil');`
-Pour qu'un bouton redirige vers le routeur + choisir la page : `<a href="index.php?action=profil">Aller au profil</a>`
+Pour changer de page : `header('Location: url ici');`
+Pour qu'un bouton redirige vers le routeur + choisir la page : `<a href="url">Aller au profil</a>`
 > ⚠️ À vérifier/actualiser : ce paramètre doit correspondre exactement à celui lu par `public/index.php` (`$_GET[...]`) et aux noms de pages ci-dessus.
 
 ## Qualité de code (en local)

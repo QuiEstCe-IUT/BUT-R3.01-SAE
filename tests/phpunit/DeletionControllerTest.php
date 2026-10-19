@@ -3,11 +3,11 @@
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\TestCase;
-use src\controllers\DeletionController;
-use src\views\DeletionView;
+use src\controllers\user\DeletionController;
+use src\views\user\DeletionView;
 
-require_once __DIR__ . '/../../core/utils/utils.inc.php';
-require_once __DIR__ . '/../../src/controllers/deletionController.php';
+require_once __DIR__ . '/../../src/views/_layout.php';
+require_once __DIR__ . '/../../src/controllers/user/deletionController.php';
 
 #[CoversClass(DeletionController::class)]
 #[CoversClass(DeletionView::class)]

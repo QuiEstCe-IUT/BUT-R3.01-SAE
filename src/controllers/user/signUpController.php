@@ -1,5 +1,5 @@
 <?php
-namespace src\controllers;
+namespace src\controllers\user;
 
 /**
  * Controller for handling user signup.
@@ -62,11 +62,9 @@ class SignUpController {
                     $bad_email = "<p class='error'>L'email est incorrect</p>";
                 } else {
                     // Vérification si l'email est déjà utilisé dans la BD
-                    require_once __DIR__ . '/../models/signUpModel.php';
+                    require_once __DIR__ . '/../../models/signUpModel.php';
                     if (\SignUpModel::emailExists($postData['form']['email'])) {
-                    $bad_email = "<p class='error'>Cet email est déjà associé à un compte</p>";
-    
-                    
+                        $bad_email = "<p class='error'>Cet email est déjà associé à un compte</p>";
                     }
                 }
     
@@ -74,8 +72,8 @@ class SignUpController {
                 if ($postData['form']['mdp'] !== $postData['form']['mdp2']) {
                     // Les deux mots de passe entrées ne sont pas exactement similaire
                     $notMatch_password = "<p class='error'>Le mot de passe entré est différent</p>";
-                } elseif (strlen($postData['form']['mdp']) < 8) {
-                    $notMatch_password = "<p class='error'>Veuillez entrer un mot de passe de taille 8+ caractères</p>";
+                } elseif (strlen($postData['form']['mdp']) < 12) {
+                    $notMatch_password = "<p class='error'>Veuillez entrer un mot de passe de taille 12+ caractères</p>";
                 }
     
                 // Vérification Conditions générales
@@ -96,7 +94,7 @@ class SignUpController {
                 if (!isset($bad_pseudo) && !isset($bad_prenom) && !isset($bad_nom) && !isset($bad_email) && !isset($notMatch_password) && !isset($notAccepted_conditions) && !isset($bad_adress)) {
 
                     // On charge le modèle
-                    require_once __DIR__ . '/../models/signUpModel.php';
+                    require_once __DIR__ . '/../../models/signUpModel.php';
 
                     // On hache le mot de passe ici dans le contrôleur
                     $hash = password_hash($postData['form']['mdp'], PASSWORD_DEFAULT);
@@ -122,7 +120,7 @@ class SignUpController {
                     $_SESSION['username'] = $postData['form']['pseudo'];
     
                     // On recharge la page pour aller sur authentification
-                    header('Location: index.php?page=login');
+                    header('Location: /user/login');
                     exit; //sert a ne plus charger la page apres la redirection
                     } else {
                         // Erreur lors de l'enregistrement dans la BD
@@ -134,7 +132,7 @@ class SignUpController {
         }
     
         // On affiche le formulaire d'inscription
-        $path = 'src\\views\\signUpView';
+        $path = 'src\\views\\user\\signUpView';
         (new $path())->show(
             $bad_pseudo,
             $bad_prenom,

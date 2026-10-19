@@ -14,8 +14,8 @@ namespace {
     use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\TestCase;
 
-    require_once __DIR__ . '/../../src/controllers/signUpController.php';
-    require_once __DIR__ . '/../../core/utils/utils.inc.php';
+    require_once __DIR__ . '/../../src/views/_layout.php';
+    require_once __DIR__ . '/../../src/controllers/user/signUpController.php';
 
     #[RunTestsInSeparateProcesses]
     #[CoversClass(\src\controllers\SignUpController::class)]
@@ -51,7 +51,7 @@ namespace {
             $_POST['form'] = $form;
 
             ob_start();
-            (new \src\controllers\SignUpController())->execute();
+            (new \src\controllers\user\SignUpController())->execute();
             return ob_get_clean();
         }
 

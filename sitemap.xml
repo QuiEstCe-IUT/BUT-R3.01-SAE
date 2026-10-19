@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=home</loc>
+        <loc>https://mathiasm.alwaysdata.net/home</loc>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=login</loc>
+        <loc>https://mathiasm.alwaysdata.net/user/login</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=signUp</loc>
+        <loc>https://mathiasm.alwaysdata.net/user/signup</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=forgottenPwd</loc>
+        <loc>https://mathiasm.alwaysdata.net/user/forgotten_password</loc>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=legalNotice</loc>
+        <loc>https://mathiasm.alwaysdata.net/legalNotice</loc>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=article</loc>
+        <loc>https://mathiasm.alwaysdata.net/article</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://mathiasm.alwaysdata.net/index.php?page=map</loc>
+        <loc>https://mathiasm.alwaysdata.net/map</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
