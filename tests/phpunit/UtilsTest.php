@@ -1,19 +1,18 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\Attributes\CoversFunction;
+use PHPUnit\Framework\Attributes\CoversMethod;
+use src\views\_Layout;
 
-require_once __DIR__ . '/../../src/views/_layout.php';
-
-#[CoversFunction('start_page')]
-#[CoversFunction('end_page')]
-#[CoversFunction('navigation')]
+#[CoversMethod(_Layout::class, 'start_page')]
+#[CoversMethod(_Layout::class, 'end_page')]
+#[CoversMethod(_Layout::class, 'navigation')]
 class UtilsTest extends TestCase
 {
     public function testStartPageOutputsFaviconAndTitle(): void
     {
         ob_start();
-        start_page();
+        (new _Layout())->start_page();
         $output = ob_get_clean();
 
         $this->assertStringContainsString('<link rel="icon" type="image/x-icon" href="favicon.ico">', $output);
@@ -24,7 +23,7 @@ class UtilsTest extends TestCase
     public function testEndPageOutputsFooterText(): void
     {
         ob_start();
-        end_page();
+        (new _Layout())->end_page();
         $output = ob_get_clean();
 
         $this->assertStringContainsString('<p>Fin de page ici</p>', $output);
@@ -34,7 +33,7 @@ class UtilsTest extends TestCase
     public function testNavigationContainsProjectRoutes(): void
     {
         ob_start();
-        navigation();
+        (new _Layout())->navigation();
         $output = ob_get_clean();
 
         $this->assertStringContainsString('/home', $output);
