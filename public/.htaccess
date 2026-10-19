@@ -1,0 +1,12 @@
+# Activer le moteur de réécriture d'URL
+RewriteEngine On
+
+# Définir le dossier de base si nécessaire (par défaut /)
+RewriteBase /
+
+# Si le fichier ou le dossier demandé existe physiquement sur le serveur, on l'affiche directement
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sinon, on redirige toutes les autres requêtes vers index.php (ou index.html selon ton projet)
+RewriteRule ^(.*)$ index.php [QSA,L]
