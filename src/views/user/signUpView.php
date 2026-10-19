@@ -20,7 +20,8 @@ class SignUpView {
         $bad_adress,
         $notAccepted_conditions
     ) {
-        $layout = new _Layout();
+        $path = 'src\\views\\_layout';
+        $layout = new $path();
         ?>
         <!DOCTYPE html>
         <html lang="fr">
