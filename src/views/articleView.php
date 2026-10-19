@@ -11,7 +11,8 @@ class ArticleView {
      * @return void
      */
     public function show($articles, $totalPages, $currentPage) {
-        $layout = new _Layout();
+        $path = 'src\\views\\_layout';
+        $layout = new $path();
 
         $articles = $articles ?? [];
         $totalPages = $totalPages ?? 1;

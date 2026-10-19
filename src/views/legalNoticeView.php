@@ -17,7 +17,8 @@ class LegalNoticeView {
             $hostName,
             $hostAddress) {
         
-        $layout = new _Layout();
+        $path = 'src\\views\\_layout';
+        $layout = new $path();
         ?>
         <!DOCTYPE html>
         <html lang="fr">

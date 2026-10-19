@@ -11,7 +11,8 @@ class HomeView {
      * @return void
      */
     public function show() {
-        $layout = new _Layout();
+        $path = 'src\\views\\_layout';
+        $layout = new $path();
 
         $features = array();
         ?>

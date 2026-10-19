@@ -11,7 +11,8 @@ class MapView {
      * @return void
      */
     public function show($pages) {
-        $layout = new _Layout();
+        $path = 'src\\views\\_layout';
+        $layout = new $path();
         ?>
         <!DOCTYPE html>
         <html lang="fr">
