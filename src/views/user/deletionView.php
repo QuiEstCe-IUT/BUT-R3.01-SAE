@@ -12,7 +12,8 @@ class DeletionView {
      * @return void
      */
     public function show($error, $success) {
-        $layout = new _Layout();
+        $path = 'src\\views\\_layout';
+        $layout = new $path();
         ?>
         <!DOCTYPE html>
         <html lang="fr">
