@@ -13,7 +13,18 @@ class UserController {
     public function login() : void {
         $path = 'src\\controllers\\user\\loginController';
         $actionController = new $path();
-        $actionController->execute();
+        $actionController->execute('');
+    }
+
+    /**
+     * Handle user logout
+     *
+     * @return void
+     */
+    public function logout() : void {
+        $path = 'src\\controllers\\user\\loginController';
+        $actionController = new $path();
+        $actionController->execute('logout');
     }
 
     /**
