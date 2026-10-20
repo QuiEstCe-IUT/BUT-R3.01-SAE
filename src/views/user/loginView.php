@@ -64,7 +64,7 @@ class LoginView {
                                 HTML;
                                 $username = $_SESSION['username'];
                                 echo "<p>$username</p>";
-                                echo '<a href="/user/login&action=logout" class="link">Se déconnecter</a><br><br>';
+                                echo '<a href="/user/logout" class="link">Se déconnecter</a><br><br>';
                                 echo '<a href="/user/deletion" class="link" style="color: red;">Supprimer mon compte</a><br>';
                             }
                             ?>
