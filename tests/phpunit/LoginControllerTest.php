@@ -56,7 +56,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute('');
+            (new \src\controllers\user\LoginController())->execute('logout');
         } finally {
             $html = ob_get_clean();
         }
