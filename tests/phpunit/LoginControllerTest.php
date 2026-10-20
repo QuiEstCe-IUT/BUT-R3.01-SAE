@@ -38,7 +38,7 @@ class LoginControllerTest extends TestCase
     {
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute();
+            (new \src\controllers\user\LoginController())->execute('');
         } finally {
             $html = ob_get_clean();
         }
@@ -56,7 +56,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute();
+            (new \src\controllers\user\LoginController())->execute('');
         } finally {
             $html = ob_get_clean();
         }
@@ -73,7 +73,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute();
+            (new \src\controllers\user\LoginController())->execute('');
         } finally {
             $html = ob_get_clean();
         }
