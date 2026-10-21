@@ -15,7 +15,7 @@ abstract class Model {
 
     protected static function getPdo(): \PDO {
         if (self::$pdo === null) {
-            $config = require __DIR__ . '/../../config/database.php';
+            $config = require __DIR__ . '/../config/database.php';
 
             $dsn = "pgsql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
 
