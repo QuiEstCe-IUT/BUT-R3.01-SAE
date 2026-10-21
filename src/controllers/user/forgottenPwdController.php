@@ -134,7 +134,7 @@ class ForgottenPwdController {
 
                                 $message = 'Bonjour, suite à votre demande de réinitialisation ';
                                 $message .= 'de mot de passe, veuillez cliquer sur le lien suivant :' . "\n";
-                                $message .= 'https://mathiasm.alwaysdata.net/user/forgotten_password&token=' . $token . "\n";
+                                $message .= 'https://mathiasm.alwaysdata.net/user/forgotten_password?token=' . $token . "\n";
                                 $message .= 'Ce lien est valable 1 heure.' . "\n";
                                 $message .= 'Si vous n\'êtes pas à l\'origine de cette demande, ignorez ce message.';
 
