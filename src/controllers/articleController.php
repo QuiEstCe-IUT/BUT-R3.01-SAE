@@ -1,7 +1,8 @@
 <?php
 namespace src\controllers;
 
-require_once __DIR__ . '/../models/articleModel.php';
+use src\views\articleView;
+use src\models\articleModel;
 
 class ArticleController {
 
@@ -16,7 +17,7 @@ class ArticleController {
         }
 
         // Récupérer le nombre total d'articles pour calculer le nombre de pages
-        $totalArticles = \ArticleModel::getTotalArticles();
+        $totalArticles = ArticleModel::getTotalArticles();
         $totalPages = ceil($totalArticles / $limit);
 
         // Si la page demandée est supérieure au total, on la remet au max
@@ -33,10 +34,9 @@ class ArticleController {
         }
 
         // Récupérer les articles paginés
-        $articles = \ArticleModel::getPaginatedArticles($limit, $offset);
+        $articles = ArticleModel::getPaginatedArticles($limit, $offset);
 
         // On inclut la vue qui utilisera $articles, $currentPage et $totalPages
-        $path = 'src\\views\\articleView';
-        (new $path())->show($articles, $totalPages, $currentPage);
+        (new ArticleView())->show($articles, $totalPages, $currentPage);
     }
 }

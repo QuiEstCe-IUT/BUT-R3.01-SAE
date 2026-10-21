@@ -1,6 +1,9 @@
 <?php
 namespace src\controllers\user;
 
+use src\views\user\loginView;
+use src\models\userModel;
+
 /**
  * Controller for handling user login and logout.
  */
@@ -31,8 +34,7 @@ class LoginController {
 
             if (isset($postData['form']['email']) && isset($postData['form']['mdp'])) {
                 // On charge le modèle et on cherche l'utilisateur par email
-                require_once __DIR__ . '/../../models/loginModel.php';
-                $user = \LoginModel::getUserByEmail($postData['form']['email']);
+                $user = UserModel::getUserByEmail($postData['form']['email']);
 
                 if ($user && password_verify($postData['form']['mdp'], $user['hash_password'])) {
                     // informations correctes, on cree la session
@@ -51,7 +53,6 @@ class LoginController {
         }
 
         // On affiche le formulaire d'authentification
-        $path = 'src\\views\\user\\loginView';
-        (new $path())->show($error);
+        (new LoginView())->show($error);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 namespace src\controllers;
 
+use src\views\mapView;
+
 /**
  * Controller for handling the map page.
  */
@@ -43,7 +45,6 @@ class mapController {
             ]
         ];
         
-        $path = 'src\\views\\mapView';
-        (new $path())->show($pages);
+        (new MapView())->show($pages);
     }
 }
