@@ -46,7 +46,7 @@ class ForgottenPwdView {
 
                                 <?php } else if (isset($get_token)) { ?>
                                     <!-- Formulaire 2 : Nouveau mot de passe -->
-                                    <form method="post" class="form_bg" action="/user/forgotten_password&token=<?php echo $get_token; ?>">
+                                    <form method="post" class="form_bg" action="/user/forgotten_password?token=<?php echo $get_token; ?>">
                                         <p><label for="mdp">Nouveau mot de passe :</label></p>
                                         <input id="mdp" name="form2[mdp]" class="input" type="password" minlength="12" required>
 
