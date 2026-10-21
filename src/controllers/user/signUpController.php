@@ -1,6 +1,9 @@
 <?php
 namespace src\controllers\user;
 
+use src\views\user\SignUpView;
+use src\models\UserModel;
+
 /**
  * Controller for handling user signup.
  */
@@ -62,8 +65,7 @@ class SignUpController {
                     $bad_email = "<p class='error'>L'email est incorrect</p>";
                 } else {
                     // Vérification si l'email est déjà utilisé dans la BD
-                    require_once __DIR__ . '/../../models/signUpModel.php';
-                    if (\SignUpModel::emailExists($postData['form']['email'])) {
+                    if (UserModel::emailExists($postData['form']['email'])) {
                         $bad_email = "<p class='error'>Cet email est déjà associé à un compte</p>";
                     }
                 }
@@ -93,9 +95,6 @@ class SignUpController {
                 // Vérification globale
                 if (!isset($bad_pseudo) && !isset($bad_prenom) && !isset($bad_nom) && !isset($bad_email) && !isset($notMatch_password) && !isset($notAccepted_conditions) && !isset($bad_adress)) {
 
-                    // On charge le modèle
-                    require_once __DIR__ . '/../../models/signUpModel.php';
-
                     // On hache le mot de passe ici dans le contrôleur
                     $hash = password_hash($postData['form']['mdp'], PASSWORD_DEFAULT);
 
@@ -103,7 +102,7 @@ class SignUpController {
                     $phone = !empty($postData['form']['phone']) ? $postData['form']['phone'] : null;
 
                     // On enregistre les données de l'utilisateur dans la BD
-                    $reussite = \SignUpModel::register(
+                    $reussite = UserModel::register(
                         $postData['form']['pseudo'],
                         $postData['form']['prenom'],
                         $postData['form']['nom'],
@@ -132,8 +131,7 @@ class SignUpController {
         }
     
         // On affiche le formulaire d'inscription
-        $path = 'src\\views\\user\\signUpView';
-        (new $path())->show(
+        (new SignUpView())->show(
             $bad_pseudo,
             $bad_prenom,
             $bad_nom,

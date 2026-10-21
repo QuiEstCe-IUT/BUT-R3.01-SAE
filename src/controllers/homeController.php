@@ -1,6 +1,8 @@
 <?php
 namespace src\controllers;
 
+use src\views\HomeView;
+
 /**
  * Controller for the home page.
  */
@@ -11,7 +13,6 @@ class HomeController {
      * @return void
      */
     public function execute() {
-        $path = 'src\\views\\homeView';
-        (new $path())->show();
+        (new HomeView())->show();
     }
 }

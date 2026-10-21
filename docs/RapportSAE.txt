@@ -1,0 +1,178 @@
+SAE 				Qui Est-Ce
+ Gerard Olivier
+
+
+
+
+
+
+
+
+
+
+
+FRANCESCHI--PINSON Lucas
+MALLET Mathias
+METERY-DROUIN Audren
+NGUYEN Vinh Tan Thomas 
+
+
+[BUT Informatique 2ème année]
+					Résumé
+	
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				        Sommaire
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------
+Page 1 : Page de garde
+ ------------------------------------------------------------------------------------------------
+Page 2 : Sommaire
+ ------------------------------------------------------------------------------------------------
+PARTIE 1 : Préparation du projet et recueil de besoin
+ ------------------------------------------------------------------------------------------------
+1: Recueil de Besoin et questionnaire
+ ------------------------------------------------------------------------------------------------
+2: Recherches Effectuées
+ ------------------------------------------------------------------------------------------------
+PARTIE 2 : Présentations des préparations et besoins
+ ------------------------------------------------------------------------------------------------
+3 :  Présentation du Concept général de l'événement
+ ------------------------------------------------------------------------------------------------
+4 :  Organisation
+ ------------------------------------------------------------------------------------------------
+5 :  Conclusion 
+ ------------------------------------------------------------------------------------------------
+6: Tableau de Bord
+ ------------------------------------------------------------------------------------------------
+7: Sitographie,Bibliographie et Annexes
+ ------------------------------------------------------------------------------------------------
+
+Présentation du concept:
+
+Notre projet consiste en la chose suivante: Créer une version du jeu de société culte Qui-est-ce? en ligne. Cependant vous vous en doutez ce n’est pas tout même si la conception d’un tel jeu jouable en ligne directement semble déjà une tâche intéressante nous allons devoir revisiter le jeu pour un contexte IUT. Les cases personnages devront être des têtes connues au sein de l’IUT donc nous parlons ici du staff des enseignants et possiblement d’élèves. Puis nous devrons modifier leur visage à l’aide d’une IA locale afin d’assurer la sécurisation de leur image et ainsi créer un jeu unique et amusant où il faudra s’amuser à reconnaître ces têtes familières. 
+Tout d’abord avant de passer à la réalisation de ce projet il nous a fallu nous poser des questions clés et nous fixer des objectifs précis:
+-Conception du site
+-Typiquement à quoi va consister le jeu et comment il va fonctionner (système de tours comment poser les questions ou deviner le bon visage)
+-Quel genre de contrat allons nous devoir créer afin de collecter des signatures auprès de nos enseignants et camarades de classes en respectant le droit à l’image
+-Comment nous allons trouver ces personnes
+Et surtout le point le plus important: comment nous allons organiser tout ça sans se perdre et maximiser notre travail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mercredi 14 Octobre:
+
+Nous nous sommes rassemblés en salle 102 où nous avons commencé par faire un trello afin d’identifier les tâches par ordre d’importance car il est crucial pour la bonne organisation de la suite de ce projet de connaître nos tâches respectives et ne pas se perdre malgré le temps qui nous est accordé. Un backlog a tout d’abord été créé avec les différente stories:
+
+-création du figma
+-base de donnée à revoir
+-système du jeu (théorique)
+-système du jeu (technique)
+-questionnaire pour les signatures
+
+Nous avions déjà décidé au préalable lors d’un appel sur discord qui s’est déroulé le jour d’avant, le Mardi 13 Octobre des choses suivantes pour notre jeu:
+
+-Chaque partie nous seront affichées 24 têtes 
+-Et la mise au point de chaque partie s’effectuera de la manière suivante:
+
+Joueur 1 et joueur 2 choisissent leur personnage que l’autre devra deviner.
+Joueur 1 a deux choix possibles:
+
+-Le bouton Question où il envoie une question pour obtenir une information sur le physique du personnage sélectionné par le joueur 2 et celui-ci lui répondra et ainsi se finira son tour
+
+-Le bouton Deviner où le joueur 1 tente de gagner la partie une fois qu’il pense avoir décerné la personne que le joueur 2 a choisi. Dans le cas où il a deviné correctement, il gagne la partie et celle-ci se termine. Dans le cas où il s’est trompé, la partie continue, son tour se terminant ainsi.
+
+Ainsi se déroule chaque partie jusqu’à ce que l’un des joueurs devine correctement le personnage de l’autre ou que le temps maximum pour la partie soit atteint (pour l’instant nous avons prévu une durée maximum de 30 minutes plutôt que d’imposer un temps pour chaque tour). De plus, il sera possible aux joueurs de cliquer sur les personnages pour les griser pour avoir une meilleure visualisation des personnes restantes qui peuvent encore correspondre à la description actuelle.
+
+Jeudi 15 Octobre:
+
+Nous avons demandé à plusieurs professeurs s’ils souhaitaient faire partie du jeu et avons réussi à obtenir plus de participants. Parmi ceux-ci nous avons la confirmation de Monsieur Olivier Gérard mais aussi de Monsieur Solminihac, Monsieur Guyot, Madame … et Madame …, les deux enseignantes d’anglais. Pour l’instant il ne s’agit que d’une demande, les papiers officiels requis pour la collecte des signatures étant toujours en cours de création ainsi que la version en ligne qui sera disponible sur notre site par la suite.
+
+Nous avons également fait une petite réunion avec notre client pour discuter du projet, des améliorations possibles de l’architecture du MVC actuel ainsi que des fonctionnalités qui pourraient être ajoutées. Suite à cela nous avons pu discerner les erreurs comme par exemple certains fichiers qu’il faudrait mieux déplacer ou encore des contrôleurs à combiner pour une meilleure gestion ainsi que des pistes pour de futures améliorations qui ont donc été rajoutées à notre trello.
+Mardi 20 Octobre:
+
+Suite aux suggestions de notre client Audren a donc modifié le util.php qui n’était pas utilisé correctement c’était un layout dans les vues ainsi que d’autres petites erreurs cités le jour précédent. Avec tous ces changements le CI des tests php Units ne fonctionnait plus et cela est lié au fait que certains chemins de fichiers avaient changé donc Lucas s’est occupé de les modifier et a donc réglé ce problème.
+
+L’après midi nous avons eu une autre rencontre avec notre client Monsieur Olivier Gérard qui a constaté que nous utilisions toujours des chemins avec require alors il nous a conseillé de plutôt utiliser l’autoloader que nous n’avions pas encore pleinement employé dans notre code ou très peu, donc encore une piste pour l’amélioration de notre code. Nous avions commencé par utiliser l’outil trello pour organiser nos tâches mais il nous a été enseigné que nous pouvions créé directement un backlog dans notre répo donc toutes les stories ont été déplacées sur celui-ci. Un autre problème identifié était que nous ne devrions pas donner d’information si une méthode existait lorsque le message d’erreur nous indiquait lequel était incorrect lorsque nous entrions des valeurs fausses ce qui a été modifié par Audren.
+
+Mercredi 21 Octobre:
+
+

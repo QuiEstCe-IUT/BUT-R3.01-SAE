@@ -6,9 +6,6 @@ use PHPUnit\Framework\TestCase;
 use src\controllers\HomeController;
 use src\views\HomeView;
 
-require_once __DIR__ . '/../../src/views/_layout.php';
-require_once __DIR__ . '/../../src/controllers/homeController.php';
-
 #[CoversClass(HomeController::class)]
 #[CoversClass(HomeView::class)]
 class HomeControllerTest extends TestCase
