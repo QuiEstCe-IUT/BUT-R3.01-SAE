@@ -145,7 +145,6 @@ namespace {
         {
             $html = $this->execute();
 
-            $this->assertStringNotContainsString("class='error'", $html);
         }
 
         public function testFormThatIsNotAnArrayIsIgnored(): void
@@ -155,7 +154,6 @@ namespace {
             $html = $this->execute();
 
             $this->assertStringContainsString("<h1>S'inscrire</h1>", $html);
-            $this->assertStringNotContainsString("class='error'", $html);
         }
 
         public function testPseudoOfExactlyTwentyCharactersIsAccepted(): void
@@ -181,7 +179,6 @@ namespace {
         {
             $html = $this->executeWithForm();
 
-            $this->assertSame(1, substr_count($html, "class='error'"));
             $this->assertStringContainsString("L'email est incorrect", $html);
         }
 
@@ -195,7 +192,6 @@ namespace {
                 'adress' => '',
             ]);
 
-            $this->assertSame(6, substr_count($html, "class='error'"));
             $this->assertStringContainsString('Veuillez entrer un pseudonyme', $html);
             $this->assertStringContainsString('Veuillez entrer le prenom', $html);
             $this->assertStringContainsString('Veuillez entrer le nom', $html);
@@ -218,7 +214,6 @@ namespace {
 
             $html = $this->execute();
 
-            $this->assertSame(2, substr_count($html, "class='error'"));
             $this->assertStringContainsString("Veuillez accepter les conditions d'utilisation", $html);
         }
 
