@@ -1,8 +1,8 @@
 <?php
 namespace src\controllers\user;
 
-use src\views\user\loginView;
-use src\models\userModel;
+use src\views\user\LoginView;
+use src\models\UserModel;
 
 /**
  * Controller for handling user login and logout.

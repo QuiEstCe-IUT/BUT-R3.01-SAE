@@ -1,8 +1,8 @@
 <?php
 namespace src\controllers;
 
-use src\views\articleView;
-use src\models\articleModel;
+use src\views\ArticleView;
+use src\models\ArticleModel;
 
 class ArticleController {
 

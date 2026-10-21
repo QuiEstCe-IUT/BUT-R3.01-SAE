@@ -1,7 +1,7 @@
 <?php
 namespace src\controllers;
 
-use src\views\mapView;
+use src\views\MapView;
 
 /**
  * Controller for handling the map page.

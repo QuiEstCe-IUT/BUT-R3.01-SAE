@@ -1,8 +1,8 @@
 <?php
 namespace src\controllers\user;
 
-use src\views\user\signUpView;
-use src\models\userModel;
+use src\views\user\SignUpView;
+use src\models\UserModel;
 
 /**
  * Controller for handling user signup.

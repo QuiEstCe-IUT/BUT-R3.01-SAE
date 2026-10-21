@@ -1,8 +1,8 @@
 <?php
 namespace src\controllers\user;
 
-use src\views\user\forgottenPwdView;
-use src\models\userModel;
+use src\views\user\ForgottenPwdView;
+use src\models\UserModel;
 
 /**
  * Controller for handling forgotten password requests.

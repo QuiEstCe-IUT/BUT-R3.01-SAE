@@ -1,8 +1,8 @@
 <?php
 namespace src\controllers\user;
 
-use src\views\user\deletionView;
-use src\models\userModel;
+use src\views\user\DeletionView;
+use src\models\UserModel;
 
 /**
  * Controller for user deletion.

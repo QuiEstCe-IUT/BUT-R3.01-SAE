@@ -1,7 +1,7 @@
 <?php
 namespace src\controllers;
 
-use src\views\legalNoticeView;
+use src\views\LegalNoticeView;
 
 /**
  * Controller for handling legal notice page.

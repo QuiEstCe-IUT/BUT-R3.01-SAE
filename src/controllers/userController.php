@@ -1,10 +1,10 @@
 <?php
 namespace src\controllers;
 
-use src\controllers\user\loginController;
-use src\controllers\user\signUpController;
-use src\controllers\user\forgottenPwdController;
-use src\controllers\user\deletionController;
+use src\controllers\user\LoginController;
+use src\controllers\user\SignUpController;
+use src\controllers\user\ForgottenPwdController;
+use src\controllers\user\DeletionController;
 
 /**
  * Controller for handling user logic.

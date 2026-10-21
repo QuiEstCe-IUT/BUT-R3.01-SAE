@@ -1,7 +1,7 @@
 <?php
 namespace src\controllers;
 
-use src\views\homeView;
+use src\views\HomeView;
 
 /**
  * Controller for the home page.
