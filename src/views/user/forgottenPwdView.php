@@ -40,7 +40,7 @@ class ForgottenPwdView {
 
                                 <?php } else if (isset($success)) { ?>
                                     <!-- Affichage du message de succès -->
-                                    <?php echo $success; ?>
+                                    <p class='success'><?php echo $success; ?></p>
                                     <br><br>
                                     <a href="/user/login" class="link">Se connecter</a>
 
@@ -55,11 +55,11 @@ class ForgottenPwdView {
 
                                         <input type="submit" class="submit" value="Modifier">
                                     </form>
-                                    <?php
+                                    <p class='error'><?php
                                     if (isset($error)) {
                                         echo $error;
                                     }
-                                    ?>
+                                    ?></p>
 
                                 <?php } else { ?>
                                     <!-- Formulaire 1 : Demande d'email -->
@@ -69,11 +69,11 @@ class ForgottenPwdView {
 
                                         <input type="submit" class="submit" value="Envoyer mail">
                                     </form>
-                                    <?php
+                                    <p class='error'><?php
                                     if (isset($error)) {
                                         echo $error;
                                     }
-                                    ?>
+                                    ?></p>
                                 <?php } ?>
                             </div>
                         </main>

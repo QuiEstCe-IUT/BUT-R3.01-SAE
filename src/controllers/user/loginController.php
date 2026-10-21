@@ -47,7 +47,7 @@ class LoginController {
                     exit;
                 } else {
                     // informations invalide
-                    $error = "<p class='error'>Email ou mot de passe incorrect</p>";
+                    $error = "Email ou mot de passe incorrect";
                 }
             }
         }
