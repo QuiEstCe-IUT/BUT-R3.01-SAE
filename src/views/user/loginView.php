@@ -47,11 +47,11 @@ class LoginView {
                                         <input type="submit" class="submit">
                                     </form>
                                 HTML;
-        
-                                if (isset($error)) {
+                                ?>
+                                <p class='error'><?php if (isset($error)) {
                                     echo $error;
-                                }
-        
+                                } ?></p>
+                                <?php
                                 echo <<<HTML
                                     <a href="/user/signup" class="link">S'inscrire</a><br>
                                     <a href="/user/forgotten_password" class="link">Mot de passe oublié</a>

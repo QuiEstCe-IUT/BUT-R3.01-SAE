@@ -2,7 +2,7 @@
 // Ce script est le "routeur central", il connecte les scripts entre eux.
 session_start();
 
-require_once __DIR__ . '/../src/core/autoloader.php';
+require_once __DIR__ . '/../core/autoloader.php';
 
 // On récupère l'url + Si l'url n'existe pas on met une chaine vide
 $url = $_SERVER['REQUEST_URI'] ?? '';

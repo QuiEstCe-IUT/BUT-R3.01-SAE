@@ -2,7 +2,7 @@
 
 namespace src\models;
 
-use src\core\Model;
+use core\Model;
 
 /**
  * Model for handling all user related data

@@ -50,18 +50,18 @@ class ForgottenPwdController {
                     if (isset($postData['form2']['mdp']) && isset($postData['form2']['mdp2'])) {
                         // Vérification que les deux mots de passe correspondent
                         if ($postData['form2']['mdp'] !== $postData['form2']['mdp2']) {
-                            $error = "<p class='error'>Les deux mots de passe ne correspondent pas</p>";
+                            $error = "Les deux mots de passe ne correspondent pas";
                         }
 
                         // Vérification que le mot de passe n'est pas vide
                         if ($error === null && strlen($postData['form2']['mdp']) < 12) {
-                            $error = "<p class='error'>Veuillez entrer un mot de passe de taille 12+ caractères</p>";
+                            $error = "Veuillez entrer un mot de passe de taille 12+ caractères";
                         }
 
                         // Si pas d'erreur, on modifie le mot de passe
                         if ($error === null) {
                             if (!UserModel::emailExists($email)) {
-                                $error = "<p class='error'>Le compte associé au token a été supprimé entre temps</p>";
+                                $error = "Le compte associé au token a été supprimé entre temps";
                             } else {
                                 // On hache le nouveau mot de passe
                                 $hash = password_hash($postData['form2']['mdp'], PASSWORD_DEFAULT);
@@ -71,18 +71,18 @@ class ForgottenPwdController {
                                 if ($reussite) {
                                     // On supprime le token utilisé
                                     UserModel::deleteToken(password_hash($get_token, PASSWORD_DEFAULT));
-                                    $success = "<p class='success'>Mot de passe modifié avec succès</p>";
+                                    $success = "Mot de passe modifié avec succès";
                                 } else {
-                                    $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
+                                    $error = "Une erreur est survenue, veuillez réessayer";
                                 }
                             }
                         }
                     } else {
-                        $error = "<p class='error'>Veuillez remplir tous les champs</p>";
+                        $error = "Veuillez remplir tous les champs";
                     }
                 } else {
                     // Le token est invalide ou expiré
-                    $error = "<p class='error'>Lien de réinitialisation invalide ou expiré (1 heure max)</p>";
+                    $error = "Lien de réinitialisation invalide ou expiré (1 heure max)";
                 }
 
             } else if (isset($_POST['form'])) {
@@ -100,7 +100,7 @@ class ForgottenPwdController {
                     // Vérification du format de l'email
                     $emailRegex = '/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/';
                     if (!preg_match($emailRegex, $postData['form']['email'])) {
-                        $error = "<p class='error'>Format d'email incorrect</p>";
+                        $error = "Format d'email incorrect";
                     }
 
                     // Si pas d'erreur, on vérifie l'email en base
@@ -108,7 +108,7 @@ class ForgottenPwdController {
 
                         if (!UserModel::emailExists($postData['form']['email'])) {
                             // On ne révèle aucune information sur si le compte existe
-                            $success = "<p class='success'>Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail</p>";
+                            $success = "Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail";
                         } else {
                             // On génère un token cryptographiquement sûr
                             $bytes = random_bytes(32);
@@ -140,17 +140,17 @@ class ForgottenPwdController {
 
                                 $envoie = mail($to, $subject, $message, $headers);
                                 if ($envoie) {
-                                    $success = "<p class='success'>Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail</p>";
+                                    $success = "Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail";
                                 } else {
-                                    $error = "<p class='error'>Une erreur est survenue lors de l'envoie de l'email, veuillez réessayer</p>";
+                                    $error = "Une erreur est survenue lors de l'envoie de l'email, veuillez réessayer";
                                 }
                             } else {
-                                $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
+                                $error = "Une erreur est survenue, veuillez réessayer";
                             }
                         }
                     }
                 } else {
-                    $error = "<p class='error'>Veuillez remplir tous les champs</p>";
+                    $error = "Veuillez remplir tous les champs";
                 }
             }
         }

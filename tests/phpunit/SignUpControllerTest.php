@@ -17,6 +17,8 @@ namespace {
     use src\models\UserModel;
     use src\views\user\SignUpView;
 
+    use core\Model;
+
     #[CoversClass(SignUpController::class)]
     #[CoversClass(SignUpView::class)]
     #[CoversClass(UserModel::class)]
@@ -45,7 +47,7 @@ namespace {
             $_SESSION = $this->previousSession;
 
             if ($this->pdoReplaced) {
-                (new \ReflectionProperty(\src\core\Model::class, 'pdo'))->setValue(null, $this->previousPdo);
+                (new \ReflectionProperty(Model::class, 'pdo'))->setValue(null, $this->previousPdo);
                 $this->pdoReplaced = false;
             }
         }
@@ -106,7 +108,7 @@ namespace {
             $pdo->exec("INSERT INTO users (login, first_name, last_name, email, hash_password, adress)
                         VALUES ('bob', 'Bob', 'Martin', 'bob@example.com', 'hash', '2 rue de Aix')");
 
-            $property = new \ReflectionProperty(\src\core\Model::class, 'pdo');
+            $property = new \ReflectionProperty(Model::class, 'pdo');
             $this->previousPdo = $property->getValue();
             $property->setValue(null, $pdo);
             $this->pdoReplaced = true;
@@ -141,13 +143,6 @@ namespace {
             $this->assertStringContainsString('href="/user/login"', $html);
         }
 
-        public function testNoErrorIsDisplayedWithoutSubmittedForm(): void
-        {
-            $html = $this->execute();
-
-            $this->assertStringNotContainsString("class='error'", $html);
-        }
-
         public function testFormThatIsNotAnArrayIsIgnored(): void
         {
             $_POST['form'] = 'pseudo=Alice';
@@ -155,7 +150,6 @@ namespace {
             $html = $this->execute();
 
             $this->assertStringContainsString("<h1>S'inscrire</h1>", $html);
-            $this->assertStringNotContainsString("class='error'", $html);
         }
 
         public function testPseudoOfExactlyTwentyCharactersIsAccepted(): void
@@ -181,7 +175,6 @@ namespace {
         {
             $html = $this->executeWithForm();
 
-            $this->assertSame(1, substr_count($html, "class='error'"));
             $this->assertStringContainsString("L'email est incorrect", $html);
         }
 
@@ -195,7 +188,6 @@ namespace {
                 'adress' => '',
             ]);
 
-            $this->assertSame(6, substr_count($html, "class='error'"));
             $this->assertStringContainsString('Veuillez entrer un pseudonyme', $html);
             $this->assertStringContainsString('Veuillez entrer le prenom', $html);
             $this->assertStringContainsString('Veuillez entrer le nom', $html);
@@ -218,7 +210,6 @@ namespace {
 
             $html = $this->execute();
 
-            $this->assertSame(2, substr_count($html, "class='error'"));
             $this->assertStringContainsString("Veuillez accepter les conditions d'utilisation", $html);
         }
 

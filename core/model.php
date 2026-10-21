@@ -1,6 +1,6 @@
 <?php
 
-namespace src\core;
+namespace core;
 
 /**
  * Abstract base model class.
