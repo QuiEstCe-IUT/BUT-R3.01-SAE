@@ -6,6 +6,10 @@ require_once __DIR__ . '/../core/includes/autoloader.php';
 
 // On récupère l'url + Si l'url n'existe pas on met une chaine vide
 $url = $_SERVER['REQUEST_URI'] ?? '';
+
+// On enlève la partie GET de l'url
+$url = parse_url($url, PHP_URL_PATH);
+
 $url = trim($url, '/'); // On enlève les / en trop au début ou fin
 if (empty($url)) {
     $url = 'home'; // Si l'url est vide on renvoie vers la page d'accueil
