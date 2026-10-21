@@ -2,7 +2,7 @@
 
 namespace src\models;
 
-use src\core\model;
+use src\core\Model;
 
 class ArticleModel extends Model {
 

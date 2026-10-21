@@ -10,7 +10,7 @@ use src\models\UserModel;
  * This controller manages both the request to send a password reset link
  * via email, and the actual password reset process once a valid token is provided.
  */
-class forgottenPwdController {
+class ForgottenPwdController {
     /**
      * Executes the forgotten password logic.
      *

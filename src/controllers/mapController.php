@@ -6,7 +6,7 @@ use src\views\MapView;
 /**
  * Controller for handling the map page.
  */
-class mapController {
+class MapController {
     /**
      * Executes the map logic renders the view.
      *
