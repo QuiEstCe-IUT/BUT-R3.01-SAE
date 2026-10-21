@@ -46,30 +46,30 @@ class SignUpView {
                                 <form method='post' class="form_bg" action="/user/signup">
                                     <p class="inpt">Pseudo:</p>
                                     <input name='form[pseudo]' class="input" type="text">
-                                    <?php if (isset($bad_pseudo)) {
-                                        echo $bad_pseudo;} ?>
+                                    <p class='error'><?php if (isset($bad_pseudo)) {
+                                        echo $bad_pseudo;} ?></p>
 
                                     <p class="inpt">Prenom:</p>
                                     <input name='form[prenom]' class="input" type="text">
-                                    <?php if (isset($bad_prenom)) {
-                                        echo $bad_prenom;} ?>
+                                    <p class='error'><?php if (isset($bad_prenom)) {
+                                        echo $bad_prenom;} ?></p>
 
                                     <p class="inpt">Nom:</p>
                                     <input name='form[nom]' class="input" type="text">
-                                    <?php if (isset($bad_nom)) {
-                                        echo $bad_nom;} ?>
+                                    <p class='error'><?php if (isset($bad_nom)) {
+                                        echo $bad_nom;} ?></p>
 
                                     <p class="inpt">Email:</p>
                                     <input name='form[email]' class="input" type="text" required>  
-                                    <?php if (isset($bad_email)) {
-                                        echo $bad_email;} ?>
+                                    <p class='error'><?php if (isset($bad_email)) {
+                                        echo $bad_email;} ?></p>
 
                                     <p class="inpt">Mot de passe:</p>
-                                    <input name='form[mdp]' class="input" type="password" minlength="8" required>
+                                    <input name='form[mdp]' class="input" type="password" minlength="12" required>
                                     <p class="inpt">Confirmation du mot de passe:</p>
-                                    <input name='form[mdp2]' class="input" type="password" minlength="8" required>
-                                    <?php if (isset($notMatch_password)) {
-                                        echo $notMatch_password;} ?>
+                                    <input name='form[mdp2]' class="input" type="password" minlength="12" required>
+                                    <p class='error'><?php if (isset($notMatch_password)) {
+                                        echo $notMatch_password;} ?></p>
 
                                     <!-- Phone number -->
                                     <p class="inpt">Numéro de téléphone (optionnel):</p>
@@ -78,13 +78,13 @@ class SignUpView {
                                     <!-- Adress -->
                                     <p class="inpt">Adresse:</p>
                                     <input name='form[adress]' class="input" type="text">
-                                    <?php if (isset($bad_adress)) {
-                                        echo $bad_adress;} ?>
+                                    <p class='error'><?php if (isset($bad_adress)) {
+                                        echo $bad_adress;} ?></p>
 
                                     <p class="inpt">Conditions générales:</p>
                                     <input name='form[generalCondition]' type="checkbox">
-                                    <?php if (isset($notAccepted_conditions)) {
-                                        echo $notAccepted_conditions;} ?>
+                                    <p class='error'><?php if (isset($notAccepted_conditions)) {
+                                        echo $notAccepted_conditions;} ?></p>
 
                                     <input type="submit" class="submit">
                                 </form>

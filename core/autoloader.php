@@ -13,7 +13,7 @@ spl_autoload_register(function ($class) {
     }
 
     $relativeClass = substr($class, strlen($namespacePrefix));
-    $file = __DIR__ . '/../' . str_replace('\\', '/', $relativeClass) . '.php';
+    $file = __DIR__ . '/../src/' . str_replace('\\', '/', $relativeClass) . '.php';
 
     if (!is_file($file)) {
         $directory = dirname($file);
