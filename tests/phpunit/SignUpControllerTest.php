@@ -45,7 +45,7 @@ namespace {
             $_SESSION = $this->previousSession;
 
             if ($this->pdoReplaced) {
-                (new \ReflectionProperty(\core\Model::class, 'pdo'))->setValue(null, $this->previousPdo);
+                (new \ReflectionProperty(core\Model::class, 'pdo'))->setValue(null, $this->previousPdo);
                 $this->pdoReplaced = false;
             }
         }
@@ -106,7 +106,7 @@ namespace {
             $pdo->exec("INSERT INTO users (login, first_name, last_name, email, hash_password, adress)
                         VALUES ('bob', 'Bob', 'Martin', 'bob@example.com', 'hash', '2 rue de Aix')");
 
-            $property = new \ReflectionProperty(\core\Model::class, 'pdo');
+            $property = new \ReflectionProperty(core\Model::class, 'pdo');
             $this->previousPdo = $property->getValue();
             $property->setValue(null, $pdo);
             $this->pdoReplaced = true;
