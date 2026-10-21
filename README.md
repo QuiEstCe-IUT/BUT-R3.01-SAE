@@ -38,18 +38,17 @@
 │   └── workflows
 │       ├── ci.yml          # Qualité : PHPStan, PHPCS, PHPUnit, audit, SonarQube Cloud
 │       └── deploy.yml      # Déploiement automatique vers AlwaysData (sur push main)
-├── _assets
-│   ├── includes            # Autoloader et includes PHP internes
-│   └── utils                # Fonctions utilitaires PHP
 ├── config
 │   ├── database.example.php # Modèle à copier en config/database.php (non versionné)
 │   └── database.php         # Identifiants réels, IGNORÉ par Git
+├── core
+│   ├── autoloader.php       # Autoloader
+│   └── model.php            # Classe Model abstraite : connexion PDO/PostgreSQL partagée
 ├── database
 │   └── dump.sql
-├── kernel
-│   └── model.php            # Classe Model abstraite : connexion PDO/PostgreSQL partagée
-├── public                   # Unique répertoire exposé sur le Web (document root)
+├── public               # Unique répertoire exposé sur le Web (document root)
 │   ├── assets
+│   ├── .htaccess
 │   ├── favicon.ico
 │   └── index.php            # Routeur central
 ├── src
