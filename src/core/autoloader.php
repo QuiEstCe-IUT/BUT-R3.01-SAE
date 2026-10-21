@@ -5,18 +5,33 @@
  * Automatically loads PHP classes from the src/ directory based on their namespace.
  */
 
-// On enregistre une fonction anonyme
+// Enregistre l'autoloader des classes du projet.
 spl_autoload_register(function ($class) {
-    // 1. On retire le préfixe "src\" si présent dans le namespace
-    $relativeClass = str_replace('src\\', '', $class);
+    $namespacePrefix = 'src\\';
+    if (!str_starts_with($class, $namespacePrefix)) {
+        return;
+    }
 
-    // 2. On adapte le chemin __DIR__
-    // Comme autoloader.php est dans src/core/, 
-    // il faut remonter d'un niveau (../) pour atteindre le dossier src/
+    $relativeClass = substr($class, strlen($namespacePrefix));
     $file = __DIR__ . '/../' . str_replace('\\', '/', $relativeClass) . '.php';
 
-    // 3. Si le fichier existe, on l'inclut
-    if (file_exists($file)) {
+    if (!is_file($file)) {
+        $directory = dirname($file);
+        $filename = basename($file);
+
+        if (!is_dir($directory)) {
+            return;
+        }
+
+        foreach (scandir($directory) as $entry) {
+            if (strcasecmp($entry, $filename) === 0) {
+                $file = $directory . '/' . $entry;
+                break;
+            }
+        }
+    }
+
+    if (is_file($file)) {
         require_once $file;
     }
 });

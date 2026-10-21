@@ -14,11 +14,12 @@ namespace {
     use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\Attributes\DataProvider;
     use src\controllers\user\SignUpController;
+    use src\models\UserModel;
     use src\views\user\SignUpView;
 
     #[CoversClass(SignUpController::class)]
     #[CoversClass(SignUpView::class)]
-    #[CoversClass(\SignUpModel::class)]
+    #[CoversClass(UserModel::class)]
     class SignUpControllerTest extends TestCase
     {
         private array $previousPost;
@@ -29,9 +30,6 @@ namespace {
 
         protected function setUp(): void
         {
-            require_once __DIR__ . '/../../core/model.php';
-            require_once __DIR__ . '/../../src/controllers/user/signUpController.php';
-
             $this->previousPost = $_POST;
             $this->previousGet = $_GET;
             $this->previousSession = $_SESSION ?? [];
@@ -47,7 +45,7 @@ namespace {
             $_SESSION = $this->previousSession;
 
             if ($this->pdoReplaced) {
-                (new \ReflectionProperty(\Model::class, 'pdo'))->setValue(null, $this->previousPdo);
+                (new \ReflectionProperty(\src\core\Model::class, 'pdo'))->setValue(null, $this->previousPdo);
                 $this->pdoReplaced = false;
             }
         }
@@ -108,7 +106,7 @@ namespace {
             $pdo->exec("INSERT INTO users (login, first_name, last_name, email, hash_password, adress)
                         VALUES ('bob', 'Bob', 'Martin', 'bob@example.com', 'hash', '2 rue de Aix')");
 
-            $property = new \ReflectionProperty(\Model::class, 'pdo');
+            $property = new \ReflectionProperty(\src\core\Model::class, 'pdo');
             $this->previousPdo = $property->getValue();
             $property->setValue(null, $pdo);
             $this->pdoReplaced = true;
@@ -282,11 +280,10 @@ namespace {
         public function testModelRegistersUserAndDetectsItsEmail(): void
         {
             $pdo = $this->useInMemoryDatabase();
-            require_once __DIR__ . '/../../src/models/signUpModel.php';
 
-            $this->assertFalse(\SignUpModel::emailExists('alice@example.com'));
+            $this->assertFalse(UserModel::emailExists('alice@example.com'));
 
-            $registered = \SignUpModel::register(
+            $registered = UserModel::register(
                 'alice',
                 'Alice',
                 'Dubois',
@@ -297,7 +294,7 @@ namespace {
             );
 
             $this->assertTrue($registered);
-            $this->assertTrue(\SignUpModel::emailExists('alice@example.com'));
+            $this->assertTrue(UserModel::emailExists('alice@example.com'));
             $this->assertSame(2, $this->countUsers($pdo));
 
             $user = $pdo->query("SELECT * FROM users WHERE email = 'alice@example.com'")->fetch();
