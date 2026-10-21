@@ -1,6 +1,11 @@
 <?php
 namespace src\controllers;
 
+use src\controllers\user\LoginController;
+use src\controllers\user\SignUpController;
+use src\controllers\user\ForgottenPwdController;
+use src\controllers\user\DeletionController;
+
 /**
  * Controller for handling user logic.
  */
@@ -11,9 +16,7 @@ class UserController {
      * @return void
      */
     public function login() : void {
-        $path = 'src\\controllers\\user\\loginController';
-        $actionController = new $path();
-        $actionController->execute('');
+        (new LoginController())->execute('');
     }
 
     /**
@@ -22,9 +25,7 @@ class UserController {
      * @return void
      */
     public function logout() : void {
-        $path = 'src\\controllers\\user\\loginController';
-        $actionController = new $path();
-        $actionController->execute('logout');
+        (new LoginController())->execute('logout');
     }
 
     /**
@@ -33,9 +34,7 @@ class UserController {
      * @return void
      */
     public function signup() : void {
-        $path = 'src\\controllers\\user\\signUpController';
-        $actionController = new $path();
-        $actionController->execute();
+        (new SignUpController())->execute();
     }
 
     /**
@@ -44,9 +43,7 @@ class UserController {
      * @return void
      */
     public function forgotten_password() : void {
-        $path = 'src\\controllers\\user\\forgottenPwdController';
-        $actionController = new $path();
-        $actionController->execute();
+        (new ForgottenPwdController())->execute();
     }
 
     /**
@@ -55,8 +52,6 @@ class UserController {
      * @return void
      */
     public function deletion() : void {
-        $path = 'src\\controllers\\user\\deletionController';
-        $actionController = new $path();
-        $actionController->execute();
+        (new DeletionController())->execute();
     }
 }

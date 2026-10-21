@@ -3,7 +3,6 @@ parameters:
     paths:
         - public/index.php
         - src
-        - core/model.php
-        - core/includes
+        - src/core/model.php
     ignoreErrors:
 

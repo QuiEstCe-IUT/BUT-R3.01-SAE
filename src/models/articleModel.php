@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../../core/model.php';
+namespace src\models;
+
+use src\core\Model;
 
 class ArticleModel extends Model {
 

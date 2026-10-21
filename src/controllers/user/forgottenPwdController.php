@@ -1,13 +1,16 @@
 <?php
 namespace src\controllers\user;
 
+use src\views\user\ForgottenPwdView;
+use src\models\UserModel;
+
 /**
  * Controller for handling forgotten password requests.
  *
  * This controller manages both the request to send a password reset link
  * via email, and the actual password reset process once a valid token is provided.
  */
-class forgottenPwdController {
+class ForgottenPwdController {
     /**
      * Executes the forgotten password logic.
      *
@@ -30,12 +33,8 @@ class forgottenPwdController {
         if (!isset($_SESSION['suid'])) {
             if (isset($_POST['form2']) && isset($get_token)) {
 
-
-                require_once __DIR__ . '/../../models/signUpModel.php';
-                require_once __DIR__ . '/../../models/forgottenPwdModel.php';
-
                 // On vérifie dans la BD que le token correspond bien à une adresse mail
-                $email = \ForgottenPwdModel::getEmailByToken(password_hash($get_token, PASSWORD_DEFAULT));
+                $email = UserModel::getEmailByToken(password_hash($get_token, PASSWORD_DEFAULT));
 
                 // Si le mail existe on vérifie les mots de passe et on met à jour
                 if ($email) {
@@ -61,17 +60,17 @@ class forgottenPwdController {
 
                         // Si pas d'erreur, on modifie le mot de passe
                         if ($error === null) {
-                            if (!\SignUpModel::emailExists($email)) {
+                            if (!UserModel::emailExists($email)) {
                                 $error = "<p class='error'>Le compte associé au token a été supprimé entre temps</p>";
                             } else {
                                 // On hache le nouveau mot de passe
                                 $hash = password_hash($postData['form2']['mdp'], PASSWORD_DEFAULT);
                                 // On met à jour la base
-                                $reussite = \ForgottenPwdModel::updatePassword($email, $hash);
+                                $reussite = UserModel::updatePassword($email, $hash);
 
                                 if ($reussite) {
                                     // On supprime le token utilisé
-                                    \ForgottenPwdModel::deleteToken(password_hash($get_token, PASSWORD_DEFAULT));
+                                    UserModel::deleteToken(password_hash($get_token, PASSWORD_DEFAULT));
                                     $success = "<p class='success'>Mot de passe modifié avec succès</p>";
                                 } else {
                                     $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
@@ -106,11 +105,10 @@ class forgottenPwdController {
 
                     // Si pas d'erreur, on vérifie l'email en base
                     if ($error === null) {
-                        require_once __DIR__ . '/../../models/signUpModel.php';
-                        require_once __DIR__ . '/../../models/forgottenPwdModel.php';
 
-                        if (!\SignUpModel::emailExists($postData['form']['email'])) {
-                            $error = "<p class='error'>Aucun compte associé à cet email</p>";
+                        if (!UserModel::emailExists($postData['form']['email'])) {
+                            // On ne révèle aucune information sur si le compte existe
+                            $success = "<p class='success'>Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail</p>";
                         } else {
                             // On génère un token cryptographiquement sûr
                             $bytes = random_bytes(32);
@@ -119,7 +117,7 @@ class forgottenPwdController {
                             $hashed_token = password_hash($token, PASSWORD_DEFAULT);
 
                             // On sauvegarde (token|email) dans la BD
-                            $reussite = \ForgottenPwdModel::saveToken($hashed_token, $postData['form']['email']);
+                            $reussite = UserModel::saveToken($hashed_token, $postData['form']['email']);
 
                             if ($reussite) {
                                 // On envoie un email avec le lien de réinitialisation
@@ -142,7 +140,7 @@ class forgottenPwdController {
 
                                 $envoie = mail($to, $subject, $message, $headers);
                                 if ($envoie) {
-                                    $success = "<p class='success'>Un email a été envoyé, veuillez vérifier votre boîte mail</p>";
+                                    $success = "<p class='success'>Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail</p>";
                                 } else {
                                     $error = "<p class='error'>Une erreur est survenue lors de l'envoie de l'email, veuillez réessayer</p>";
                                 }
@@ -158,7 +156,6 @@ class forgottenPwdController {
         }
 
         // On affiche la vue de mot de passe oublié
-        $path = 'src\\views\\user\\forgottenPwdView';
-        (new $path())->show($success, $error, $get_token);
+        (new ForgottenPwdView())->show($success, $error, $get_token);
     }
 }
