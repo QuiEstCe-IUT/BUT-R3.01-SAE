@@ -52,9 +52,9 @@ PARTIE 3 : Gestion de projet
 Etudes des besoins
 
 
-1. Léa – "Une enfant ayant des difficultés" 
+Borislava – "Une enfant ayant des difficultés" 
 
- Profil : 7 ans, elle sait lire mais a des difficultés de compréhensions notamment en vocabulaire,mais elle veut jouer comme tout le monde.
+ Profil : 7 ans, elle sait lire mais a des difficultés de compréhension notamment en vocabulaire,mais elle veut jouer comme tout le monde.
 Ses besoins :
       -  Avoir des visuels simples et bien clairs.
       -  Un jeu avec des concepts dynamiques pour pas qu'elle arrête de jouer
@@ -63,7 +63,7 @@ Ses restrictions :
 - Vocabulaire limitée : Elle n’a pas un grand vocabulaire
 - Fait des erreurs : Elle baisse les mauvais clapets sans faire exprès et ça ruine toute sa partie.
 
-2.  Gérard– "Un senior avec des baisses de vision" 
+2.  Gustave – "Un senior avec des baisses de vision" 
 -	Profil : 70 ans, il veut partager un moment avec ses petits-enfants mais sa vue et sa dextérité ne sont plus aussi bonnes qu'avant.
 - Ses besoins :
 - Des visuels très lisibles avec de grands contrastes de couleurs.
@@ -100,17 +100,34 @@ Ses restrictions :
 Environnement instable : Joue dans des lieux où le vent ou les secousses font tomber les pièces.
 Contrainte de temps : Doit pouvoir enchaîner des parties très courtes (5 à 10 minutes maximum).
 Les Besoins Fonctionnels (UI / Métier)
-Les besoins fonctionnels regroupent l'ensemble des fonctionnalités logicielles et des interactions de l'interface utilisateur. Tout d'abord, la plateforme doit proposer un système de cartes et de thématiques modulaires. Le site doit permettre de choisir différents decks de personnages (classique, thèmes personnalisés, vocabulaire adapté) ou même de créer ses propres grilles, répondant ainsi au besoin de renouvellement des joueurs experts et à l'usage pédagogique des enseignants. En complément, une interface d'aide au vocabulaire intégrée doit permettre d'afficher des infobulles, des pictogrammes ou une assistance vocale sur chaque attribut physique au survol ou au clic, afin d'aider les utilisateurs ayant des difficultés de compréhension ou d'apprentissage de la langue.
-De plus, l'application doit offrir un moteur de règles configurable et des modes de jeu variés. Le site doit gérer aussi bien le mode multijoueur en ligne (1v1 ou en équipe), un mode solo contre une IA, qu'un mode "expert" intégrant des contraintes de questions logiques. Enfin, le système doit intégrer une validation intelligente des coups et une sécurité anti-erreur. L'algorithme peut proposer un système de confirmation avant de retourner une carte ou avertir le joueur s'il s'apprête à faire une erreur logique manifeste par rapport aux questions précédentes, évitant ainsi de ruiner la partie.
+Les besoins fonctionnels vont regrouper les fonctionnalités logicielles et interactions de l'interface utilisateur. 
+Tout d'abord,le site doit permettre de choisir différents decks de personnages (classique, thèmes personnalisés, vocabulaire adapté) ou même de créer ses propres grilles, répondant ainsi au besoin de renouvellement des joueurs experts et à l'usage pédagogique des enseignants. 
+De plus, l'application doit avoir la possibilté de changer les règles ainsi qu’avoir plusieurs  modes de jeu afin que le jeu ne soit pas répétitif. Le site doit gérer aussi bien le mode multijoueur en ligne (1v1 ou en équipe). Enfin, notre site doit intégrer doit permettre lorsqu’on joue de ne pas avoir d’erreur selon ce que l’on tape au clavier.
+
 Les Besoins Non-Fonctionnels (UX / Technique)
-Les besoins non-fonctionnels définissent les critères de performance, d'accessibilité numérique et d'expérience utilisateur du site. En premier lieu, la conformité aux normes d'accessibilité numérique (A11y / RGAA) constitue une priorité absolue. Le site doit offrir un design Responsive adaptable à tous les écrans, des contrastes de couleurs élevés (norme WCAG AA minimum), une compatibilité avec les lecteurs d'écran ainsi qu'un mode "DYS" (police adaptée) et un mode "Forte Lisibilité" pour les utilisateurs seniors ou déficients visuels.
-En second lieu, l'optimisation mobile et l'usage en réseau instable sont essentiels pour garantir un usage fluide en déplacement. L'application web doit être légère, rapide à charger et capable de gérer les micro-coupures de connexion (grâce à une architecture Progressive Web App / PWA) pour permettre de jouer facilement sur smartphone dans les transports. Enfin, le site doit garantir une ergonomie ultra-simple et un parcours utilisateur fluide. La création de partie ou l'accès à une salle de jeu via un simple code ou QR code doit se faire sans inscription obligatoire en moins de deux clics, garantissant un lancement instantané.
-Priorisation des Besoins (Méthode MoSCoW)
-Afin d'organiser le développement technique du site, les fonctionnalités sont hiérarchisées selon la méthode MoSCoW. Dans les exigences indispensables (Must have), on retrouve l'accessibilité de l'interface (contrastes, responsive, police lisible), le système de jeu de base à deux joueurs (ou contre IA) et la validation sécurisée des clics pour éviter les erreurs de manipulation. Les fonctionnalités importantes (Should have) regroupent l'intégration des pictogrammes d'aide au vocabulaire, le système de création de partie rapide par lien/QR code et la possibilité de changer de deck de cartes.
-Dans la catégorie des fonctionnalités secondaires (Could have), on place le développement du mode multijoueur par équipes, le générateur de decks personnalisés par les utilisateurs et les statistiques de partie. Enfin, dans les éléments exclus de la première version (Won't have), il est décidé de ne pas développer de système de chat vocal intégré ni de boutique micro-transactions complexes, afin de garder une plateforme épurée, sécurisée pour les enfants et rapide à charger.
+Les besoins non-fonctionnels vont être principalement les critères de performance et d’expérience utilisateur du site. 
+L'application web doit être légère, rapide à charger et capable de gérer les possibles erreurs de connexion afin de pouvoir jouer facilement sur smartphone dans les transports. Enfin, le site doit avoir une ergonomie simple et un parcours utilisateur fluide. 
+La création de partie ou l'accès à une salle de jeu via un simple code ou QR code doit se faire sans inscription obligatoire en moins de deux clics, garantissant un lancement instantané.
+
+
+
+
+Priorisation des Besoins 
+Afin d'organiser le développement technique du site, les fonctionnalités sont hiérarchisées selon la méthode MoSCoW. 
+Dans un premier temps,dans le MUST HAVE ,on va retrouver l'accessibilité de l'interface (contrastes, responsive, police lisible), le système de jeu de base à deux joueurs (ou contre IA) ainsi que la validation sécurisée des clics pour éviter les erreurs de manipulation. 
+
+Ensuite, pour les fonctionnalités importantes SHOULD HAVE ,cela rassemble le système de création de partie rapide par lien/QR code et la possibilité de changer de deck de cartes.
+Pour ce qui des fonctionnalités secondaires COULD HAVE on va mettre en place en priorité  le développement du mode multijoueur le générateur de decks personnalisés par les utilisateurs et les statistiques de partie. 
+
+Enfin, dans les éléments exclus de la première version WON’T HAVE 
+
+
 Synthèse des Contraintes Projet
-Le développement de ce site web doit composer avec quatre contraintes techniques et d'usage majeures. La première est une contrainte d'accessibilité UI/UX intergénérationnelle, l'interface devant être aussi intuitive pour un enfant de 7 ans apprenant à naviguer que pour un senior peu familier avec les outils numériques. La deuxième concerne le rendement technique et la connectivité, le site devant fonctionner parfaitement sur des smartphones d'entrée de gamme et supporter des connexions mobiles instables (4G/5G en déplacement).
-La troisième contrainte est d'ordre cognitif et pédagogique : l'interface ne doit pas surcharger l'utilisateur d'informations visuelles ou de menus complexes pour ne pas déconcentrer les joueurs ayant des troubles de l'attention ou du vocabulaire. Enfin, une contrainte de sécurité et de conformité (RGPD) s'impose, le site accueillant un public jeune : aucune donnée personnelle sensible ne doit être stockée inutilement et la navigation doit rester totalement sécurisée et sans publicités intrusives.
+Le développement de ce site web doit composer avec quatre contraintes techniques et d'usage majeures. La première est une contrainte d'accessibilité UI/UX  avec une interface devant être aussi intuitive pour un enfant de 7 ans apprenant à naviguer que pour un senior découvrant et ayant des difficultés avec les outils informatiques. 
+
+La deuxième contrainte va concerner le rendement technique et la connectivité, le site devant fonctionner parfaitement sur les téléphones. 
+La troisième contrainte est d'ordre cognitif et pédagogique : l'interface ne doit pas surcharger l'utilisateur d'informations visuelles ou de menus complexes pour ne pas déconcentrer les joueurs ayant des troubles de l'attention ou du vocabulaire. 
+Enfin, une contrainte de sécurité et de conformité (RGPD) s'impose, le site accueillant un public jeune : aucune donnée personnelle sensible ne doit être stockée inutilement et la navigation doit rester totalement sécurisée et sans publicités intrusives.
 
 
 
@@ -128,18 +145,6 @@ La troisième contrainte est d'ordre cognitif et pédagogique : l'interface ne d
 
 
 
-
-
-
-
-	
-
-
-
-
-
-
-		
 Gestion de projet
 
 Le projet adopte la méthodologie Agile, en s'appuyant principalement sur la méthode Scrum.
@@ -151,7 +156,7 @@ Scrum Master (SM) : Facilitateur de l'équipe. Il s'assure du respect de la mét
 Équipe Technique (Dev / Design) : Composée de développeurs (Front-end/Back-end), d'un designer UI/UX (expert en accessibilité A11y) et d'un ingénieur Qualité/Testeur. Elle est responsable de la conception, de la réalisation technique et de la qualité des livrables.
 Panneau d'Utilisateurs & Parties Prenantes (Stakeholders) : Représentants réels de nos personas (enseignante, parents d'enfants dyslexiques/en difficulté, seniors, joueurs chevronnés). Ils participent aux phases de tests d'usabilité et aux démonstrations pour valider l'adéquation du site avec le terrain.
 
-
+ Premier sprint (
 
 
 
@@ -170,11 +175,17 @@ Semaine 7 (Tester) : Recette globale, corrections de bugs, tests de sécurité e
 Semaine 8 (Finaliser) : Intégration finale, préparation du support de démonstration et soutenance du projet. Jalon : Application finale livrée et opérationnelle.
 L'ensemble des activités est répertorié au sein d'un backlog d'équipe hiérarchisé, regroupant l'ensemble des tâches fonctionnelles et techniques (du maquetage à la recette). Afin de garantir l'alignement continu entre les développements et les attentes initiales, le cahier des charges fait l'objet d'une actualisation contrôlée : toute modification d'exigence identifiée au cours des sprints est formalisée, évaluée en comité de projet et consignée dans un historique des révisions.
 
-Nous allons donc démmarer
+Nous allons donc démarrer par le premier sprint soit du 12 Octobre 2026 au 21 Octobre 2026:
+
+Daily meeting du 20/10/26 : 
+Relecture de l’architecture,Mise au point avec le client,problème à fixer notamment sur l’autoloader qui n’est pas utilisé dans certains endroit et doit être automatisé de partout. Nous avons de plus un problème de sécurité à régler. Donc pour la répartition des tâches : 
+-
 
 
+Daily meeting du 21/10/26 : 
 
-
+rien.
+non 
 
 
 
