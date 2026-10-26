@@ -95,48 +95,26 @@ PARTIE 2 : Présentations des préparations et besoins
 7: Sitographie,Bibliographie et Annexes
  ------------------------------------------------------------------------------------------------
 
+PARTIE 1 :
+
+Recueil de besoins et questionnaire:
+
+
+
+PARTIE 2 :
+
 Présentation du concept:
 
 Notre projet consiste en la chose suivante: Créer une version du jeu de société culte Qui-est-ce? en ligne. Cependant vous vous en doutez ce n’est pas tout même si la conception d’un tel jeu jouable en ligne directement semble déjà une tâche intéressante nous allons devoir revisiter le jeu pour un contexte IUT. Les cases personnages devront être des têtes connues au sein de l’IUT donc nous parlons ici du staff des enseignants et possiblement d’élèves. Puis nous devrons modifier leur visage à l’aide d’une IA locale afin d’assurer la sécurisation de leur image et ainsi créer un jeu unique et amusant où il faudra s’amuser à reconnaître ces têtes familières. 
+
+Organisation:
+
 Tout d’abord avant de passer à la réalisation de ce projet il nous a fallu nous poser des questions clés et nous fixer des objectifs précis:
 -Conception du site
 -Typiquement à quoi va consister le jeu et comment il va fonctionner (système de tours comment poser les questions ou deviner le bon visage)
 -Quel genre de contrat allons nous devoir créer afin de collecter des signatures auprès de nos enseignants et camarades de classes en respectant le droit à l’image
 -Comment nous allons trouver ces personnes
-Et surtout le point le plus important: comment nous allons organiser tout ça sans se perdre et maximiser notre travail
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Et surtout le point le plus important: comment nous allons organiser tout ça sans se perdre et maximiser notre travail.
 
 Mercredi 14 Octobre:
 
@@ -167,6 +145,7 @@ Jeudi 15 Octobre:
 Nous avons demandé à plusieurs professeurs s’ils souhaitaient faire partie du jeu et avons réussi à obtenir plus de participants. Parmi ceux-ci nous avons la confirmation de Monsieur Olivier Gérard mais aussi de Monsieur Solminihac, Monsieur Guyot, Madame … et Madame …, les deux enseignantes d’anglais. Pour l’instant il ne s’agit que d’une demande, les papiers officiels requis pour la collecte des signatures étant toujours en cours de création ainsi que la version en ligne qui sera disponible sur notre site par la suite.
 
 Nous avons également fait une petite réunion avec notre client pour discuter du projet, des améliorations possibles de l’architecture du MVC actuel ainsi que des fonctionnalités qui pourraient être ajoutées. Suite à cela nous avons pu discerner les erreurs comme par exemple certains fichiers qu’il faudrait mieux déplacer ou encore des contrôleurs à combiner pour une meilleure gestion ainsi que des pistes pour de futures améliorations qui ont donc été rajoutées à notre trello.
+
 Mardi 20 Octobre:
 
 Suite aux suggestions de notre client Audren a donc modifié le util.php qui n’était pas utilisé correctement c’était un layout dans les vues ainsi que d’autres petites erreurs cités le jour précédent. Avec tous ces changements le CI des tests php Units ne fonctionnait plus et cela est lié au fait que certains chemins de fichiers avaient changé donc Lucas s’est occupé de les modifier et a donc réglé ce problème.
@@ -175,4 +154,14 @@ L’après midi nous avons eu une autre rencontre avec notre client Monsieur Oli
 
 Mercredi 21 Octobre:
 
+Audren s’est ce matin occupé de fixer l’autoloader et à transformer les modèles en rapport avec les users en un unique userModel
+ tandis que Lucas et Thomas se sont occupés de rajouter leur rapports dans l’état actuel dans un nouveau dossier docs sur le repo. Dans l’après midi Lucas a modifié les tests en retirant les require qui n’étaient plus requis grâce à l’autoloader encore modifié.
+De plus, Audren s’est occupé de fixer les urls pour les tokens que nous ne souhaitons pas afficher dans ce dit url.
 
+Lundi 26 Octobre:
+
+Nous nous sommes regroupés autour d’un appel sur discord afin de discuter de la répartition des tâches lors de la modification du code pour ainsi créer ce système de jeu. Nous avons identifié les tâches suivantes à effectuer:
+Gérer avec la base de données et les cartes. Pour la répartition des cartes lors de chaque partie nous avions deux options. Soit un fonctionnement par seeds donc des plateaux pré faits avec des cartes définies à l’avance pour chacune de ces seeds et donc à chaque partie sera assigné une seed.
+Soit chaque carte a un identifiant et seront organisées en groupe suivant les modificateurs appliqués ou suivant la personne afin de ne pas sélectionner deux fois la même personne dans la partie (ce problème deviendra un avantage lorsque l’on voudra spécifiquement choisir une seule personne pour un mode de jeu spécial par exemple) et à chaque partie des cartes seront sélectionnées aléatoirement créant des plateaux presque toujours uniques.
+Nous avons décidé de choisir l’aléatoire et ce sera Mathias qui s’en occupera ainsi que le formulaire d’inscription pour la participation.
+De son côté Audren s’occupera des contrôleurs et Lucas et Thomas s’occupent respectivement de mettre à jour leurs rapports (Lucas rapport SAE et Thomas rapport intermédiaire) et se répartissent aussi la création des Views.
