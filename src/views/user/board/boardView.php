@@ -33,6 +33,7 @@ class BoardView
                                 </article>
                             <?php endforeach; ?>
                         </section>
+                        <?php $this->formulaireQuestion(); ?>
                     </main>
                     <footer><?php $layout->end_page(); ?></footer>
                 </div>
@@ -41,4 +42,21 @@ class BoardView
         </html>
         <?php
     }
+
+    private function formulaireQuestion(): void
+    {
+        ?>
+        <form method="post" action="/user/board">
+            <label for="question">Écris ta question :</label>
+            <textarea
+                id="question"
+                name="question"
+                required
+                maxlength="250"
+            ></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <?php
+    }
+
 }
