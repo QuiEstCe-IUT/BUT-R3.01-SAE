@@ -16,7 +16,7 @@ class LobbyView {
         $path = 'src\\views\\_layout';
         $layout = new $path();
 
-        $rooms = $rooms ?? [];
+
         ?>
         <!DOCTYPE html>
         <html lang="fr">
