@@ -1,23 +1,22 @@
 <?php
+
 namespace src\views;
 
 /**
- * View for the player win page.
+ * View for the lobby page.
  */
-class PlayerWinView {
+class LobbyView {
     /**
-     * Display the view when the player wins.
+     * Display the view of the lobby page.
      *
-     * @param string $winnerName Name of the winner
-     * @param string $secretCharacter The character that had to be guessed
+     * @param array $rooms List of available rooms
      * @return void
      */
-    public function show($winnerName, $secretCharacter) {
+    public function show($rooms) {
         $path = 'src\\views\\_layout';
         $layout = new $path();
 
-        $winnerName = $winnerName ?? 'Joueur';
-        $secretCharacter = $secretCharacter ?? 'Personnage Mystère';
+        $rooms = $rooms ?? [];
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -26,9 +25,8 @@ class PlayerWinView {
 
                 <link rel="stylesheet" href="assets/styles/_default.min.css">
                 <link rel="stylesheet" href="assets/styles/_navigation.min.css">
-                <link rel="stylesheet" href="assets/styles/gameStyle.min.css">
+                <link rel="stylesheet" href="assets/styles/lobbyStyle.min.css">
                 <?php $layout->start_page(); ?>
-                <title>Qui est-ce ? - Victoire !</title>
             </head>
             <body>
                 <div id="main-container">
@@ -38,21 +36,41 @@ class PlayerWinView {
 
                     <div id="right-container">
                         <main>
-                            <div class="cont" style="text-align: center; padding: 40px 20px;">
-                                <div class="form_bg" style="max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 8px;">
-                                    <h1 style="color: #2a2c2c; font-size: 2.5em; margin-bottom: 10px;"> Vous avez gagné ! </h1>
-                                    <p style="font-size: 1.2em; color: var(--color_link); margin-bottom: 20px;">
-                                        Félicitations <strong style="color: #2a2c2c;"><?= htmlspecialchars($winnerName) ?></strong> !
-                                    </p>
-                                    
-                                    <div style="background: #f9f9f9; padding: 15px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 30px;">
-                                        <p style="margin: 0; font-size: 1em; color: #555;">Le personnage mystère était bien :</p>
-                                        <h2 style="margin: 10px 0 0 0; color: #2a2c2c; font-size: 1.8em;"><?= htmlspecialchars($secretCharacter) ?></h2>
+                            <div class="cont">
+                                <h1>🔍 Qui est-ce ? - Salons</h1>
+                                <p style="margin:5px 0 20px 0; color:var(--color_link);">Rejoignez un salon ou créez une partie pour deviner le personnage mystère !</p>
+
+                                <div class="lobby-grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                    <!-- Formulaire de création de salon -->
+                                    <div class="form_bg" style="padding: 20px; flex: 1; min-width: 280px;">
+                                        <h3 style="margin:0 0 15px 0; color:#2a2c2c;">Créer un salon</h3>
+                                        <form action="index.php?action=lobby" method="POST">
+                                            <div style="margin-bottom: 15px;">
+                                                <label for="room_name" style="display:block; margin-bottom:5px; font-size:0.9em;">Nom de la partie</label>
+                                                <input type="text" id="room_name" name="room_name" placeholder="Ex: Partie entre amis" required style="width: 100%; padding: 8px; box-sizing: border-box;">
+                                            </div>
+                                            <button type="submit" class="link btn-page" style="width: 100%; cursor: pointer;">Créer et lancer</button>
+                                        </form>
                                     </div>
 
-                                    <div style="display: flex; gap: 15px; justify-content: center;">
-                                        <a href="index.php?action=lobby" class="link btn-page" style="text-decoration: none; padding: 10px 20px;">Retour au Lobby</a>
-                                        <a href="index.php?action=game" class="link btn-page" style="text-decoration: none; padding: 10px 20px; background-color: #2a2c2c; color: #fff;">Rejouer une partie</a>
+                                    <!-- Liste des salons disponibles -->
+                                    <div class="form_bg" style="padding: 20px; flex: 2; min-width: 300px;">
+                                        <h3 style="margin:0 0 15px 0; color:#2a2c2c;">Salons disponibles</h3>
+                                        <?php if (empty($rooms)): ?>
+                                            <p>Aucun salon disponible pour le moment. Créez-en un pour commencer !</p>
+                                        <?php else: ?>
+                                            <div class="rooms-list" style="display: flex; flex-direction: column; gap: 10px;">
+                                                <?php foreach ($rooms as $room): ?>
+                                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #fff; border-radius: 4px; border: 1px solid #ddd;">
+                                                        <div>
+                                                            <h4 style="margin:0; color:#2a2c2c;"><?= htmlspecialchars($room['name']) ?></h4>
+                                                            <p style="margin:5px 0 0 0; font-size:0.85em; color:var(--color_link);">Statut : En attente d'un adversaire</p>
+                                                        </div>
+                                                        <a href="game.php?room_id=<?= $room['id'] ?>" class="link btn-page" style="text-decoration: none; padding: 5px 15px;">Rejoindre</a>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
