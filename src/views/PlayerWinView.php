@@ -1,4 +1,5 @@
 <?php
+
 namespace src\views;
 
 /**
@@ -15,9 +16,6 @@ class PlayerWinView {
     public function show($winnerName, $secretCharacter) {
         $path = 'src\\views\\_layout';
         $layout = new $path();
-
-        $winnerName = $winnerName ?? 'Joueur';
-        $secretCharacter = $secretCharacter ?? 'Personnage Mystère';
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -46,7 +44,7 @@ class PlayerWinView {
                                     </p>
                                     
                                     <div style="background: #f9f9f9; padding: 15px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 30px;">
-                                        <p style="margin: 0; font-size: 1em; color: #555;">Le personnage mystère était bien :</p>
+                                        <p style="margin: 0; font-size: 1.em; color: #555;">Le personnage mystère était bien :</p>
                                         <h2 style="margin: 10px 0 0 0; color: #2a2c2c; font-size: 1.8em;"><?= htmlspecialchars($secretCharacter) ?></h2>
                                     </div>
 
