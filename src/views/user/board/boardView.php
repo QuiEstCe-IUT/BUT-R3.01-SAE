@@ -40,15 +40,15 @@ class BoardView
                                 break;
 
                             case 'attente_question':
-                                $this->AdvEcritQuestion();
+                                $this->advEcritQuestion();
                                 break;
 
                             case 'attente_reponse':
-                                $this->AdvRepondQuestion();
+                                $this->advRepondQuestion();
                                 break;
 
                             case 'choix_tour':
-                                $this->ChoixProchaineQuestionDeviner();
+                                $this->choixProchaineQuestionDeviner();
                                 $this->formulaireReponse($characters);
                                 break;
 
@@ -56,11 +56,11 @@ class BoardView
                                 if ($question === null) {
                                     throw new \InvalidArgumentException('La question est requise pour cette phase.');
                                 }
-                                $this->RepondreQuestion($question);
+                                $this->repondreQuestion($question);
                                 break;
 
                             case 'attente_elimination':
-                                $this->AdvEliminePerso();
+                                $this->advEliminePerso();
                                 break;
 
                             default:
@@ -93,21 +93,21 @@ class BoardView
     }
 
     
-    private function AdvEcritQuestion(): void
+    private function advEcritQuestion(): void
     {
         ?>
         <p>L'adversaire écrit sa question</p>
         <?php
     }
 
-    private function AdvRepondQuestion(): void
+    private function advRepondQuestion(): void
     {
         ?>
         <p>L'adversaire répond à la question</p>
         <?php
     }
 
-    private function ChoixProchaineQuestionDeviner(): void
+    private function choixProchaineQuestionDeviner(): void
     {
         ?>
         <form method="post" action="/user/board">
@@ -135,7 +135,7 @@ class BoardView
         <?php
     }
 
-    private function RepondreQuestion(string $question): void
+    private function repondreQuestion(string $question): void
     {
     ?>
     <section>
@@ -155,7 +155,7 @@ class BoardView
     <?php
     }
 
-    private function AdvEliminePerso(): void
+    private function advEliminePerso(): void
     {
         ?>
         <p>L'adversaire élimine des personnages</p>
