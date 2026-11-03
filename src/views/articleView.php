@@ -1,6 +1,8 @@
 <?php
 namespace src\views;
 
+use src\views\_Layout;
+
 /**
  * View for the article page.
  */
@@ -11,8 +13,7 @@ class ArticleView {
      * @return void
      */
     public function show($articles, $totalPages, $currentPage) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
 
         $articles = $articles ?? [];
         $totalPages = $totalPages ?? 1;

@@ -12,8 +12,7 @@ class ForgottenPwdView {
      * @return void
      */
     public function show($success, $error, $get_token) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">

@@ -1,5 +1,5 @@
 <?php
-namespace src\views\user\board;
+namespace src\views\board;
 
 use src\views\_Layout;
 
