@@ -5,7 +5,7 @@ use src\views\_Layout;
 
 class BoardView
 {
-    public function show(array $characters): void
+    public function show(array $characters, string $phase, ?string $question = null): void
     {
         $layout = new _Layout();
         ?>
@@ -33,7 +33,40 @@ class BoardView
                                 </article>
                             <?php endforeach; ?>
                         </section>
-                        <?php $this->formulaireQuestion(); ?>
+                        <?php
+                        switch ($phase) {
+                            case 'poser_question':
+                                $this->formulaireQuestion();
+                                break;
+
+                            case 'attente_question':
+                                $this->AdvEcritQuestion();
+                                break;
+
+                            case 'attente_reponse':
+                                $this->AdvRepondQuestion();
+                                break;
+
+                            case 'choix_tour':
+                                $this->ChoixProchaineQuestionDeviner();
+                                $this->formulaireReponse($characters);
+                                break;
+
+                            case 'repondre_question':
+                                if ($question === null) {
+                                    throw new \InvalidArgumentException('La question est requise pour cette phase.');
+                                }
+                                $this->RepondreQuestion($question);
+                                break;
+
+                            case 'attente_elimination':
+                                $this->AdvEliminePerso();
+                                break;
+
+                            default:
+                                throw new \InvalidArgumentException('Phase de jeu inconnue.');
+                        }
+                        ?>
                     </main>
                     <footer><?php $layout->end_page(); ?></footer>
                 </div>
@@ -82,7 +115,6 @@ class BoardView
         </form>
         <?php
     }
-
         
 
     private function formulaireReponse(array $characters): void
@@ -103,5 +135,31 @@ class BoardView
         <?php
     }
 
+    private function RepondreQuestion(string $question): void
+    {
+    ?>
+    <section>
+        <h2>Question posée</h2>
+        <p><?= htmlspecialchars($question, ENT_QUOTES, 'UTF-8') ?></p>
+        <form method="post" action="/board/answerQuestion">
+            <label for="reponse">Écris ta réponse :</label>
+                <textarea
+                    id="reponse"
+                    name="form[reponse]"
+                    required
+                    maxlength="250"
+                ></textarea>
+                <button type="submit">Envoyer</button>
+        </form>
+    </section>
+    <?php
+    }
+
+    private function AdvEliminePerso(): void
+    {
+        ?>
+        <p>L'adversaire élimine des personnages</p>
+        <?php
+    }
 
 }
