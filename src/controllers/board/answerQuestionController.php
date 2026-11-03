@@ -1,6 +1,8 @@
 <?php
 namespace src\controllers\board;
 
+use src\views\board\BoardView;
+
 /**
  * Controller to answer a question from the opponent or wait until the opponent answered our question
  */
@@ -55,7 +57,7 @@ class AnswerQuestionController {
             } else {
                 // On affiche le plateau avec un texte disant que l'autre joueur est en train de répondre à la question
                 // TODO: Afficher view
-
+                
             }
         } else {
             // On redirige vers la page de connection

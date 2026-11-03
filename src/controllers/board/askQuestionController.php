@@ -1,6 +1,8 @@
 <?php
 namespace src\controllers\board;
 
+use src\views\board\BoardView;
+
 /**
  * Controller to ask question to the opponent or wait until the opponent asked a question.
  */

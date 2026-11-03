@@ -2,6 +2,8 @@
 
 namespace src\views;
 
+use src\views\_Layout;
+
 /**
  * View for the lobby page.
  */
@@ -13,10 +15,7 @@ class LobbyView {
      * @return void
      */
     public function show($rooms) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
-
-
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">

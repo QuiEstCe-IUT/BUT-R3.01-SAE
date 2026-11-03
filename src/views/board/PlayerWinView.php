@@ -1,6 +1,8 @@
 <?php
 
-namespace src\views;
+namespace src\views\board;
+
+use src\views\_Layout;
 
 /**
  * View for the player win page.
@@ -14,8 +16,7 @@ class PlayerWinView {
      * @return void
      */
     public function show($winnerName, $secretCharacter) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">

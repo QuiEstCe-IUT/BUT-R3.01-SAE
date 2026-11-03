@@ -12,8 +12,7 @@ class LoginView {
      * @return void
      */
     public function show($error) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">

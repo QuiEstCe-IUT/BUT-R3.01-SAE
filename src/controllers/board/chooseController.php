@@ -1,6 +1,8 @@
 <?php
 namespace src\controllers\board;
 
+use src\views\board\BoardView;
+
 /**
  * Controller to simply choose which character you want to eliminate from your board
  */
