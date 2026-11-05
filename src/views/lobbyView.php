@@ -23,9 +23,8 @@ class LobbyView {
             <head>
                 <meta charset="UTF-8">
 
-                <link rel="stylesheet" href="assets/styles/_default.min.css">
-                <link rel="stylesheet" href="assets/styles/_navigation.min.css">
-                <link rel="stylesheet" href="assets/styles/lobbyStyle.min.css">
+                <link rel="stylesheet" href="assets/styles/LobbyView.css">
+     
                 <?php $layout->start_page(); ?>
             </head>
             <body>
