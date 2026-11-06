@@ -1,7 +1,7 @@
 <?php
 namespace src\controllers\user;
 
-use src\controllers\user\LogoutController;
+use src\controllers\user\LoginController;
 use src\models\UserModel;
 
 /**
