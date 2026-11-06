@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 require_once __DIR__ . '/../core/model.php';
 require_once __DIR__ . '/../src/models/loginModel.php';
 require_once __DIR__ . '/../src/models/signUpModel.php';
-require_once __DIR__ . '/../src/models/forgottenPwdModel.php';
+require_once __DIR__ . '/../src/models/forgotten_passwordModel.php';
 
 try {
     Model::checkConnection();
