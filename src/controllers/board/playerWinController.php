@@ -21,7 +21,9 @@ class ChooseController {
 
         // On vérifie que l'on est connecté
         if (isset($_SESSION['suid'])) {
-            if ($_SESSION['suid'])
+            if ($_SESSION['suid']) {
+                // Blabla
+            }
         } else {
             // On affiche simplement le nom du joueur
         }
