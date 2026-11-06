@@ -1,13 +1,13 @@
 <?php
 namespace src\controllers\user;
 
-use src\controllers\user\LoginController;
+use src\controllers\user\LogoutController;
 use src\models\UserModel;
 
 /**
  * Controller for handling user logout.
  */
-class LoginController {
+class LogoutController {
     /**
      * Executes the logout logic.
      *
