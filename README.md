@@ -101,7 +101,7 @@ Le site est alors accessible sur `http://localhost:8000`.
 | `home` | Page d'accueil |
 | `login` | Authentification (connexion) |
 | `signUp` | Inscription |
-| `forgottenPwd` | Mot de passe oublié |
+| `forgotten_password` | Mot de passe oublié |
 | `legalNotice` | Mentions légales |
 | `map` | Plan du site |
 
