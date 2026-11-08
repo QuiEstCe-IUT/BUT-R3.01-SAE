@@ -102,7 +102,7 @@ Contrainte de temps : Doit pouvoir enchaîner des parties très courtes (5 à 10
 Les Besoins Fonctionnels (UI / Métier)
 Les besoins fonctionnels vont regrouper les fonctionnalités logicielles et interactions de l'interface utilisateur. 
 Tout d'abord,le site doit permettre de choisir différents decks de personnages (classique, thèmes personnalisés, vocabulaire adapté) ou même de créer ses propres grilles, répondant ainsi au besoin de renouvellement des joueurs experts et à l'usage pédagogique des enseignants. 
-De plus, l'application doit avoir la possibilté de changer les règles ainsi qu’avoir plusieurs  modes de jeu afin que le jeu ne soit pas répétitif. Le site doit gérer aussi bien le mode multijoueur en ligne (1v1 ou en équipe). Enfin, notre site doit intégrer doit permettre lorsqu’on joue de ne pas avoir d’erreur selon ce que l’on tape au clavier.
+De plus, l'application doit avoir la possibilité de changer les règles ainsi qu’avoir plusieurs  modes de jeu afin que le jeu ne soit pas répétitif. Le site doit gérer aussi bien le mode multijoueur en ligne (1v1 ou en équipe). Enfin, notre site doit intégrer doit permettre lorsqu’on joue de ne pas avoir d’erreur selon ce que l’on tape au clavier.
 
 Les Besoins Non-Fonctionnels (UX / Technique)
 Les besoins non-fonctionnels vont être principalement les critères de performance et d’expérience utilisateur du site. 
@@ -143,39 +143,24 @@ Enfin, une contrainte de sécurité et de conformité (RGPD) s'impose, le site a
 
 
 
-
-
 Gestion de projet
 
-Le projet adopte la méthodologie Agile, en s'appuyant principalement sur la méthode Scrum.
-Ce choix se justifie par la nécessité d'adapter continuellement l'application aux besoins très variés des utilisateurs (enfants en difficulté, seniors, enseignants, gamers) identifiés dans nos personas. L'approche Agile permet de livrer rapidement des incréments logiciels fonctionnels, d'obtenir des retours utilisateurs très tôt dans le cycle de développement (notamment sur l'ergonomie et l'accessibilité UI/UX) et d'ajuster les fonctionnalités en fonction des contraintes techniques sans bloquer le projet.
+Pour ce projet de SAE d'une durée de 8 semaines, nous avons fait le choix d'adopter la méthodologie Agile, et plus particulièrement le cadre Scrum. Ce choix s'est imposé naturellement car nous devions adapter notre jeu à des profils d'utilisateurs très variés, allant des enfants en difficulté aux seniors, en passant par les enseignants et les joueurs chevronnés. L'approche Agile nous permet de progresser par étapes régulières, de livrer rapidement des versions fonctionnelles et d'ajuster notre travail en fonction des retours et des blocages techniques.
+Au sein de l'équipe, nous avons réparti les rôles pour travailler de façon organisée. Le Product Owner veille au respect des besoins des utilisateurs, gère le Backlog et définit les priorités tout en tenant compte de l'accessibilité et du RGPD. Le Scrum Master facilite le travail du groupe, s'assure du bon suivi de la méthode et aide à résoudre les problèmes d'organisation ou d'équipe. L'équipe technique s'occupe du développement front-end, back-end et de l'ergonomie des interfaces. Enfin, un panneau d'utilisateurs représentant nos différents personas participe aux phases de test pour vérifier que le jeu reste simple et adapté au terrain.
+Notre mode de collaboration repose sur un travail en Sprints d'une à deux semaines et sur des échanges très fréquents. Nous organisons des réunions régulières pour faire le point sur ce qui a été fait, répartir les tâches et identifier les blocages. À la fin de chaque étape, nous effectuons des démonstrations et des revues de projet avec notre client afin d'obtenir sa validation avant de passer aux fonctionnalités suivantes.
+Notre planning se découpe en cinq sprints principaux répartis sur les 8 semaines. Les semaines 1 et 2 sont consacrées à la conception des maquettes et de l'architecture MVC. Les semaines 3 et 4 permettent de développer le socle fonctionnel et le moteur de jeu pour obtenir une version Alpha. Lors des semaines 5 et 6, nous enrichissons le jeu avec les fonctionnalités avancées pour atteindre une version Bêta. La semaine 7 sert à effectuer les tests globaux et corriger les bugs, tandis que la semaine 8 est dédiée aux retouches finales et à la préparation de la soutenance.
+L'ensemble des tâches est consigné et suivi au travers d'un Backlog d'équipe sur GitHub. Le cahier des charges n'étant pas figé, toute nouvelle contrainte ou suggestion d'amélioration issue des réunions clients est discutée en équipe, réévaluée, puis directement intégrée dans le Backlog pour les sprints à venir.
 
-
-Product Owner (PO) : Garant de la vision du produit et des besoins utilisateurs. Il rédige les User Stories, définit les critères d'acceptation, gère et priorise le Backlog Produit (notamment en fonction des contraintes RGPD, d'accessibilité et de pédagogie).
-Scrum Master (SM) : Facilitateur de l'équipe. Il s'assure du respect de la méthodologie Agile, élimine les obstacles techniques ou organisationnels et veille à la bonne communication au sein du groupe.
-Équipe Technique (Dev / Design) : Composée de développeurs (Front-end/Back-end), d'un designer UI/UX (expert en accessibilité A11y) et d'un ingénieur Qualité/Testeur. Elle est responsable de la conception, de la réalisation technique et de la qualité des livrables.
-Panneau d'Utilisateurs & Parties Prenantes (Stakeholders) : Représentants réels de nos personas (enseignante, parents d'enfants dyslexiques/en difficulté, seniors, joueurs chevronnés). Ils participent aux phases de tests d'usabilité et aux démonstrations pour valider l'adéquation du site avec le terrain.
-
- Premier sprint (
-
-
-
-
-
-
-
-Dans le cadre de la réalisation de notre projet (SAE) sur une durée de 8 semaines, visant la livraison d'une application pleinement jouable et présentable à l'échéance finale, nous adoptons une démarche de gestion de projet structurée et professionnelle s'appuyant sur les méthodologies agiles (de type Scrum). Cette approche permet un développement incrémental, favorise la réactivité face aux imprévus techniques et garantit un suivi rigoureux de l'avancement des livrables tout au long du cycle de vie du projet.
-Méthodologie et organisation de l'équipe
-L'organisation de l'équipe repose sur une répartition claire des rôles et responsabilités : un Product Owner assure le cadrage fonctionnel, la gestion des priorités et la conformité aux exigences du cahier des charges ; un Scrum Master veille à l'application de la méthodologie, à la fluidité des processus et à la levée des points d'achoppement ; l'équipe technique de développement prend en charge la conception, la programmation et l'intégration ; enfin, les utilisateurs et intervenants externes participent aux phases de recette et de validation. Les modes de collaboration s'articulent autour de réunions de suivi périodiques, de revues d'étape à l'issue de chaque phase et de validations formelles pour autoriser le passage aux jalons suivants.
-Planification, jalons et gestion des exigences La feuille de route se décline en cinq phases majeures sur 8 semaines :
-Semaines 1 et 2 (Concevoir) : Analyse des besoins, définition des règles métier, réalisation des maquettes UI/UX et élaboration de l'architecture technique. Jalon : Validation des spécifications et de l'architecture.
-Semaines 3 et 4 (Développer) : Implémentation du socle fonctionnel, incluant la gestion des personnages, des joueurs et du moteur de partie. Jalon : Version alpha jouable en environnement de test.
-Semaines 5 et 6 (Enrichir) : Intégration des fonctionnalités avancées (IA locale, avatars, sécurité des données et optimisation ergonomique). Jalon : Version bêta complète.
-Semaine 7 (Tester) : Recette globale, corrections de bugs, tests de sécurité et contrôle qualité. Jalon : Version stable validée.
-Semaine 8 (Finaliser) : Intégration finale, préparation du support de démonstration et soutenance du projet. Jalon : Application finale livrée et opérationnelle.
-L'ensemble des activités est répertorié au sein d'un backlog d'équipe hiérarchisé, regroupant l'ensemble des tâches fonctionnelles et techniques (du maquetage à la recette). Afin de garantir l'alignement continu entre les développements et les attentes initiales, le cahier des charges fait l'objet d'une actualisation contrôlée : toute modification d'exigence identifiée au cours des sprints est formalisée, évaluée en comité de projet et consignée dans un historique des révisions.
 
 Nous allons donc démarrer par le premier sprint soit du 12 Octobre 2026 au 21 Octobre 2026:
+1er Sprint
+L'objectif principal de ce premier sprint était de poser des bases techniques solides et d'installer toute l'organisation de travail de l'équipe. Durant ces dix jours, nous devions nous assurer que la structure de notre code PHP était propre, que les outils de suivi sur GitHub étaient opérationnels et que la documentation initiale était rédigée.
+Sur le plan de l'architecture technique, nous avons d'abord mis en place le socle MVC initial . Après une première revue du code et des échanges avec notre client, nous avons procédé à une restructuration globale du MVC). Cela nous a permis d'assainir les contrôleurs, de nettoyer le fichier util.php qui était mal employé comme layout, et de regrouper les modèles liés aux utilisateurs au sein d'un unique UserModel. En parallèle, l'intégration complète de l'autoloader et la modification de l'arborescence ont nécessité un ajustement des tests automatisés avec la correction du script de tests PHPUnit..
+
+En ce qui concerne la gestion et la sécurité du projet, nous avons identifié et corrigé un problème d'exposition de données sensibles en veillant à ne plus laisser passer de tokens de sécurité directement dans les URL. Nous avons également commencé à préparer la collecte des participants (professeurs) pour le jeu et formalisé le questionnaire d'autorisation de signature d'image.
+Enfin, pour la partie organisationnelle et documentaire, après avoir brièvement testé Trello, nous avons fait le choix de centraliser directement tout notre backlog et nos issues sur notre dépôt GitHub. Nous avons commencé à rédiger le rapport intermédiaire pour faire le point sur nos choix fonctionnels, puis nous avons créé la branche docs sur GitHub afin d'y centraliser et de versionner l'ensemble de nos rapports et documents de travail.
+
+
 
 Daily meeting du 20/10/26 : 
 Relecture de l’architecture,Mise au point avec le client,problème à fixer notamment sur l’autoloader qui n’est pas utilisé dans certains endroit et doit être automatisé de partout. Nous avons de plus un problème de sécurité à régler. Donc pour la répartition des tâches : 
@@ -186,8 +171,17 @@ Daily meeting du 21/10/26 :
 
 rien.
 non 
+déplacer ici les trucs que Lucas a écrit
 
-
+Daily meeting du 03/11/26 : 
+Mathias :
+qqdqdq
+Lucas :
+Il a merge la boardView actuelle et a continué à créer les méthodes suivantes prévues.
+Thomas :
+Il a commencé à implémenter les vues PlayerView et LobbyView. Cela va permettre en les reliant aux contrôleurs de pouvoir avoir un lobby ainsi qu’un affichage de victoire fonctionnel.
+Audren :
+Il a commencé à implémenter la logique et le squelette des différents contrôleurs (answerQuestionController / askQuestionController / chooseController / boardController) pour les différentes méthodes de la page plateau.
 
 
 
