@@ -13,12 +13,12 @@ namespace {
     use PHPUnit\Framework\Attributes\CoversClass;
     use PHPUnit\Framework\Attributes\RunInSeparateProcess;
     use PHPUnit\Framework\TestCase;
-    use src\controllers\user\forgottenPwdController;
-	use src\views\user\ForgottenPwdView;
+    use src\controllers\user\forgotten_passwordController;
+	use src\views\user\Forgotten_passwordView;
 
-    #[CoversClass(forgottenPwdController::class)]
-	#[CoversClass(ForgottenPwdView::class)]
-    class ForgottenPwdControllerTest extends TestCase
+    #[CoversClass(forgotten_passwordController::class)]
+	#[CoversClass(Forgotten_passwordView::class)]
+    class Forgotten_passwordControllerTest extends TestCase
     {
 	    private array $previousPost;
 	    private array $previousGet;
@@ -45,7 +45,7 @@ namespace {
 	    {
 		    ob_start();
 		    try {
-			    (new forgottenPwdController())->execute();
+			    (new forgotten_passwordController())->execute();
 		    } finally {
 			    $html = ob_get_clean();
 		    }

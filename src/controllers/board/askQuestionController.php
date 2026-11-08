@@ -19,6 +19,7 @@ class AskQuestionController {
             $weAsk = false;
             $skip = false; // Si personne ne pose de question
             // TODO: Lire la BD
+            $characters = array();
 
             // plus personne ne pose de question, alors on passe à la réponse
             if ($skip == true) {
@@ -52,12 +53,11 @@ class AskQuestionController {
                     exit;
                 }
                 // Sinon on affiche le plateau avec l'entrée pour écrire la question
-                // TODO: Afficher view
+                (new BoardView())->show($characters, 'poser_question', null);
 
             } else {
                 // On affiche le plateau avec un texte disant que l'autre joueur est en train de poser une question
-                // TODO: Afficher view
-
+                (new BoardView())->show($characters, 'attente_question', null);
             }
         } else {
             // On redirige vers la page de connection

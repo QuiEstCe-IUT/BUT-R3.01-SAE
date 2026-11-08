@@ -5,21 +5,16 @@ use src\views\user\LoginView;
 use src\models\UserModel;
 
 /**
- * Controller for handling user login and logout.
+ * Controller for handling user login.
  */
 class LoginController {
     /**
-     * Executes the login/logout logic and renders the view.
+     * Executes the login logic and renders the view.
      *
      * @return void
      */
-    public function execute($action) : void {
+    public function execute() : void {
         $error = null;
-
-        // Gestion de la déconnexion
-        if (isset($action) && $action == 'logout') {
-            $_SESSION = array(); // On vide la variable superglobale session pour se déconnecter
-        }
         
         // On vérifie le contenu du formulaire d'authentification (si on est pas déjà connecté)
         if (isset($_POST['form']) && !isset($_SESSION['suid'])) {

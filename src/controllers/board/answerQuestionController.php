@@ -19,6 +19,8 @@ class AnswerQuestionController {
             $weAnswer = false;
             $skip = false; // Si personne ne réponds
             // TODO: Lire la BD
+            $characters = array();
+            $question = 'debug, question posé par l\'adversaire ici';
 
             // plus personne n'est en train de répondre, alors on passe à la vue pour éliminer des personnages
             if ($skip == true) {
@@ -52,12 +54,10 @@ class AnswerQuestionController {
                     exit;
                 }
                 // Sinon on affiche le plateau avec l'entrée pour répondre à la question
-                // TODO: Afficher view
-
+                (new BoardView())->show($characters, 'repondre_question', $question);
             } else {
                 // On affiche le plateau avec un texte disant que l'autre joueur est en train de répondre à la question
-                // TODO: Afficher view
-                
+                (new BoardView())->show($characters, 'attente_reponse', null);
             }
         } else {
             // On redirige vers la page de connection

@@ -19,6 +19,8 @@ class ChooseController {
             $weChoose = false;
             $skip = false; // Si personne ne choisis
             // TODO: Lire la BD
+            $characters = array();
+            $reponse = 'debug, question répondu par l\'adversaire ici';
 
             // plus personne ne choisis, alors on passe à la prochain question
             if ($skip == true) {
@@ -56,12 +58,10 @@ class ChooseController {
                 }
                 // Sinon on affiche le plateau avec le boutton pour dire qu'on a fini d'éliminer des personnages OU pour essayer de deviner qui est le perso choisis par l'autre joueur
                 // On affiche également un texte pour afficher la réponse à la question
-                // TODO: Afficher view
-
+                (new BoardView())->show($characters, 'choix_tour', $reponse);
             } else {
                 // On affiche le plateau avec un texte disant que l'autre joueur est en train d'éliminer des personnages
-                // TODO: Afficher view
-
+                (new BoardView())->show($characters, 'attente_elimination', null);
             }
         } else {
             // On redirige vers la page de connection
