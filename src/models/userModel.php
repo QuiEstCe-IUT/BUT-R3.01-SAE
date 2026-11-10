@@ -36,6 +36,22 @@ class UserModel extends Model {
     }
 
     /**
+     * Récupère toutes les informations d'un utilisateur par son identifiant.
+     *
+     * @param int $userId L'ID de l'utilisateur
+     * @return array<string, mixed>|false Les informations de l'utilisateur ou false si non trouvé
+     */
+    public static function getUserById(int $userId): array|false {
+        $sql = "SELECT user_id, login, first_name, last_name, email, hash_password, phone_number, adress
+                FROM users
+                WHERE user_id = :user_id";
+        $stmt = self::getPdo()->prepare($sql);
+        $stmt->execute([':user_id' => $userId]);
+
+        return $stmt->fetch();
+    }
+
+    /**
      * Enregistre un nouvelle utilisateur
      *
      * @param string $login Le login
