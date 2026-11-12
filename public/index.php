@@ -34,6 +34,22 @@ if (file_exists(__DIR__ . '/../src/controllers/' . $controllerName . 'Controller
         http_response_code(404);
         echo "Erreur 404.";
     }
+} else if (is_dir(__DIR__ . '/../src/controllers/' . $controllerName)) {
+    // On regarde si le controller avec le nom de l'action existe
+    if (file_exists(__DIR__ . '/../src/controllers/' . $controllerName . '/' . $action . 'Controller.php')) {
+        // On instancie la classe
+        $path = 'src\\controllers\\' . $controllerName . '\\' . $action . 'Controller';
+        $controller = new $path();
+
+        // On appelle la bonne méthode
+        if (method_exists($controller, 'execute')) {
+            $controller->execute();
+        } else {
+            // On retourne l'erreur
+            http_response_code(404);
+            echo "Erreur 404.";
+        }
+    }
 } else {
     // On retourne l'erreur
     http_response_code(404);

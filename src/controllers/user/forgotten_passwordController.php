@@ -1,7 +1,7 @@
 <?php
 namespace src\controllers\user;
 
-use src\views\user\ForgottenPwdView;
+use src\views\user\Forgotten_passwordView;
 use src\models\UserModel;
 
 /**
@@ -10,7 +10,7 @@ use src\models\UserModel;
  * This controller manages both the request to send a password reset link
  * via email, and the actual password reset process once a valid token is provided.
  */
-class ForgottenPwdController {
+class Forgotten_passwordController {
     /**
      * Executes the forgotten password logic.
      *
@@ -156,6 +156,6 @@ class ForgottenPwdController {
         }
 
         // On affiche la vue de mot de passe oublié
-        (new ForgottenPwdView())->show($success, $error, $get_token);
+        (new Forgotten_passwordView())->show($success, $error, $get_token);
     }
 }
