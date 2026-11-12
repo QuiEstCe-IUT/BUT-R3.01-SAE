@@ -1,6 +1,6 @@
 <?php
 
-namespace src\views;
+namespace src\views\board;
 
 /**
  * View for the lobby page.
@@ -50,7 +50,7 @@ class LobbyView {
                                         </p>
                                         
                                         <!-- Bouton pour quitter / annuler la partie -->
-                                        <form action="index.php?action=leave_room" method="POST">
+                                        <form action="/board/lobby?action=leave_room" method="POST">
                                             <input type="hidden" name="room_id" value="<?= htmlspecialchars($currentRoom['id']) ?>">
                                             <button type="submit" class="link btn-page" style="background-color: #d9534f; color: white; padding: 10px 25px; border: none; cursor: pointer;">
                                                 Quitter la partie
@@ -64,7 +64,7 @@ class LobbyView {
                                         <!-- Formulaire de création de salon -->
                                         <div class="form_bg" style="padding: 20px; flex: 1; min-width: 280px;">
                                             <h3 style="margin:0 0 15px 0; color:#2a2c2c;">Créer un salon</h3>
-                                            <form action="index.php?action=create_room" method="POST">
+                                            <form action="/board/lobby?action=create_room" method="POST">
                                                 <div style="margin-bottom: 15px;">
                                                     <label for="room_name" style="display:block; margin-bottom:5px; font-size:0.9em;">Nom de la partie</label>
                                                     <input type="text" id="room_name" name="room_name" placeholder="Ex: Partie entre amis" required style="width: 100%; padding: 8px; box-sizing: border-box;">
@@ -86,7 +86,7 @@ class LobbyView {
                                                                 <h4 style="margin:0; color:#2a2c2c;"><?= htmlspecialchars($room['name']) ?></h4>
                                                                 <p style="margin:5px 0 0 0; font-size:0.85em; color:var(--color_link);">Statut : En attente d'un adversaire</p>
                                                             </div>
-                                                            <a href="index.php?action=join_room&room_id=<?= $room['id'] ?>" class="link btn-page" style="text-decoration: none; padding: 5px 15px;">Rejoindre</a>
+                                                            <a href="/board/lobby?action=join_room&room_id=<?= $room['id'] ?>" class="link btn-page" style="text-decoration: none; padding: 5px 15px;">Rejoindre</a>
                                                         </div>
                                                     <?php endforeach; ?>
                                                 </div>
