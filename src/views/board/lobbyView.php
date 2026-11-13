@@ -21,15 +21,13 @@ class LobbyView {
                 <title>Qui est-ce ? - Salons</title>
             </head>
             <body>
-                <header>
-                    <?php $layout->navigation(); ?>
-                </header>
-
                 <main style="padding: 20px; text-align: center;">
                     <h1>Salons de jeu</h1>
                     <p style="color: var(--color_link); margin-bottom: 20px;">Rejoignez un salon ou créez-en un pour commencer.</p>
 
                     <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+
+                        
                         <!-- Créer un salon -->
                         <div style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 6px; flex: 1; min-width: 280px;">
                             <h3>Créer un salon</h3>
@@ -38,6 +36,7 @@ class LobbyView {
                                 <button type="submit" style="width: 100%; padding: 8px; cursor: pointer;">Créer</button>
                             </form>
                         </div>
+                        
 
                         <!-- Liste des salons -->
                         <div style="background: #fff; padding: 20px; border: 1px solid #ddd; border-radius: 6px; flex: 2; min-width: 300px;">
