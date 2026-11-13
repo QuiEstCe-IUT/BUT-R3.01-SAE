@@ -1,6 +1,6 @@
 <?php
 
-namespace src\views;
+namespace src\views\board;
 
 use src\views\_Layout;
 
