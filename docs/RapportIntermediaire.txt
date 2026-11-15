@@ -162,16 +162,35 @@ Enfin, pour la partie organisationnelle et documentaire, après avoir brièvemen
 
 
 
+
+
+
+
 Daily meeting du 20/10/26 : 
 Relecture de l’architecture,Mise au point avec le client,problème à fixer notamment sur l’autoloader qui n’est pas utilisé dans certains endroit et doit être automatisé de partout. Nous avons de plus un problème de sécurité à régler. Donc pour la répartition des tâches : 
 -
 
 
-Daily meeting du 21/10/26 : 
+Daily meeting du 21/10/26 :
+Audren : Il s'est occupé de fixer l'autoloader ce matin et a transformé les différents modèles liés aux utilisateurs en un unique userModel. De plus, il a configuré les URLs pour masquer les tokens qui ne doivent pas y figurer.
+Lucas : Il a ajouté son rapport dans l'état actuel au sein d'un nouveau dossier docs sur le dépôt. Dans l'après-midi, il a modifié les tests en supprimant les require qui n'étaient plus nécessaires grâce aux modifications apportées à l'autoloader.
+Thomas : Il s'est également occupé d'ajouter son rapport dans l'état actuel dans le nouveau dossier docs du dépôt, aux côtés de Lucas.
+Mathias : Absent ce jour
 
-rien.
-non 
-déplacer ici les trucs que Lucas a écrit
+
+Mercredi 21 Octobre:
+
+Audren s’est ce matin occupé de fixer l’autoloader et à transformer les modèles en rapport avec les users en un unique userModel
+ tandis que Lucas et Thomas se sont occupés de rajouter leur rapports dans l’état actuel dans un nouveau dossier docs sur le repo. Dans l’après midi Lucas a modifié les tests en retirant les require qui n’étaient plus requis grâce à l’autoloader encore modifié.
+De plus, Audren s’est occupé de fixer les urls pour les tokens que nous ne souhaitons pas afficher dans ce dit url.
+
+
+
+Sprint 2 : Implémentation du système de jeu et des vues
+Le deuxième sprint s'inscrit dans la continuité directe des fondations posées lors du premier. L'objectif principal de cette période est de passer de la structure de base à une application réellement interactive, en développant le moteur de jeu, les contrôleurs associés ainsi que les différentes vues nécessaires à l'expérience joueur.
+Sur le plan de l'interface et du développement Front-End, l'équipe a finalisé plusieurs composants majeurs de l'affichage. Nous avons développé la vue du plateau de jeu BoardView, la vue de la salle d'attente LobbyView ainsi que l'écran d'affichage de la victoire PlayerWinView. De plus, nous avons implémenté le système de sélection de personnage à travers l'ensemble pickView / pickController. Ces développements permettent d'obtenir un parcours utilisateur visuellement complet, du choix du personnage jusqu'à la fin de la partie.
+Côté logique métier et contrôleurs Back-End, l'effort s'est porté sur la gestion des interactions durant la partie. Les contrôleurs du plateau BoardController et le contrôleur de victoire WinController ont été complètement finalisés. Afin de maintenir un code propre et maintenable, un travail de refactorisation a été réalisé sur le point d'entrée principal de l'application index.php. Pour parfaire le flux du jeu, le développement du contrôleur de salle d'attente LobbyController ainsi que la modélisation des données de partie GameModel ont été engagés et sont actuellement en cours de finalisation.
+Enfin, concernant l'organisation et la préparation des tâches futures, nous avons mis à jour la documentation du projet et les rapports d'avancement. En parallèle, le travail sur le formulaire destiné à recueillir l'accord et les informations des enseignant FormulaireEnseignant a été formalisé dans le backlog et est prêt à être pris en charge pour les prochaines itérations.
 
 Daily meeting du 03/11/26 : 
 Mathias :
@@ -179,14 +198,25 @@ qqdqdq
 Lucas :
 Il a merge la boardView actuelle et a continué à créer les méthodes suivantes prévues.
 Thomas :
-Il a commencé à implémenter les vues PlayerView et LobbyView. Cela va permettre en les reliant aux contrôleurs de pouvoir avoir un lobby ainsi qu’un affichage de victoire fonctionnel.
+Il a commencé à implémenter les vues PlayerWinView et LobbyView. Cela va permettre en les reliant aux contrôleurs de pouvoir avoir un lobby ainsi qu’un affichage de victoire fonctionnel.
 Audren :
 Il a commencé à implémenter la logique et le squelette des différents contrôleurs (answerQuestionController / askQuestionController / chooseController / boardController) pour les différentes méthodes de la page plateau.
 
 
-
-
-
+Daily meeting du 06/11/26 : 
+Mathias :
+Il continue d'avancer sur le développement du boardModel afin de structurer la logique et les données liées au plateau de jeu.
+Lucas :
+Il s'occupe de l'implémentation du lobbyController pour gérer les interactions et le fonctionnement de la salle d'attente avant le lancement d'une partie. 
+Thomas :
+Il travaille sur la création et la mise en place de la vue et du contrôleur dédiés à la sélection (pickView et pickController) afin d'intégrer cette étape dans le déroulement du jeu. 
+Audren :
+Il est chargé de relier l'ensemble des vues, modèles et contrôleurs développés par l'équipe pour assurer la cohérence et le bon fonctionnement global de l'application.
+Daily meeting du 12/11/26 : 
+Mathias : Il a finalisé le développement du boardModel, permettant ainsi de disposer d'une structure complète et fonctionnelle pour la gestion des données et de la logique du plateau de jeu.
+Lucas : Il a terminé l'implémentation du lobbyController et validé son bon fonctionnement, assurant désormais une gestion complète de la salle d'attente avant le démarrage des parties.
+Thomas : Il a achevé la mise en place de la vue et du contrôleur dédiés à la sélection (pickView et pickController), rendant cette phase du jeu pleinement opérationnelle.
+Audren : Il a donc commencé à relier l'ensemble des vues, modèles et contrôleurs développés par l'équipe et a vérifié le bon fonctionnement global de l'application pour clôturer ce sprint.
 
 
 
