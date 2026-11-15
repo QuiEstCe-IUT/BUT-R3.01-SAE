@@ -1,0 +1,243 @@
+SAE 	RAPPORT INTERMÉDIAIRE
+ Gerard Olivier
+
+
+
+
+
+
+
+
+
+
+
+FRANCESCHI--PINSON Lucas
+MALLET Mathias
+METERY-DROUIN Audren
+NGUYEN Vinh Tan Thomas 
+
+
+[BUT Informatique 2ème année]
+		        			Sommaire
+
+
+PARTIE 1 : Etudes des besoins
+ ------------------------------------------------------------------------------------------------
+1: Personas
+ ------------------------------------------------------------------------------------------------
+2: Besoins fonctionnels,priorités,contraintes
+ ------------------------------------------------------------------------------------------------
+PARTIE 2 :  Analyse 
+ ------------------------------------------------------------------------------------------------
+3 :  Diagramme de l’architecture générale 
+ ------------------------------------------------------------------------------------------------
+4 :  Comportement des diagrammes
+ ------------------------------------------------------------------------------------------------
+PARTIE 3 : Gestion de projet
+
+ ------------------------------------------------------------------------------------------------
+5 :  Méthodologie utilisée
+ ------------------------------------------------------------------------------------------------
+6 :  Comportement des diagrammes
+ ------------------------------------------------------------------------------------------------
+
+
+
+
+[BUT Informatique 2ème année]
+
+
+
+
+Etudes des besoins
+
+
+Borislava – "Une enfant ayant des difficultés" 
+
+ Profil : 7 ans, elle sait lire mais a des difficultés de compréhension notamment en vocabulaire,mais elle veut jouer comme tout le monde.
+Ses besoins :
+      -  Avoir des visuels simples et bien clairs.
+      -  Un jeu avec des concepts dynamiques pour pas qu'elle arrête de jouer
+
+Ses restrictions :
+- Vocabulaire limitée : Elle n’a pas un grand vocabulaire
+- Fait des erreurs : Elle baisse les mauvais clapets sans faire exprès et ça ruine toute sa partie.
+
+2.  Gustave – "Un senior avec des baisses de vision" 
+-	Profil : 70 ans, il veut partager un moment avec ses petits-enfants mais sa vue et sa dextérité ne sont plus aussi bonnes qu'avant.
+- Ses besoins :
+- Des visuels très lisibles avec de grands contrastes de couleurs.
+- Un jeu facile  à manipuler.
+-  Ses restrictions :
+- Vision réduite : Incapable de distinguer les micro-détails (couleur des yeux, petits accessoires, nuances proches)
+[BUT Informatique 2ème année]
+- Difficulté avec l’informatique : Difficulté à comprendre le fonctionnement des nouvelles technologies
+3. Enzo – "Un joueur ayant de l’expérience" 
+
+Profil : 17 ans, passionné de jeux de société et de logique, il s'ennuie rapidement si le jeu manque de profondeur.
+Ses besoins :
+Du challenge intellectuel, de la rejouabilité et de la tactique.
+Un système qui réduit la part de chance pure au profit de la réflexion.
+Ses restrictions :
+Saturé du jeu classique : Le plateau de base à 24 personnages est trop prévisible pour lui.
+Restrictions auto-imposées : S'interdit les questions binaires simples (ex: "C'est une fille ?") et cherche des règles de déduction complexes.
+
+   4. Mme Dubois – "Une enseignante en besoin d'adaptation"
+
+Profil : 35 ans, prof de langues ou éducatrice, elle souhaite utiliser le jeu comme support d'apprentissage ludique.
+Ses besoins :
+Un matériel modulaire et personnalisable (pouvoir changer les cartes selon la leçon).
+La possibilité de faire jouer plusieurs élèves en même temps ou en équipes.
+Ses restrictions :
+Format 1v1 restrictif : Le plateau classique ne permet pas de faire jouer un groupe d'élèves.
+Hétérogénéité des niveaux : Doit gérer dans une même classe des élèves très à l'aise et d'autres en grande difficulté.
+    5. Maxime – "Un joueur pressé" (Transport / Voyage)
+Profil : 16 ans, très actif, il aime jouer sur le pouce entre deux cours, dans les transports ou en extérieur.
+Ses besoins :
+Un format compact, robuste et rapide à installer ou ranger dans un sac.
+Un système de fixation pour que le matériel reste en place en toutes circonstances.
+Ses restrictions :
+Environnement instable : Joue dans des lieux où le vent ou les secousses font tomber les pièces.
+Contrainte de temps : Doit pouvoir enchaîner des parties très courtes (5 à 10 minutes maximum).
+Les Besoins Fonctionnels (UI / Métier)
+Les besoins fonctionnels vont regrouper les fonctionnalités logicielles et interactions de l'interface utilisateur. 
+Tout d'abord,le site doit permettre de choisir différents decks de personnages (classique, thèmes personnalisés, vocabulaire adapté) ou même de créer ses propres grilles, répondant ainsi au besoin de renouvellement des joueurs experts et à l'usage pédagogique des enseignants. 
+De plus, l'application doit avoir la possibilité de changer les règles ainsi qu’avoir plusieurs  modes de jeu afin que le jeu ne soit pas répétitif. Le site doit gérer aussi bien le mode multijoueur en ligne (1v1 ou en équipe). Enfin, notre site doit intégrer doit permettre lorsqu’on joue de ne pas avoir d’erreur selon ce que l’on tape au clavier.
+
+Les Besoins Non-Fonctionnels (UX / Technique)
+Les besoins non-fonctionnels vont être principalement les critères de performance et d’expérience utilisateur du site. 
+L'application web doit être légère, rapide à charger et capable de gérer les possibles erreurs de connexion afin de pouvoir jouer facilement sur smartphone dans les transports. Enfin, le site doit avoir une ergonomie simple et un parcours utilisateur fluide. 
+La création de partie ou l'accès à une salle de jeu via un simple code ou QR code doit se faire sans inscription obligatoire en moins de deux clics, garantissant un lancement instantané.
+
+
+
+
+Priorisation des Besoins 
+Afin d'organiser le développement technique du site, les fonctionnalités sont hiérarchisées selon la méthode MoSCoW. 
+Dans un premier temps,dans le MUST HAVE ,on va retrouver l'accessibilité de l'interface (contrastes, responsive, police lisible), le système de jeu de base à deux joueurs (ou contre IA) ainsi que la validation sécurisée des clics pour éviter les erreurs de manipulation. 
+
+Ensuite, pour les fonctionnalités importantes SHOULD HAVE ,cela rassemble le système de création de partie rapide par lien/QR code et la possibilité de changer de deck de cartes.
+Pour ce qui des fonctionnalités secondaires COULD HAVE on va mettre en place en priorité  le développement du mode multijoueur le générateur de decks personnalisés par les utilisateurs et les statistiques de partie. 
+
+Enfin, dans les éléments exclus de la première version WON’T HAVE 
+
+
+Synthèse des Contraintes Projet
+Le développement de ce site web doit composer avec quatre contraintes techniques et d'usage majeures. La première est une contrainte d'accessibilité UI/UX  avec une interface devant être aussi intuitive pour un enfant de 7 ans apprenant à naviguer que pour un senior découvrant et ayant des difficultés avec les outils informatiques. 
+
+La deuxième contrainte va concerner le rendement technique et la connectivité, le site devant fonctionner parfaitement sur les téléphones. 
+La troisième contrainte est d'ordre cognitif et pédagogique : l'interface ne doit pas surcharger l'utilisateur d'informations visuelles ou de menus complexes pour ne pas déconcentrer les joueurs ayant des troubles de l'attention ou du vocabulaire. 
+Enfin, une contrainte de sécurité et de conformité (RGPD) s'impose, le site accueillant un public jeune : aucune donnée personnelle sensible ne doit être stockée inutilement et la navigation doit rester totalement sécurisée et sans publicités intrusives.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gestion de projet
+
+Pour ce projet de SAE d'une durée de 8 semaines, nous avons fait le choix d'adopter la méthodologie Agile, et plus particulièrement le cadre Scrum. Ce choix s'est imposé naturellement car nous devions adapter notre jeu à des profils d'utilisateurs très variés, allant des enfants en difficulté aux seniors, en passant par les enseignants et les joueurs chevronnés. L'approche Agile nous permet de progresser par étapes régulières, de livrer rapidement des versions fonctionnelles et d'ajuster notre travail en fonction des retours et des blocages techniques.
+Au sein de l'équipe, nous avons réparti les rôles pour travailler de façon organisée. Le Product Owner veille au respect des besoins des utilisateurs, gère le Backlog et définit les priorités tout en tenant compte de l'accessibilité et du RGPD. Le Scrum Master facilite le travail du groupe, s'assure du bon suivi de la méthode et aide à résoudre les problèmes d'organisation ou d'équipe. L'équipe technique s'occupe du développement front-end, back-end et de l'ergonomie des interfaces. Enfin, un panneau d'utilisateurs représentant nos différents personas participe aux phases de test pour vérifier que le jeu reste simple et adapté au terrain.
+Notre mode de collaboration repose sur un travail en Sprints d'une à deux semaines et sur des échanges très fréquents. Nous organisons des réunions régulières pour faire le point sur ce qui a été fait, répartir les tâches et identifier les blocages. À la fin de chaque étape, nous effectuons des démonstrations et des revues de projet avec notre client afin d'obtenir sa validation avant de passer aux fonctionnalités suivantes.
+Notre planning se découpe en cinq sprints principaux répartis sur les 8 semaines. Les semaines 1 et 2 sont consacrées à la conception des maquettes et de l'architecture MVC. Les semaines 3 et 4 permettent de développer le socle fonctionnel et le moteur de jeu pour obtenir une version Alpha. Lors des semaines 5 et 6, nous enrichissons le jeu avec les fonctionnalités avancées pour atteindre une version Bêta. La semaine 7 sert à effectuer les tests globaux et corriger les bugs, tandis que la semaine 8 est dédiée aux retouches finales et à la préparation de la soutenance.
+L'ensemble des tâches est consigné et suivi au travers d'un Backlog d'équipe sur GitHub. Le cahier des charges n'étant pas figé, toute nouvelle contrainte ou suggestion d'amélioration issue des réunions clients est discutée en équipe, réévaluée, puis directement intégrée dans le Backlog pour les sprints à venir.
+
+
+Nous allons donc démarrer par le premier sprint soit du 12 Octobre 2026 au 21 Octobre 2026:
+1er Sprint
+L'objectif principal de ce premier sprint était de poser des bases techniques solides et d'installer toute l'organisation de travail de l'équipe. Durant ces dix jours, nous devions nous assurer que la structure de notre code PHP était propre, que les outils de suivi sur GitHub étaient opérationnels et que la documentation initiale était rédigée.
+Sur le plan de l'architecture technique, nous avons d'abord mis en place le socle MVC initial . Après une première revue du code et des échanges avec notre client, nous avons procédé à une restructuration globale du MVC). Cela nous a permis d'assainir les contrôleurs, de nettoyer le fichier util.php qui était mal employé comme layout, et de regrouper les modèles liés aux utilisateurs au sein d'un unique UserModel. En parallèle, l'intégration complète de l'autoloader et la modification de l'arborescence ont nécessité un ajustement des tests automatisés avec la correction du script de tests PHPUnit..
+
+En ce qui concerne la gestion et la sécurité du projet, nous avons identifié et corrigé un problème d'exposition de données sensibles en veillant à ne plus laisser passer de tokens de sécurité directement dans les URL. Nous avons également commencé à préparer la collecte des participants (professeurs) pour le jeu et formalisé le questionnaire d'autorisation de signature d'image.
+Enfin, pour la partie organisationnelle et documentaire, après avoir brièvement testé Trello, nous avons fait le choix de centraliser directement tout notre backlog et nos issues sur notre dépôt GitHub. Nous avons commencé à rédiger le rapport intermédiaire pour faire le point sur nos choix fonctionnels, puis nous avons créé la branche docs sur GitHub afin d'y centraliser et de versionner l'ensemble de nos rapports et documents de travail.
+
+
+
+
+
+
+
+Daily meeting du 20/10/26 : 
+Relecture de l’architecture,Mise au point avec le client,problème à fixer notamment sur l’autoloader qui n’est pas utilisé dans certains endroit et doit être automatisé de partout. Nous avons de plus un problème de sécurité à régler. Donc pour la répartition des tâches : 
+-
+
+
+Daily meeting du 21/10/26 :
+Audren : Il s'est occupé de fixer l'autoloader ce matin et a transformé les différents modèles liés aux utilisateurs en un unique userModel. De plus, il a configuré les URLs pour masquer les tokens qui ne doivent pas y figurer.
+Lucas : Il a ajouté son rapport dans l'état actuel au sein d'un nouveau dossier docs sur le dépôt. Dans l'après-midi, il a modifié les tests en supprimant les require qui n'étaient plus nécessaires grâce aux modifications apportées à l'autoloader.
+Thomas : Il s'est également occupé d'ajouter son rapport dans l'état actuel dans le nouveau dossier docs du dépôt, aux côtés de Lucas.
+Mathias : Absent ce jour
+
+
+Mercredi 21 Octobre:
+
+Audren s’est ce matin occupé de fixer l’autoloader et à transformer les modèles en rapport avec les users en un unique userModel
+ tandis que Lucas et Thomas se sont occupés de rajouter leur rapports dans l’état actuel dans un nouveau dossier docs sur le repo. Dans l’après midi Lucas a modifié les tests en retirant les require qui n’étaient plus requis grâce à l’autoloader encore modifié.
+De plus, Audren s’est occupé de fixer les urls pour les tokens que nous ne souhaitons pas afficher dans ce dit url.
+
+
+
+Sprint 2 : Implémentation du système de jeu et des vues
+Le deuxième sprint s'inscrit dans la continuité directe des fondations posées lors du premier. L'objectif principal de cette période est de passer de la structure de base à une application réellement interactive, en développant le moteur de jeu, les contrôleurs associés ainsi que les différentes vues nécessaires à l'expérience joueur.
+Sur le plan de l'interface et du développement Front-End, l'équipe a finalisé plusieurs composants majeurs de l'affichage. Nous avons développé la vue du plateau de jeu BoardView, la vue de la salle d'attente LobbyView ainsi que l'écran d'affichage de la victoire PlayerWinView. De plus, nous avons implémenté le système de sélection de personnage à travers l'ensemble pickView / pickController. Ces développements permettent d'obtenir un parcours utilisateur visuellement complet, du choix du personnage jusqu'à la fin de la partie.
+Côté logique métier et contrôleurs Back-End, l'effort s'est porté sur la gestion des interactions durant la partie. Les contrôleurs du plateau BoardController et le contrôleur de victoire WinController ont été complètement finalisés. Afin de maintenir un code propre et maintenable, un travail de refactorisation a été réalisé sur le point d'entrée principal de l'application index.php. Pour parfaire le flux du jeu, le développement du contrôleur de salle d'attente LobbyController ainsi que la modélisation des données de partie GameModel ont été engagés et sont actuellement en cours de finalisation.
+Enfin, concernant l'organisation et la préparation des tâches futures, nous avons mis à jour la documentation du projet et les rapports d'avancement. En parallèle, le travail sur le formulaire destiné à recueillir l'accord et les informations des enseignant FormulaireEnseignant a été formalisé dans le backlog et est prêt à être pris en charge pour les prochaines itérations.
+
+Daily meeting du 03/11/26 : 
+Mathias :
+qqdqdq
+Lucas :
+Il a merge la boardView actuelle et a continué à créer les méthodes suivantes prévues.
+Thomas :
+Il a commencé à implémenter les vues PlayerWinView et LobbyView. Cela va permettre en les reliant aux contrôleurs de pouvoir avoir un lobby ainsi qu’un affichage de victoire fonctionnel.
+Audren :
+Il a commencé à implémenter la logique et le squelette des différents contrôleurs (answerQuestionController / askQuestionController / chooseController / boardController) pour les différentes méthodes de la page plateau.
+
+
+Daily meeting du 06/11/26 : 
+Mathias :
+Il continue d'avancer sur le développement du boardModel afin de structurer la logique et les données liées au plateau de jeu.
+Lucas :
+Il s'occupe de l'implémentation du lobbyController pour gérer les interactions et le fonctionnement de la salle d'attente avant le lancement d'une partie. 
+Thomas :
+Il travaille sur la création et la mise en place de la vue et du contrôleur dédiés à la sélection (pickView et pickController) afin d'intégrer cette étape dans le déroulement du jeu. 
+Audren :
+Il est chargé de relier l'ensemble des vues, modèles et contrôleurs développés par l'équipe pour assurer la cohérence et le bon fonctionnement global de l'application.
+Daily meeting du 12/11/26 : 
+Mathias : Il a finalisé le développement du boardModel, permettant ainsi de disposer d'une structure complète et fonctionnelle pour la gestion des données et de la logique du plateau de jeu.
+Lucas : Il a terminé l'implémentation du lobbyController et validé son bon fonctionnement, assurant désormais une gestion complète de la salle d'attente avant le démarrage des parties.
+Thomas : Il a achevé la mise en place de la vue et du contrôleur dédiés à la sélection (pickView et pickController), rendant cette phase du jeu pleinement opérationnelle.
+Audren : Il a donc commencé à relier l'ensemble des vues, modèles et contrôleurs développés par l'équipe et a vérifié le bon fonctionnement global de l'application pour clôturer ce sprint.
+
+
+
+
+
+
+
+
+
+
+
+	TO DO LIST
+ Étude des besoins
+Identifier les utilisateurs (faire des personas) et décrire leur contexte d'utilisation de l'application
+Décrire les besoins (fonctionnels ou non), leurs priorités et les contraintes
+Formaliser ces besoins sous forme de diagrammes de cas d'utilisation UML qui décrivent les interactions entre acteurs et système
+Analyse
+Faire une première proposition d'architecture générale pour l'application avec un diagramme de classes
+Décrire le comportement de l'application par des diagrammes de séquences ou d’activités
+Gestion de projet
+Préciser la méthodologie utilisée
+Décrire l'organisation des rôles (p.ex. product owner, scrum master, équipe technique, utilisateurs) et les modes de collaboration (sprints, réunions, validations)
+Préciser le découpage en sprints, les jalons clés, le backlog (liste des tâches à réaliser) et la façon dont le cahier des charges sera actualisé au fil du projet
+
