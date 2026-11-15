@@ -5,15 +5,14 @@ use src\views\_Layout;
 /**
  * View for the forgotten password page.
  */
-class ForgottenPwdView {
+class Forgotten_passwordView {
     /**
      * Display the view of the forgotten password page.
      *
      * @return void
      */
     public function show($success, $error, $get_token) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">
@@ -22,7 +21,7 @@ class ForgottenPwdView {
 
                 <link rel="stylesheet" href="../assets/styles/_default.min.css">
                 <link rel="stylesheet" href="../assets/styles/_navigation.min.css">
-                <link rel="stylesheet" href="../assets/styles/forgottenPwdStyle.min.css">
+                <link rel="stylesheet" href="../assets/styles/forgotten_passwordStyle.min.css">
                 <?php $layout->start_page(); ?>
             </head>
             <body>
@@ -40,13 +39,13 @@ class ForgottenPwdView {
 
                                 <?php } else if (isset($success)) { ?>
                                     <!-- Affichage du message de succès -->
-                                    <?php echo $success; ?>
+                                    <p class='success'><?php echo $success; ?></p>
                                     <br><br>
                                     <a href="/user/login" class="link">Se connecter</a>
 
                                 <?php } else if (isset($get_token)) { ?>
                                     <!-- Formulaire 2 : Nouveau mot de passe -->
-                                    <form method="post" class="form_bg" action="/user/forgotten_password&token=<?php echo $get_token; ?>">
+                                    <form method="post" class="form_bg" action="/user/forgotten_password?token=<?php echo $get_token; ?>">
                                         <p><label for="mdp">Nouveau mot de passe :</label></p>
                                         <input id="mdp" name="form2[mdp]" class="input" type="password" minlength="12" required>
 
@@ -55,11 +54,11 @@ class ForgottenPwdView {
 
                                         <input type="submit" class="submit" value="Modifier">
                                     </form>
-                                    <?php
+                                    <p class='error'><?php
                                     if (isset($error)) {
                                         echo $error;
                                     }
-                                    ?>
+                                    ?></p>
 
                                 <?php } else { ?>
                                     <!-- Formulaire 1 : Demande d'email -->
@@ -69,11 +68,11 @@ class ForgottenPwdView {
 
                                         <input type="submit" class="submit" value="Envoyer mail">
                                     </form>
-                                    <?php
+                                    <p class='error'><?php
                                     if (isset($error)) {
                                         echo $error;
                                     }
-                                    ?>
+                                    ?></p>
                                 <?php } ?>
                             </div>
                         </main>

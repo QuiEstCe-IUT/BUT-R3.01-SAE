@@ -6,9 +6,6 @@ use PHPUnit\Framework\TestCase;
 use src\controllers\LegalNoticeController;
 use src\views\LegalNoticeView;
 
-require_once __DIR__ . '/../../src/views/_layout.php';
-require_once __DIR__ . '/../../src/controllers/legalNoticeController.php';
-
 #[CoversClass(LegalNoticeController::class)]
 #[CoversClass(LegalNoticeView::class)]
 class LegalNoticeControllerTest extends TestCase

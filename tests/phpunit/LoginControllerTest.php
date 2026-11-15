@@ -16,9 +16,6 @@ class LoginControllerTest extends TestCase
 
     protected function setUp(): void
     {
-        require_once __DIR__ . '/../../src/views/_layout.php';
-        require_once __DIR__ . '/../../src/controllers/user/loginController.php';
-
         $this->previousPost = $_POST;
         $this->previousGet = $_GET;
         $this->previousSession = $_SESSION ?? [];
@@ -38,7 +35,7 @@ class LoginControllerTest extends TestCase
     {
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute('');
+            (new \src\controllers\user\LoginController())->execute();
         } finally {
             $html = ob_get_clean();
         }
@@ -56,7 +53,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute('logout');
+            (new \src\controllers\user\LogoutController())->execute();
         } finally {
             $html = ob_get_clean();
         }
@@ -73,7 +70,7 @@ class LoginControllerTest extends TestCase
 
         ob_start();
         try {
-            (new \src\controllers\user\LoginController())->execute('');
+            (new \src\controllers\user\LoginController())->execute();
         } finally {
             $html = ob_get_clean();
         }

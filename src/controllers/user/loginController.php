@@ -1,22 +1,20 @@
 <?php
 namespace src\controllers\user;
 
+use src\views\user\LoginView;
+use src\models\UserModel;
+
 /**
- * Controller for handling user login and logout.
+ * Controller for handling user login.
  */
 class LoginController {
     /**
-     * Executes the login/logout logic and renders the view.
+     * Executes the login logic and renders the view.
      *
      * @return void
      */
-    public function execute($action) : void {
+    public function execute() : void {
         $error = null;
-
-        // Gestion de la déconnexion
-        if (isset($action) && $action == 'logout') {
-            $_SESSION = array(); // On vide la variable superglobale session pour se déconnecter
-        }
         
         // On vérifie le contenu du formulaire d'authentification (si on est pas déjà connecté)
         if (isset($_POST['form']) && !isset($_SESSION['suid'])) {
@@ -31,8 +29,7 @@ class LoginController {
 
             if (isset($postData['form']['email']) && isset($postData['form']['mdp'])) {
                 // On charge le modèle et on cherche l'utilisateur par email
-                require_once __DIR__ . '/../../models/loginModel.php';
-                $user = \LoginModel::getUserByEmail($postData['form']['email']);
+                $user = UserModel::getUserByEmail($postData['form']['email']);
 
                 if ($user && password_verify($postData['form']['mdp'], $user['hash_password'])) {
                     // informations correctes, on cree la session
@@ -45,13 +42,12 @@ class LoginController {
                     exit;
                 } else {
                     // informations invalide
-                    $error = "<p class='error'>Email ou mot de passe incorrect</p>";
+                    $error = "Email ou mot de passe incorrect";
                 }
             }
         }
 
         // On affiche le formulaire d'authentification
-        $path = 'src\\views\\user\\loginView';
-        (new $path())->show($error);
+        (new LoginView())->show($error);
     }
 }

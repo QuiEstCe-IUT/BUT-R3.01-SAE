@@ -1,6 +1,8 @@
 <?php
 namespace src\controllers;
 
+use src\views\LegalNoticeView;
+
 /**
  * Controller for handling legal notice page.
  */
@@ -19,8 +21,7 @@ class LegalNoticeController {
         $hostName = "";
         $hostAddress = "";
 
-        $path = 'src\\views\\legalNoticeView';
-        (new $path())->show(
+        (new LegalNoticeView())->show(
             $companyName,
             $address,
             $contactEmail,

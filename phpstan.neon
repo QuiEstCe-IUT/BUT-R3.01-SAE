@@ -4,6 +4,5 @@ parameters:
         - public/index.php
         - src
         - core/model.php
-        - core/includes
     ignoreErrors:
 

@@ -1,13 +1,16 @@
 <?php
 namespace src\controllers\user;
 
+use src\views\user\Forgotten_passwordView;
+use src\models\UserModel;
+
 /**
  * Controller for handling forgotten password requests.
  *
  * This controller manages both the request to send a password reset link
  * via email, and the actual password reset process once a valid token is provided.
  */
-class forgottenPwdController {
+class Forgotten_passwordController {
     /**
      * Executes the forgotten password logic.
      *
@@ -30,12 +33,8 @@ class forgottenPwdController {
         if (!isset($_SESSION['suid'])) {
             if (isset($_POST['form2']) && isset($get_token)) {
 
-
-                require_once __DIR__ . '/../../models/signUpModel.php';
-                require_once __DIR__ . '/../../models/forgottenPwdModel.php';
-
                 // On vérifie dans la BD que le token correspond bien à une adresse mail
-                $email = \ForgottenPwdModel::getEmailByToken(password_hash($get_token, PASSWORD_DEFAULT));
+                $email = UserModel::getEmailByToken(password_hash($get_token, PASSWORD_DEFAULT));
 
                 // Si le mail existe on vérifie les mots de passe et on met à jour
                 if ($email) {
@@ -51,39 +50,39 @@ class forgottenPwdController {
                     if (isset($postData['form2']['mdp']) && isset($postData['form2']['mdp2'])) {
                         // Vérification que les deux mots de passe correspondent
                         if ($postData['form2']['mdp'] !== $postData['form2']['mdp2']) {
-                            $error = "<p class='error'>Les deux mots de passe ne correspondent pas</p>";
+                            $error = "Les deux mots de passe ne correspondent pas";
                         }
 
                         // Vérification que le mot de passe n'est pas vide
                         if ($error === null && strlen($postData['form2']['mdp']) < 12) {
-                            $error = "<p class='error'>Veuillez entrer un mot de passe de taille 12+ caractères</p>";
+                            $error = "Veuillez entrer un mot de passe de taille 12+ caractères";
                         }
 
                         // Si pas d'erreur, on modifie le mot de passe
                         if ($error === null) {
-                            if (!\SignUpModel::emailExists($email)) {
-                                $error = "<p class='error'>Le compte associé au token a été supprimé entre temps</p>";
+                            if (!UserModel::emailExists($email)) {
+                                $error = "Le compte associé au token a été supprimé entre temps";
                             } else {
                                 // On hache le nouveau mot de passe
                                 $hash = password_hash($postData['form2']['mdp'], PASSWORD_DEFAULT);
                                 // On met à jour la base
-                                $reussite = \ForgottenPwdModel::updatePassword($email, $hash);
+                                $reussite = UserModel::updatePassword($email, $hash);
 
                                 if ($reussite) {
                                     // On supprime le token utilisé
-                                    \ForgottenPwdModel::deleteToken(password_hash($get_token, PASSWORD_DEFAULT));
-                                    $success = "<p class='success'>Mot de passe modifié avec succès</p>";
+                                    UserModel::deleteToken(password_hash($get_token, PASSWORD_DEFAULT));
+                                    $success = "Mot de passe modifié avec succès";
                                 } else {
-                                    $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
+                                    $error = "Une erreur est survenue, veuillez réessayer";
                                 }
                             }
                         }
                     } else {
-                        $error = "<p class='error'>Veuillez remplir tous les champs</p>";
+                        $error = "Veuillez remplir tous les champs";
                     }
                 } else {
                     // Le token est invalide ou expiré
-                    $error = "<p class='error'>Lien de réinitialisation invalide ou expiré (1 heure max)</p>";
+                    $error = "Lien de réinitialisation invalide ou expiré (1 heure max)";
                 }
 
             } else if (isset($_POST['form'])) {
@@ -101,16 +100,15 @@ class forgottenPwdController {
                     // Vérification du format de l'email
                     $emailRegex = '/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/';
                     if (!preg_match($emailRegex, $postData['form']['email'])) {
-                        $error = "<p class='error'>Format d'email incorrect</p>";
+                        $error = "Format d'email incorrect";
                     }
 
                     // Si pas d'erreur, on vérifie l'email en base
                     if ($error === null) {
-                        require_once __DIR__ . '/../../models/signUpModel.php';
-                        require_once __DIR__ . '/../../models/forgottenPwdModel.php';
 
-                        if (!\SignUpModel::emailExists($postData['form']['email'])) {
-                            $error = "<p class='error'>Aucun compte associé à cet email</p>";
+                        if (!UserModel::emailExists($postData['form']['email'])) {
+                            // On ne révèle aucune information sur si le compte existe
+                            $success = "Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail";
                         } else {
                             // On génère un token cryptographiquement sûr
                             $bytes = random_bytes(32);
@@ -119,7 +117,7 @@ class forgottenPwdController {
                             $hashed_token = password_hash($token, PASSWORD_DEFAULT);
 
                             // On sauvegarde (token|email) dans la BD
-                            $reussite = \ForgottenPwdModel::saveToken($hashed_token, $postData['form']['email']);
+                            $reussite = UserModel::saveToken($hashed_token, $postData['form']['email']);
 
                             if ($reussite) {
                                 // On envoie un email avec le lien de réinitialisation
@@ -136,29 +134,28 @@ class forgottenPwdController {
 
                                 $message = 'Bonjour, suite à votre demande de réinitialisation ';
                                 $message .= 'de mot de passe, veuillez cliquer sur le lien suivant :' . "\n";
-                                $message .= 'https://mathiasm.alwaysdata.net/user/forgotten_password&token=' . $token . "\n";
+                                $message .= 'https://mathiasm.alwaysdata.net/user/forgotten_password?token=' . $token . "\n";
                                 $message .= 'Ce lien est valable 1 heure.' . "\n";
                                 $message .= 'Si vous n\'êtes pas à l\'origine de cette demande, ignorez ce message.';
 
                                 $envoie = mail($to, $subject, $message, $headers);
                                 if ($envoie) {
-                                    $success = "<p class='success'>Un email a été envoyé, veuillez vérifier votre boîte mail</p>";
+                                    $success = "Si l'email associé au compte existe, un email a été envoyé, veuillez vérifier votre boîte mail";
                                 } else {
-                                    $error = "<p class='error'>Une erreur est survenue lors de l'envoie de l'email, veuillez réessayer</p>";
+                                    $error = "Une erreur est survenue lors de l'envoie de l'email, veuillez réessayer";
                                 }
                             } else {
-                                $error = "<p class='error'>Une erreur est survenue, veuillez réessayer</p>";
+                                $error = "Une erreur est survenue, veuillez réessayer";
                             }
                         }
                     }
                 } else {
-                    $error = "<p class='error'>Veuillez remplir tous les champs</p>";
+                    $error = "Veuillez remplir tous les champs";
                 }
             }
         }
 
         // On affiche la vue de mot de passe oublié
-        $path = 'src\\views\\user\\forgottenPwdView';
-        (new $path())->show($success, $error, $get_token);
+        (new Forgotten_passwordView())->show($success, $error, $get_token);
     }
 }

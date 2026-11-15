@@ -1,6 +1,8 @@
 <?php
 namespace src\views;
 
+use src\views\_Layout;
+
 /**
  * View for the map page.
  */
@@ -11,8 +13,7 @@ class MapView {
      * @return void
      */
     public function show($pages) {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
         ?>
         <!DOCTYPE html>
         <html lang="fr">

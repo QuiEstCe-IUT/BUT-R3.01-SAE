@@ -1,6 +1,8 @@
 <?php
 namespace src\views;
 
+use src\views\_Layout;
+
 /**
  * View for the home page.
  */
@@ -11,8 +13,7 @@ class HomeView {
      * @return void
      */
     public function show() {
-        $path = 'src\\views\\_layout';
-        $layout = new $path();
+        $layout = new _Layout();
 
         $features = array();
         ?>
