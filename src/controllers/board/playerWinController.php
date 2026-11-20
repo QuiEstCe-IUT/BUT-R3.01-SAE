@@ -4,6 +4,7 @@ namespace src\controllers\board;
 use src\views\board\PlayerWinView;
 
 use src\models\UserModel;
+use src\models\board\BoardModel;
 
 /**
  * Controller to simply choose which character you want to eliminate from your board

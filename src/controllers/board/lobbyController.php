@@ -2,6 +2,7 @@
 namespace src\controllers\board;
 
 use src\views\board\LobbyView;
+use src\models\board\BoardModel;
 
 /**
  * Controller for handling the game lobby.
@@ -35,10 +36,12 @@ class LobbyController {
 
             $roomName = trim($roomName);
             $createdRoomId = null;
-            // TODO: Créer le salon en base avec son nom et l'utilisateur connecté comme créateur,
-            //       puis récupérer son identifiant.
 
-            if ($createdRoomId !== null) {
+            // On créer le salon en base avec son nom et l'utilisateur connecté comme créateur,
+            // puis récupérer son identifiant.
+            $createdRoomId = BoardModel::createGame($_SESSION['suid'], null, BoardModel::STATUS_LOBBY);
+
+            if ($createdRoomId !== null && $createdRoomId !== false) {
                 header('Location: /board/lobby');
                 exit;
             }

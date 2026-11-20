@@ -1,8 +1,8 @@
 <?php
-
 namespace src\controllers\board;
 
 use src\views\board\PickView;
+use src\models\board\BoardModel;
 
 class PickController {
     
